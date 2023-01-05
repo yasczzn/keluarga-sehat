@@ -1,30 +1,30 @@
 <?php 
  
-include 'connection.php';
- 
-error_reporting(0);
- 
-session_start();
- 
-if (isset($_SESSION['username'])) {
-    header("Location: admin-dashboard.php");
-}
- 
-if (isset($_POST['submit'])) {
-    $email = $_POST['email'];
-    $password = md5($_POST['password']);
- 
-    $sql = "SELECT * FROM user_admin WHERE email='$email' AND password='$password'";
-    $result = mysqli_query($conn, $sql);
-    if ($result->num_rows > 0) {
-        $row = mysqli_fetch_assoc($result);
-        $_SESSION['username'] = $row['username'];
-        echo "<script>alert('Login successful!')</script>";
+    include 'connection.php';
+    
+    error_reporting(0);
+    
+    session_start();
+    
+    if (isset($_SESSION['username'])) {
         header("Location: admin-dashboard.php");
-    } else {
-        echo "<script>alert('Invalid email or password. Please try again!')</script>";
     }
-}
+    
+    if (isset($_POST['submit'])) {
+        $email = $_POST['email'];
+        $password = md5($_POST['password']);
+    
+        $sql = "SELECT * FROM user_admin WHERE email='$email' AND password='$password'";
+        $result = mysqli_query($conn, $sql);
+        if ($result->num_rows > 0) {
+            $row = mysqli_fetch_assoc($result);
+            $_SESSION['username'] = $row['username'];
+            echo "<script>alert('Login successful!')</script>";
+            header("Location: admin-dashboard.php");
+        } else {
+            echo "<script>alert('Invalid email or password. Please try again!')</script>";
+        }
+    }
 ?>
 
 <!DOCTYPE html>

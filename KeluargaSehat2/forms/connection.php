@@ -1,9 +1,9 @@
 <?php
 
-$dbhost = 'localhost';
-$dbuser = 'yasczzn';
-$dbpass = '1saythename7';
-$db     = 'keluarga_sehat';
+$dbhost = $_ENV['localhost'];
+$dbuser = $_ENV['yasczzn'];
+$dbpass = $_ENV['1saythename7'];
+$db     = $_ENV['keluarga_sehat'];
 
 
 $conn  = mysqli_connect($dbhost,$dbuser,$dbpass,$db);

@@ -8,6 +8,10 @@
     
     include "connection.php";
 
+    $sql = mysqli_query($conn, "SELECT * FROM vaccination v, patient p, vaccine_stock vs WHERE 
+    v.userRegNum = p.userRegNum AND v.vaccineID = vs.vaccineID");
+    $data = mysqli_fetch_array($sql); 
+
     $userRegNum = "";
     $vaccineID = "";
     $date = "";
@@ -140,14 +144,30 @@
 
                         <h3 class="text-center font-weight-light my-4">Vaccination Form</h3>
                         <form action="" method="POST" role="form" class="php-email-form">
-                            <div class="form-floating mb-3 mx-3">
-                                <input type="number" class="form-control form-control-user" name="userRegNum" value="<?php echo $userRegNum; ?>" placeholder="User Registered Number" required>
-                                <label for="inputUserRegNum">User Registered Number</label>
+                        <div class="form-floating mb-3 mx-3">
+                                <select aria-label="ID" title="type-choice" type="text" class="form-control" name="userRegNum" required>
+                                    <?php
+                                        echo "<option value=$data[userRegNum]>$data[name]</option>";
+                                        $query = mysqli_query($conn, "SELECT * FROM patient");
+                                        while ($data = mysqli_fetch_array($query)){
+                                            echo "<option value=$data[userRegNum]>$data[name]</option>";
+                                        }
+                                    ?>
+                                </select>
+                                <label for="inputPatientName">Patient Name</label>
                                 <div class="validate"></div>
                             </div>
                             <div class="form-floating mb-3 mx-3">
-                                <input type="number" class="form-control form-control-user" name="vaccineID" value="<?php echo $vaccineID; ?>" placeholder="Vaccine ID" required>
-                                <label for="inputVaccineID">Vaccine ID</label>
+                                <select aria-label="Type" title="type-choice" type="text" class="form-control" name="vaccineID" required>
+                                    <?php
+                                        echo "<option value=$data[vaccineID]>$data[vaccineType]</option>";
+                                        $query = mysqli_query($conn, "SELECT * FROM vaccine_stock");
+                                        while ($data = mysqli_fetch_array($query)){
+                                            echo "<option value=$data[vaccineID]>$data[vaccineType]</option>";
+                                        }
+                                    ?>
+                                </select>
+                                <label for="inputVaccineType">Vaccine Type</label>
                                 <div class="validate"></div>
                             </div>
                             <div class="form-floating mb-3 mx-3">
