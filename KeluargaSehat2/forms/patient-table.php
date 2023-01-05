@@ -3,7 +3,7 @@
     session_start();
     
     if (!isset($_SESSION['username'])) {
-        header("Location: login.php");
+        header("Location: index.php");
     }
     
 
@@ -147,7 +147,9 @@
                                                 <td>$display[patientStatus]</td>
                                                 <td>
                                                     <a href='patient-edit.php?update=$display[userRegNum]' type='button' value='Update' class='btn btn-primary'>Update</a>
-                                                    <a href='?update=$display[userRegNum]' type='button' value='Delete' class='btn btn-danger btn-user'>Delete</a>
+                                                    <a href='?delete=$display[userRegNum]'>
+                                                        <input type='button' value='delete' class='btn btn-danger btn-user'>
+                                                    </a>
                                                 </td>
                                             </tr>";
                                         
@@ -156,6 +158,15 @@
                                         ?>
                                     </tbody>
                                 </table>
+                                <?php
+                                if(isset($_GET['delete'])){
+
+                                    mysqli_query($conn, "DELETE FROM patient WHERE userRegNum='$_GET[delete]'");
+
+                                    echo "<p><b> Data is successfully delete</b></p>";
+                                    echo "<meta http-equiv=refresh content=2;URL='patient-table.php'>";
+                                }
+                                ?>
                             </div>
                         </div>
                     </div>

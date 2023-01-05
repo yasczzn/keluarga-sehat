@@ -3,7 +3,7 @@
 session_start();
  
 if (!isset($_SESSION['username'])) {
-    header("Location: login.php");
+    header("Location: index.php");
 }
  
 ?>
@@ -131,7 +131,9 @@ if (!isset($_SESSION['username'])) {
                                                 <td>$display[date]</td>
                                                 <td>
                                                     <a href='vaccine-stock-edit.php?update=$display[vaccineID]' type='button' value='Update' class='btn btn-primary'>Update</a>
-                                                    <a href='?update=$display[vaccineID]' type='button' value='Delete' class='btn btn-danger btn-user'>Delete</a>
+                                                    <a href='?delete=$display[vaccineID]'>
+                                                        <input type='button' value='delete' class='btn btn-danger btn-user'>
+                                                    </a>
                                                 </td>
                                             </tr>";
                                         
@@ -140,6 +142,15 @@ if (!isset($_SESSION['username'])) {
                                         ?>
                                     </tbody>
                                 </table>
+                                <?php
+                                if(isset($_GET['delete'])){
+
+                                    mysqli_query($conn, "DELETE FROM vaccin_stock WHERE vaccineID='$_GET[delete]'");
+
+                                    echo "<p><b> Data is successfully delete</b></p>";
+                                    echo "<meta http-equiv=refresh content=2;URL='vaccine-stock-table.php'>";
+                                }
+                                ?>
                             </div>
                         </div>
                     </div>
