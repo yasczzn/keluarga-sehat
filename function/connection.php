@@ -1,10 +1,10 @@
 <?php
 
-$dbhost = $_ENV["MYSQLHOST"];
-$dbuser = $_ENV["MYSQLUSER"];
-$dbpass = $_ENV["MYSQLPASSWORD"];
-$dbname = $_ENV["MYSQLUSER"];
-$dbport = $_ENV["MYSQLPORT"];
+$dbhost = $_ENV["DB_HOST"];
+$dbuser = $_ENV["DB_USER"];
+$dbpass = $_ENV["DB_PASSWORD"];
+$dbname = $_ENV["DB_NAME"];
+$dbport = $_ENV["DB_PORT"];
 
 $conn  = mysqli_connect($dbhost,$dbuser,$dbpass,$dbname, $dbport);
 
