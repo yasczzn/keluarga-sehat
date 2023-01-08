@@ -3,7 +3,7 @@
 session_start();
  
 if (!isset($_SESSION['username'])) {
-    header("Location: index.php");
+    header("Location: login.php");
 }
  
 ?>
@@ -17,6 +17,11 @@ if (!isset($_SESSION['username'])) {
         <meta name="description" content="" />
         <meta name="author" content="" />
         <title>Admin - Vaccination Table</title>
+
+          <!-- Favicons -->
+        <link href="assets/img/keluargasehat.png" rel="icon">
+        <link href="assets/img/keluargasehat.png" rel="apple-touch-icon">
+
         <link href="https://cdn.jsdelivr.net/npm/simple-datatables@latest/dist/style.css" rel="stylesheet" />
         <link href="../assets/css/styles.css" rel="stylesheet" />
         <script src="https://use.fontawesome.com/releases/v6.1.0/js/all.js" crossorigin="anonymous"></script>
@@ -27,7 +32,7 @@ if (!isset($_SESSION['username'])) {
             <div class="navbar-brand ps-3" >
                 <img class="mr-auto" src="../assets/img/keluargasehat.png" alt="keluarga sehat logo"/>
                 </div>
-            <a class="navbar-brand" href="admin-index.html">Keluarga Sehat Admin</a>
+            <a class="navbar-brand" href="admin-dashboard.php">Keluarga Sehat Admin</a>
             <!-- Sidebar Toggle-->
             <button title="toggle" class="btn btn-link btn-sm order-1 order-lg-0 me-4 me-lg-0" id="sidebarToggle" href="#!"><i class="fas fa-bars"></i></button>
             <!-- Navbar-->

@@ -3,7 +3,7 @@
     session_start();
     
     if (!isset($_SESSION['username'])) {
-        header("Location: index.php");
+        header("Location: login.php");
     }
     
     include '../function/connection.php';
@@ -60,6 +60,11 @@
         <meta name="description" content="" />
         <meta name="author" content="" />
         <title>Admin - Dashboard</title>
+
+          <!-- Favicons -->
+        <link href="assets/img/keluargasehat.png" rel="icon">
+        <link href="assets/img/keluargasehat.png" rel="apple-touch-icon">
+
         <link href="https://cdn.jsdelivr.net/npm/simple-datatables@latest/dist/style.css" rel="stylesheet" />
         <link href="../assets/css/styles.css" rel="stylesheet" />
         <script src="https://use.fontawesome.com/releases/v6.1.0/js/all.js" crossorigin="anonymous"></script>
@@ -144,7 +149,7 @@
 
                         <h3 class="text-center font-weight-light my-4">Vaccination Form</h3>
                         <form action="" method="POST" role="form" class="php-email-form">
-                        <div class="form-floating mb-3 mx-3">
+                            <div class="form-floating mb-3 mx-3">
                                 <select aria-label="ID" title="type-choice" type="text" class="form-control" name="userRegNum" required>
                                     <?php
                                         echo "<option value=$data[userRegNum]>$data[name]</option>";
