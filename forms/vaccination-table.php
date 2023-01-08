@@ -120,7 +120,7 @@ if (!isset($_SESSION['username'])) {
                                         <tr>
                                         </tr>
                                         <?php
-                                            include 'function/connection.php';
+                                            include '../function/connection.php';
                                             
                                             $no=1;
                                             $sql = "SELECT * FROM vaccination
@@ -139,7 +139,7 @@ if (!isset($_SESSION['username'])) {
                                                 <td>$display[vaccineDate]</td>
                                                 <td>
                                                 <a href='vaccination-edit.php?update=$display[nomor]' type='button' value='Update' class='btn btn-primary'>Update</a>
-                                                <a href='?delete=$display[nomor]'>
+                                                <a href='?delete=$display[nomor]' onClick=\"return confirm('Proceed to delete data?');\">
                                                     <input type='button' value='delete' class='btn btn-danger btn-user'>
                                                 </a>
                                                 </td>

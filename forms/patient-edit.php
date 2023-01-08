@@ -6,7 +6,7 @@
         header("Location: index.php");
     }
 
-    include 'function/connection.php';
+    include '../function/connection.php';
 
     $sql = mysqli_query($conn, "SELECT * FROM patient WHERE userRegNum='$_GET[update]'");
     $data = mysqli_fetch_array($sql);   
@@ -130,7 +130,7 @@
                                 <div class="validate"></div>
                             </div>
                             <div class="form-floating mb-3">
-                                <input type="text" class="form-control form-control-user" value="<?php echo $data['address']; ?>" name="addresss" placeholder="Address" required>
+                                <input type="text" class="form-control form-control-user" value="<?php echo $data['address']; ?>" name="address" placeholder="Address" required>
                                 <label for="inputAddress">Address</label>
                                 <div class="validate"></div>
                             </div>

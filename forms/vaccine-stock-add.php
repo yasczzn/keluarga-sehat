@@ -6,7 +6,7 @@
         header("Location: index.php");
     }
     
-    include 'function/connection.php';
+    include '../function/connection.php';
 
     $vaccineType = "";
     $stock = "";

@@ -6,7 +6,7 @@
         header("Location: index.php");
     }
 
-    include 'function/connection.php';
+    include '../function/connection.php';
 
     $sql = mysqli_query($conn, "SELECT * FROM vaccine_stock WHERE vaccineID='$_GET[update]'");
     $data = mysqli_fetch_array($sql);   

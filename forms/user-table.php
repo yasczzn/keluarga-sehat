@@ -98,6 +98,7 @@ if (!isset($_SESSION['username'])) {
                                 <table id="datatablesSimple">
                                     <thead>
                                         <tr>
+                                            <th hidden>no</th>
                                             <th>ID</th>
                                             <th>Email</th>
                                             <th>Password</th>
@@ -106,6 +107,7 @@ if (!isset($_SESSION['username'])) {
                                     </thead>
                                     <tfoot>
                                         <tr>
+                                            <th hidden>no</th>
                                             <th>ID</th>
                                             <th>Email</th>
                                             <th>Password</th>
@@ -116,20 +118,20 @@ if (!isset($_SESSION['username'])) {
                                         <tr>
                                         </tr>
                                         <?php
-                                            include 'function/connection.php';
+                                            include '../function/connection.php';
                                             
                                             $no=1;
                                             $pulldata = mysqli_query($conn, "SELECT * FROM user_admin");
                                             while ($display = mysqli_fetch_array($pulldata)){
                                             echo "
                                             <tr>
-                                                <td>$no</td>
+                                                <td hidden>$no</td>
+                                                <td>$display[ID]</td>
                                                 <td>$display[email]</td>
                                                 <td>$display[password]</td>
                                                 <td>$display[username]</td>
                                                 <td>
-                                                    <a href='update' type='button' value='Update' class='btn btn-primary btn-user'>Update</a>
-                                                    <a href='delete' type='button' value='Delete' class='btn btn-danger btn-user'>Delete</a>
+                                                    <a href='user-edit.php?update=$display[ID]' type='button' value='Update' class='btn btn-primary'>Update</a>
                                                 </td>
                                             </tr>";
                                         
@@ -140,31 +142,6 @@ if (!isset($_SESSION['username'])) {
                                 </table>
                             </div>
                         </div>
-                        <h2 class="mt-5 mb-4">Update Data Form</h2>
-                        <form action="update" method="POST" role="form" class="php-email-form" onkeyup="success()">
-                            <div class="form-floating mb-3">
-                                <input type="number" class="form-control form-control-user" id="ID" placeholder="ID" required>
-                                <label for="inputID">ID</label>
-                            </div>
-                            <div class="form-floating mb-3">
-                                <input type="email" class="form-control form-control-user" id="email" placeholder="Email" required>
-                                <label for="inputEmail">Email</label>
-                            </div>
-                            <div class="form-floating mb-3">
-                                <input type="text" class="form-control form-control-user" id="password" placeholder="Password" required>
-                                <label for="inputPass">Date of Birth</label>
-                            </div>
-                            <div class="form-floating mb-3">
-                                <input type="text" class="form-control form-control-user" id="username" placeholder="Username" required>
-                                <label for="inputUsername">Username</label>
-                                <div class="validate"></div>
-                            </div>
-                        <input type="button" value="Update" onclick="update_user();"
-                            class="btn btn-warning btn-user" disabled/>
-                        <input type="button" value="Cancel" onclick="cancel_user();"
-                            class="btn btn-danger btn-user"/>
-                        <hr>
-                        </form>
                     </div>
                 </main>
                 <footer class="py-4 bg-light mt-auto">

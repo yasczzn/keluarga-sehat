@@ -1,11 +1,16 @@
 <?php 
  
-session_start();
- 
-if (!isset($_SESSION['username'])) {
-    header("Location: index.php");
-}
- 
+    session_start();
+    
+    if (!isset($_SESSION['username'])) {
+        header("Location: index.php");
+    }
+
+    include '../function/connection.php';
+
+    $sql = mysqli_query($conn, "SELECT * FROM user_admin WHERE ID='$_GET[update]'");
+    $data = mysqli_fetch_array($sql);   
+
 ?>
 
 <!DOCTYPE html>
@@ -16,7 +21,7 @@ if (!isset($_SESSION['username'])) {
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
         <meta name="description" content="" />
         <meta name="author" content="" />
-        <title>Admin - Vaccine Stock Table</title>
+        <title>Admin - Edit Admin Data</title>
         <link href="https://cdn.jsdelivr.net/npm/simple-datatables@latest/dist/style.css" rel="stylesheet" />
         <link href="../assets/css/styles.css" rel="stylesheet" />
         <script src="https://use.fontawesome.com/releases/v6.1.0/js/all.js" crossorigin="anonymous"></script>
@@ -27,7 +32,7 @@ if (!isset($_SESSION['username'])) {
             <div class="navbar-brand ps-3" >
                 <img class="mr-auto" src="../assets/img/keluargasehat.png" alt="keluarga sehat logo"/>
                 </div>
-            <a class="navbar-brand" href="admin-index.html">Keluarga Sehat Admin</a>
+            <a class="navbar-brand" href="admin-dashboard.php">Keluarga Sehat Admin</a>
             <!-- Sidebar Toggle-->
             <button title="toggle" class="btn btn-link btn-sm order-1 order-lg-0 me-4 me-lg-0" id="sidebarToggle" href="#!"><i class="fas fa-bars"></i></button>
             <!-- Navbar-->
@@ -46,7 +51,7 @@ if (!isset($_SESSION['username'])) {
                     <div class="sb-sidenav-menu">
                         <div class="nav">
                             <div class="sb-sidenav-menu-heading">Main</div>
-                            <a class="nav-link" href="admin-dashboard.html">
+                            <a class="nav-link" href="admin-dashboard.php">
                                 <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
                                 Dashboard
                             </a>
@@ -59,7 +64,7 @@ if (!isset($_SESSION['username'])) {
                                 <div class="sb-nav-link-icon"><i class="fa-solid fa-shield-virus"></i></div>
                                 Vaccination Table
                             </a>
-                            <a class="nav-link" href="#">
+                            <a class="nav-link" href="vaccine-stock-table.php">
                                 <div class="sb-nav-link-icon"><i class="fa-solid fa-syringe"></i></div>
                                 Vaccine Stock Table
                             </a>
@@ -79,86 +84,58 @@ if (!isset($_SESSION['username'])) {
             <div id="layoutSidenav_content">
                 <main>
                     <div class="container-fluid px-4">
-                        <h1 class="mt-4">Vaccine Stock Table</h1>
+                        <h1 class="mt-4">Edit Admin Data</h1>
                         <ol class="breadcrumb mb-4">
                             <li class="breadcrumb-item"><a href="admin-dashboard.php">Dashboard</a></li>
-                            <li class="breadcrumb-item active">Vaccine Stock Table</li>
+                            <li class="breadcrumb-item"><a href="user-table.php">Admin Settings</a></li>
+                            <li class="breadcrumb-item active">Edit Admin Data</li>
                         </ol>
-                        <div class="card mb-4">
-                            <div class="card-body">
-                                Vaccine Stock Tables containing all registered vaccine type/dosage stock available at the health center.
-                            </div>
-                        </div>
-                        <div class="card mb-4">
-                            <div class="card-header">
-                                <i class="fas fa-table me-1"></i>
-                                Vaccine Stock Table
-                            </div>
-                            <div class="card-body">
-                                <table id="datatablesSimple">
-                                    <thead>
-                                        <tr>
-                                            <th hidden>No</th>
-                                            <th>Vaccine ID</th>
-                                            <th>Vaccine Type</th>
-                                            <th>Stock</th>
-                                            <th>Date</th>
-                                        </tr>
-                                    </thead>
-                                    <tfoot>
-                                        <tr>
-                                            <th hidden>No</th>
-                                            <th>Vaccine ID</th>
-                                            <th>Vaccine Type</th>
-                                            <th>Stock</th>
-                                            <th>Date</th>
-                                        </tr>
-                                    </tfoot>
-                                    <tbody>
-                                        <tr>
-                                        </tr>
-                                        <?php
-                                            include '../function/connection.php';
-                                            
-                                            $no=1;
-                                            $pulldata = mysqli_query($conn, "SELECT * FROM vaccine_stock");
-                                            while ($display = mysqli_fetch_array($pulldata)){
-                                            echo "
-                                            <tr>
-                                                <td hidden>$no</td>
-                                                <td>$display[vaccineID]</td>
-                                                <td>$display[vaccineType]</td>
-                                                <td>$display[stock]</td>
-                                                <td>$display[date]</td>
-                                                <td>
-                                                    <a href='vaccine-stock-edit.php?update=$display[vaccineID]' type='button' value='Update' class='btn btn-primary'>Update</a>
-                                                    <a href='?delete=$display[vaccineID]' onClick=\"return confirm('Proceed to delete data?');\">
-                                                        <input type='button' value='delete' class='btn btn-danger btn-user'>
-                                                    </a>
-                                                </td>
-                                            </tr>";
-                                        
-                                            $no++;
-                                            }
-                                        ?>
-                                    </tbody>
-                                </table>
-                                <?php
-                                if(isset($_GET['delete'])){
 
-                                    mysqli_query($conn, "DELETE FROM vaccin_stock WHERE vaccineID='$_GET[delete]'");
-
-                                    echo "<p><b> Data is successfully delete</b></p>";
-                                    echo "<meta http-equiv=refresh content=2;URL='vaccine-stock-table.php'>";
-                                }
-                                ?>
+                        <form action="" method="POST" role="form" class="php-email-form">
+                            <div class="form-floating mb-3">
+                                <input type="number" class="form-control form-control-user" value="<?php echo $data['ID']; ?>" id="ID" placeholder="ID" readonly>
+                                <label for="inputID">ID</label>
                             </div>
-                        </div>
-                    </div>
-                    <div class="ms-5">
-                        <a href="vaccine-stock-add.php" type="button" value="Add" class="btn btn-primary">Add New Type</a>
+                            <div class="form-floating mb-3">
+                                <input type="email" class="form-control form-control-user" value="<?php echo $data['email']; ?>" name="email" placeholder="Email" required>
+                                <label for="inputEmail">Email</label>
+                                <div class="validate"></div>
+                            </div>
+                            <div class="form-floating mb-3">
+                                <input type="email" class="form-control form-control-user" value="<?php echo md5($data['password']); ?>" name="password" placeholder="Password" required>
+                                <label for="inputPassword">Password</label>
+                                <div class="validate"></div>
+                            </div>
+                            <div class="form-floating mb-3">
+                                <input type="text" class="form-control form-control-user" value="<?php echo $data['username']; ?>" name="username" placeholder="Username" required>
+                                <label for="inputUsername">Username</label>
+                                <div class="validate"></div>
+                            </div>
+                            <input type="submit" value="Update" name="update" class="btn btn-warning btn-user" />
+                            <a href='vaccine-stock-table.php'>
+                                <input type='button' value='Cancel' class='btn btn-danger btn-user'>
+                            </a>
+                        <hr>
+                        </form>
                     </div>
                 </main>
+
+                <?php
+
+                if (isset($_POST['update'])) {
+
+                    mysqli_query($conn, "UPDATE user_admin SET 
+                    ID = '$_POST[ID]',
+                    email = '$_POST[email]',
+                    password = 'md5($_POST[password])',  
+                    username = '$_POST[username]' WHERE ID =$_GET[update]");       
+                    
+                    echo "<script>alert('User data updated!')
+                    document.location = 'user-table.php'</script>";                                               
+                }
+
+                ?>
+
                 <footer class="py-4 bg-light mt-auto">
                     <div class="container-fluid px-4">
                         <div class="d-flex align-items-center justify-content-between small">

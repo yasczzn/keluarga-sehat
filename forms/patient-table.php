@@ -129,7 +129,7 @@
                                         <tr>
                                         </tr>
                                         <?php
-                                            include 'function/connection.php';
+                                            include '../function/connection.php';
                                             
                                             $no=1;
                                             $pulldata = mysqli_query($conn, "SELECT * FROM patient");
@@ -148,7 +148,7 @@
                                                 <td>$display[patientStatus]</td>
                                                 <td>
                                                     <a href='patient-edit.php?update=$display[userRegNum]' type='button' value='Update' class='btn btn-primary'>Update</a>
-                                                    <a href='?delete=$display[userRegNum]'>
+                                                    <a href='?delete=$display[userRegNum]' onClick=\"return confirm('Proceed to delete data?');\">
                                                         <input type='button' value='delete' class='btn btn-danger btn-user'>
                                                     </a>
                                                 </td>

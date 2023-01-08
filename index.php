@@ -11,8 +11,8 @@
     }
     
     if (isset($_POST['submit'])) {
-        $email = $_POST['email'];
-        $password = md5($_POST['password']);
+        $email = filter_input(INPUT_POST, 'email', FILTER_SANITIZE_STRING);
+        $password = md5(filter_input(INPUT_POST, 'password', FILTER_SANITIZE_STRING));
     
         $sql = "SELECT * FROM user_admin WHERE email='$email' AND password='$password'";
         $result = mysqli_query($conn, $sql);
@@ -36,7 +36,7 @@
         <meta name="description" content="" />
         <meta name="author" content="" />
         <title>Keluarga Sehat Admin - Login</title>
-        <link href="../assets/css/styles.css" rel="stylesheet" />
+        <link href="assets/css/styles.css" rel="stylesheet" />
         <script src="https://use.fontawesome.com/releases/v6.1.0/js/all.js" crossorigin="anonymous"></script>
     </head>
     <body class="bg-prior">
