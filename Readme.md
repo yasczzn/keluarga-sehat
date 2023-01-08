@@ -3,5 +3,5 @@
 Keluarga Sehat is a web-based vaccine registration application for enrolling in a government vaccination program.
 This personal project is made as a final project material submission.
 
-> Credits: BootstrapMade.com
+> Template Credits: BootstrapMade.com
 [License](https://bootstrapmade.com/license/)
