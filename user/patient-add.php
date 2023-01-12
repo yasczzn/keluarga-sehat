@@ -188,12 +188,11 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' ) {
                                 <label for="inputStatus">Status</label>
                                 <div class="validate"></div>
                             </div>
-                        <input type="submit" value="Update" name="update" class="btn btn-warning btn-user" />
-                        <a href='patient-table.php'>
-                            <input type='button' value='Cancel' class='btn btn-danger btn-user'>
+                            <input type="submit" value="Submit" name="submit" class="btn btn-success btn-user ms-3"/>
+                        <input type="button" value="Cancel" name="cancel" class="btn btn-danger btn-user"/>
                         </a>
-                        <hr>
-                        </form>
+                      <hr>
+                </form>
         </div>
 
     </section>
