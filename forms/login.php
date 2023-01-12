@@ -1,6 +1,6 @@
 <?php 
  
-    include 'function/connection.php';
+    include '../function/connection.php';
     
     error_reporting(0);
     
@@ -20,7 +20,7 @@
             $row = mysqli_fetch_assoc($result);
             $_SESSION['username'] = $row['username'];
             echo "<script>alert('Login successful!')</script>";
-            header("Location: forms/admin-dashboard.php");
+            header("Location: admin-dashboard.php");
         } else {
             echo "<script>alert('Invalid email or password. Please try again!')</script>";
         }
@@ -86,6 +86,6 @@
             </div>
         </div>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
-        <script src="js/scripts.js"></script>
+        <script src="../assets/js/scripts.js"></script>
     </body>
 </html>
