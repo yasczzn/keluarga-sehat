@@ -2,26 +2,35 @@
 
 include '../function/connection.php';
 
-$vaccineType = "";
-$stock = "";
-$date = "";
+$ID = "";
+$name = "";
+$doB = "";
+$gender = "";
+$email = "";
+$phoneNum = "";
+$patientStatus = "";
 
 $errorMessage = "";
 $successMessage = "";
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST' ) {
-    $vaccineType = $_POST['vaccineType'];
-    $stock = $_POST['stock'];
-    $date = $_POST['date'];
+    $ID = $_POST['ID'];
+    $name = $_POST['name'];
+    $doB = $_POST['doB'];
+    $gender = $_POST['gender'];
+    $email = $_POST['email'];
+    $phoneNum = $_POST['phoneNum'];
+    $patientStatus = $_POST['patientStatus'];
 
     do {
-        if (empty($vaccineType) || empty($stock) || empty($date)) {
+        if (empty($ID) || empty($name) || empty($doB) || empty($gender) || empty($email) || empty($phoneNum) || 
+        empty($patientStatus)) {
             $errorMessage = "All the fields are required";
             break;
         }
 
         $sql = "INSERT INTO vaccine_stock(vaccineType, stock, date)".
-                "VALUES ('$vaccineType', '$stock', '$date')";
+                "VALUES ('$ID', '$name', '$doB', '$gender', '$email', '$phoneNum', '$patientStatus')";
         $result = $conn->query($sql);
 
         if (!$result) {
@@ -29,12 +38,16 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' ) {
             break;
         }
 
-        $vaccineType = "";
-        $stock = "";
-        $date = "";
+        $ID = "";
+        $name = "";
+        $doB = "";
+        $gender = "";
+        $email = "";
+        $phoneNum = "";
+        $patientStatus = "";
 
-        echo "<script>alert('Vaccination data submitted!')
-        document.location = 'vaccine-stock-table.php'</script>";
+        echo "<script>alert('Patient data submitted!')
+        document.location = 'patient-success.php'</script>";
 
     } while (false);
 
@@ -123,32 +136,64 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' ) {
         </div>
 
         <div class="col-lg-7 mt-5 mt-lg-0 d-flex align-items-stretch" data-aos="fade-left">
-          <form action="" method="POST" role="form" class="php-email-form">
-            <div class="row">
-              <div class="form-group col-md-6">
-                <label for="name">Your Name</label>
-                <input type="text" name="name" class="form-control" id="name" required>
-              </div>
-              <div class="form-group col-md-6 mt-3 mt-md-0">
-                <label for="name">Your Email</label>
-                <input type="email" class="form-control" name="email" id="email" required>
-              </div>
-            </div>
-            <div class="form-group mt-3">
-              <label for="name">Subject</label>
-              <input type="text" class="form-control" name="subject" id="subject" required>
-            </div>
-            <div class="form-group mt-3">
-              <label for="name">Message</label>
-              <textarea class="form-control" name="message" rows="10" required></textarea>
-            </div>
-            <div class="my-3">
-              <div class="loading">Loading</div>
-              <div class="error-message"></div>
-              <div class="sent-message">Your message has been sent. Thank you!</div>
-            </div>
-            <div class="text-center"><button type="submit">Send Message</button></div>
-          </form>
+        <form action="" method="POST" role="form" class="php-email-form">
+                            <div class="form-floating mb-3">
+                                <input type="number" class="form-control form-control-user" value="<?php echo $ID; ?>" name="ID" placeholder="ID" required>
+                                <label for="inputID">ID</label>
+                                <div class="validate"></div>
+                            </div>
+                            <div class="form-floating mb-3">
+                                <input type="text" class="form-control form-control-user" value="<?php echo $name; ?>" name="name" placeholder="Name" required>
+                                <label for="inputName">Name</label>
+                                <div class="validate"></div>
+                            </div>
+                            <div class="form-floating mb-3">
+                                <input type="text" class="form-control form-control-user" value="<?php echo $doB; ?>" name="doB" placeholder="Date of Birth" required>
+                                <label for="inputDoB">Date of Birth</label>
+                                <div class="validate"></div>
+                            </div>
+                            <div class="form-floating mb-3">
+                                <select aria-label="Gender" title="gender-choice" type="text" class="form-control" name="gender" placeholder="Gender" required>
+                                    <option value="male" <?php echo $gender == 'male'; ?>>male</option>
+                                    <option value="female" <?php echo $gender == 'female'; ?>>female</option>
+                                </select>
+                                <label for="inputGender">Gender</label>
+                                <div class="validate"></div>
+                            </div>
+                            <div class="form-floating mb-3">
+                                <input type="email" class="form-control form-control-user" value="<?php echo $email; ?>" name="email" placeholder="Email" required>
+                                <label for="inputEmail">Email</label>
+                                <div class="validate"></div>
+                            </div>
+                            <div class="form-floating mb-3">
+                                <input type="number" class="form-control form-control-user" value="<?php echo $phoneNum; ?>" name="phoneNum" placeholder="Phone Number" required>
+                                <label for="inputPhoneNum">Phone Number</label>
+                                <div class="validate"></div>
+                            </div>
+                            <div class="form-floating mb-3">
+                                <input type="text" class="form-control form-control-user" value="<?php echo $address; ?>" name="address" placeholder="Address" required>
+                                <label for="inputAddress">Address</label>
+                                <div class="validate"></div>
+                            </div>
+                            <div class="form-floating mb-3">
+                                <select aria-label="Status" title="status-choice" type="text" class="form-control" name="patientStatus" id="patientStatus" placeholder="Vaccine Status" required>
+                                    <option value="not vaccinated" <?php echo $patientStatus == 'not vaccinated'; ?>>not vaccinated</option>
+                                    <option value="Dosage 1" <?php echo $patientStatus == 'Dosage 1'; ?>>Dosage 1</option>
+                                    <option value="Dosage 2" <?php echo $patientStatus == 'Dosage 2'; ?>>Dosage 2</option>
+                                    <option value="Dosage 3" <?php echo $patientStatus == 'Dosage 3'; ?>>Dosage 3</option>
+                                    <option value="Booster 1" <?php echo $patientStatus == 'Booster 1'; ?>>Booster 1</option>
+                                    <option value="Booster 2" <?php echo $patientStatus == 'Booster 2'; ?>>Booster 2</option>
+                                    <option value="Booster 3" <?php echo $patientStatus == 'Booster 3'; ?>>Booster 3</option>
+                                </select>
+                                <label for="inputStatus">Status</label>
+                                <div class="validate"></div>
+                            </div>
+                        <input type="submit" value="Update" name="update" class="btn btn-warning btn-user" />
+                        <a href='patient-table.php'>
+                            <input type='button' value='Cancel' class='btn btn-danger btn-user'>
+                        </a>
+                        <hr>
+                        </form>
         </div>
 
     </section>

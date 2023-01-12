@@ -64,7 +64,7 @@
       <div class="container">
 
         <ol>
-          <li><a href="../index.html">Home</a></li>
+          <li><a href="../index.php">Home</a></li>
           <li>Registration Form</li>
           <li class="active">Registration Success</li>
         </ol>
