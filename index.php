@@ -118,26 +118,20 @@
             <ul class="nav nav-tabs flex-column">
               <li class="nav-item" data-aos="fade-up">
                 <a class="nav-link active show" data-bs-toggle="tab" href="#tab-1">
-                  <h4>Modi sit est</h4>
-                  <p>Quis excepturi porro totam sint earum quo nulla perspiciatis eius.</p>
+                  <h4>Track your vaccination progress!</h4>
+                  <p>Your current vaccination status will be shown in your digital ID's vaccination description.</p>
                 </a>
               </li>
               <li class="nav-item mt-2" data-aos="fade-up" data-aos-delay="100">
                 <a class="nav-link" data-bs-toggle="tab" href="#tab-2">
-                  <h4>Unde praesentium sed</h4>
-                  <p>Voluptas vel esse repudiandae quo excepturi.</p>
+                  <h4>No Queueing!</h4>
+                  <p>Provide social distancing and time-saving for register a vaccination schedule.</p>
                 </a>
               </li>
               <li class="nav-item mt-2" data-aos="fade-up" data-aos-delay="200">
                 <a class="nav-link" data-bs-toggle="tab" href="#tab-3">
-                  <h4>Pariatur explicabo vel</h4>
-                  <p>Velit veniam ipsa sit nihil blanditiis mollitia natus.</p>
-                </a>
-              </li>
-              <li class="nav-item mt-2" data-aos="fade-up" data-aos-delay="300">
-                <a class="nav-link" data-bs-toggle="tab" href="#tab-4">
-                  <h4>Nostrum qui quasi</h4>
-                  <p>Ratione hic sapiente nostrum doloremque illum nulla praesentium id</p>
+                  <h4>Easy access to any places!</h4>
+                  <p>Every crowded and public place can get your vaccination status by scaning your ID.</p>
                 </a>
               </li>
             </ul>
