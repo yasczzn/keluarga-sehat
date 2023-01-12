@@ -47,6 +47,7 @@ h6 {
   height: 40px;
   border-radius: 4px;
   transition: all 0.4s;
+  color: white;
 }
 
 .back-to-top i {
@@ -653,9 +654,28 @@ section {
   color: #2282ff;
 }
 
+.services p {
+  margin-block: 3rem;
+}
+
 .services .icon-box-blue:hover {
   border-color: #2282ff;
 }
+
+.services .btn-get-started {
+  font-family: "Raleway", sans-serif;
+  font-weight: 600;
+  font-size: 13px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  display: inline-block;
+  padding: 12px 28px;
+  border-radius: 3px;
+  transition: 0.5s;
+  color: #fff;
+  background: #099C70;
+}
+
 
 /*--------------------------------------------------------------
 # Portfolio
