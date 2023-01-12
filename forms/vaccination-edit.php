@@ -25,8 +25,8 @@
         <title>Admin - Edit Vaccination</title>
 
             <!-- Favicons -->
-        <link href="assets/img/keluargasehat.png" rel="icon">
-        <link href="assets/img/keluargasehat.png" rel="apple-touch-icon">
+        <link href="../assets/img/keluargasehat.png" rel="icon">
+        <link href="../assets/img/keluargasehat.png" rel="apple-touch-icon">
 
         <link href="https://cdn.jsdelivr.net/npm/simple-datatables@latest/dist/style.css" rel="stylesheet" />
         <link href="../assets/css/styles.css" rel="stylesheet" />

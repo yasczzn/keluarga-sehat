@@ -61,9 +61,9 @@
         <meta name="author" content="" />
         <title>Admin - Dashboard</title>
 
-          <!-- Favicons -->
-        <link href="assets/img/keluargasehat.png" rel="icon">
-        <link href="assets/img/keluargasehat.png" rel="apple-touch-icon">
+            <!-- Favicons -->
+        <link href="../assets/img/keluargasehat.png" rel="icon">
+        <link href="../assets/img/keluargasehat.png" rel="apple-touch-icon">
 
         <link href="https://cdn.jsdelivr.net/npm/simple-datatables@latest/dist/style.css" rel="stylesheet" />
         <link href="../assets/css/styles.css" rel="stylesheet" />

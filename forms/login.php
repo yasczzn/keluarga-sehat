@@ -36,6 +36,11 @@
         <meta name="description" content="" />
         <meta name="author" content="" />
         <title>Keluarga Sehat Admin - Login</title>
+
+            <!-- Favicons -->
+        <link href="../assets/img/keluargasehat.png" rel="icon">
+        <link href="../assets/img/keluargasehat.png" rel="apple-touch-icon">
+
         <link href="assets/css/styles.css" rel="stylesheet" />
         <script src="https://use.fontawesome.com/releases/v6.1.0/js/all.js" crossorigin="anonymous"></script>
     </head>
