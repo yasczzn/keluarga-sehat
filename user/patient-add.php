@@ -84,17 +84,16 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' ) {
   <header id="header" class="fixed-top d-flex align-items-center">
     <div class="container d-flex align-items-center">
 
-      <div class="logo me-auto">
-        <h1><a href="index.html">Keluarga Sehat<img src="../assets/img/keluargasehat.png" alt="" class="img-fluid"></a></h1>
+    <div class="logo me-auto">
+        <h1><a href="index.php">Keluarga Sehat<img src="../assets/img/keluargasehat.png" alt="" class="img-fluid"></a></h1>
       </div>
 
       <nav id="navbar" class="navbar order-last order-lg-0">
         <ul>
-          <li><a class="nav-link scrollto" href="../index.html#hero">Home</a></li>
-          <li><a class="nav-link scrollto" href="../user/patient-search.html">Search</a></li>
-          <li><a class="nav-link scrollto" href="../index.html#about">About Us</a></li>
-          <li><a class="nav-link scrollto" href="../index.html#faq">FAQ</a></li>
-          <li><a class="nav-link scrollto" href="../index.html#contact">Contact</a></li>
+          <li><a class="nav-link scrollto" href="../index.php#hero">Home</a></li>
+          <li><a class="nav-link scrollto" href="../index.php#about">About Us</a></li>
+          <li><a class="nav-link scrollto" href="../index.php#faq">FAQ</a></li>
+          <li><a class="nav-link scrollto" href="../index.php#contact">Contact</a></li>
         </ul>
         <i class="bi bi-list mobile-nav-toggle"></i>
       </nav><!-- .navbar -->
@@ -119,7 +118,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' ) {
     <section class="inner-page">
 
     <div class="section-title" data-aos="fade-up">
-          <h2>Services</h2>
+          <h2>Regoster Now</h2>
           <p>Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum quidem. Sit sint consectetur velit. Quisquam quos quisquam cupiditate. Et nemo qui impedit suscipit alias ea. Quia fugiat sit in iste officiis commodi quidem hic quas.</p>
         </div>
 
@@ -178,10 +177,10 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' ) {
             <div class="col-lg-2 col-md-6 footer-links">
               <h4>Sections</h4>
               <ul>
-                <li><i class="bx bx-chevron-right"></i> <a href="../index.html#hero">Home</a></li>
-                <li><i class="bx bx-chevron-right"></i> <a href="../index.html#about">About us</a></li>
-                <li><i class="bx bx-chevron-right"></i> <a href="../index.html#faq">Terms of service</a></li>
-                <li><i class="bx bx-chevron-right"></i> <a href="../index.html#contact">Privacy policy</a></li>
+                <li><i class="bx bx-chevron-right"></i> <a href="../index.php#hero">Home</a></li>
+                <li><i class="bx bx-chevron-right"></i> <a href="../index.php#about">About us</a></li>
+                <li><i class="bx bx-chevron-right"></i> <a href="../index.php#faq">Terms of service</a></li>
+                <li><i class="bx bx-chevron-right"></i> <a href="../index.php#contact">Privacy policy</a></li>
               </ul>
             </div>
   

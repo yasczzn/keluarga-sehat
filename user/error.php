@@ -5,7 +5,7 @@
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-  <title>Keluarga Sehat Website - Registration Success</title>
+  <title>Keluarga Sehat Website - Error</title>
   <meta content="" name="description">
   <meta content="" name="keywords">
 
@@ -42,16 +42,15 @@
     <div class="container d-flex align-items-center">
 
       <div class="logo me-auto">
-        <h1><a href="index.html">Keluarga Sehat<img src="../assets/img/keluargasehat.png" alt="" class="img-fluid"></a></h1>
+        <h1><a href="index.php">Keluarga Sehat<img src="../assets/img/keluargasehat.png" alt="" class="img-fluid"></a></h1>
       </div>
 
       <nav id="navbar" class="navbar order-last order-lg-0">
         <ul>
-          <li><a class="nav-link scrollto" href="../index.html#hero">Home</a></li>
-          <li><a class="nav-link scrollto" href="../user/patient-search.html">Search</a></li>
-          <li><a class="nav-link scrollto" href="../index.html#about">About Us</a></li>
-          <li><a class="nav-link scrollto" href="../index.html#faq">FAQ</a></li>
-          <li><a class="nav-link scrollto" href="../index.html#contact">Contact</a></li>
+          <li><a class="nav-link scrollto" href="../index.php#hero">Home</a></li>
+          <li><a class="nav-link scrollto" href="../index.php#about">About Us</a></li>
+          <li><a class="nav-link scrollto" href="../index.php#faq">FAQ</a></li>
+          <li><a class="nav-link scrollto" href="../index.php#contact">Contact</a></li>
         </ul>
         <i class="bi bi-list mobile-nav-toggle"></i>
       </nav><!-- .navbar -->
@@ -60,37 +59,12 @@
 
   <main id="main">
 
-    <!-- ======= Breadcrumbs ======= -->
-    <section id="breadcrumbs" class="breadcrumbs">
-      <div class="container">
-
-        <ol>
-          <li><a href="../index.html">Home</a></li>
-          <li>Registration Form</li>
-          <li class="active">Registration Success</li>
-        </ol>
-        <h2>Registration Success</h2>
-
-      </div>
-    </section><!-- End Breadcrumbs -->
-
     <section class="inner-page">
-
       <div class="container">
-        <div class="row">
-          <div class="col-lg-6 pt-5 pt-lg-0 order-2 order-lg-1 d-flex flex-column justify-content-center" data-aos="fade-up">
-            <div>
-              <h1>Registration Success!</h1>
-              <h3>please print your ticket and bring it for vaccination</h3>
-              <a href="../index.html" class="btn-get-started scrollto">Back</a>
-            </div>
-          </div>
-          <div class="col-lg-6 order-1 order-lg-2 hero-img" data-aos="fade-left">
-            <img src="../assets/img/success-1.svg" class="img-fluid" alt="">
-          </div>
+        <div class="error">
+            <img src="" alt="" class="error-page">
         </div>
       </div>
-
     </section>
 
   </main><!-- End #main -->
@@ -117,10 +91,10 @@
             <div class="col-lg-2 col-md-6 footer-links">
               <h4>Sections</h4>
               <ul>
-                <li><i class="bx bx-chevron-right"></i> <a href="../index.html#hero">Home</a></li>
-                <li><i class="bx bx-chevron-right"></i> <a href="../index.html#about">About us</a></li>
-                <li><i class="bx bx-chevron-right"></i> <a href="../index.html#faq">Terms of service</a></li>
-                <li><i class="bx bx-chevron-right"></i> <a href="../index.html#contact">Privacy policy</a></li>
+                <li><i class="bx bx-chevron-right"></i> <a href="../index.php#hero">Home</a></li>
+                <li><i class="bx bx-chevron-right"></i> <a href="../index.php#about">About us</a></li>
+                <li><i class="bx bx-chevron-right"></i> <a href="../index.php#faq">Terms of service</a></li>
+                <li><i class="bx bx-chevron-right"></i> <a href="../index.php#contact">Privacy policy</a></li>
               </ul>
             </div>
   

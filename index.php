@@ -42,13 +42,12 @@
     <div class="container d-flex align-items-center">
 
       <div class="logo me-auto">
-        <h1><a href="index.html">Keluarga Sehat<img src="assets/img/keluargasehat.png" alt="" class="img-fluid"></a></h1>
+        <h1><a href="#">Keluarga Sehat<img src="assets/img/keluargasehat.png" alt="" class="img-fluid"></a></h1>
       </div>
 
       <nav id="navbar" class="navbar order-last order-lg-0">
         <ul>
           <li><a class="nav-link scrollto active" href="#hero">Home</a></li>
-          <li><a class="nav-link scrollto" href="../user/patient-search.html">Search</a></li>
           <li><a class="nav-link scrollto" href="#about">About Us</a></li>
           <li><a class="nav-link scrollto" href="#faq">FAQ</a></li>
           <li><a class="nav-link scrollto" href="#footer">Contact</a></li>
@@ -203,7 +202,6 @@
             <h4>Sections</h4>
             <ul>
               <li><i class="bx bx-chevron-right"></i> <a href="#hero">Home</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="#../user/patient-search.html">Search</a></li>
               <li><i class="bx bx-chevron-right"></i> <a href="#about">About us</a></li>
               <li><i class="bx bx-chevron-right"></i> <a href="#faq">FAQ</a></li>
               <li><i class="bx bx-chevron-right"></i> <a href="#footer">Contact</a></li>
