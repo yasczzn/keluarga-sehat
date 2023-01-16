@@ -138,10 +138,10 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' ) {
 
       <div class="section-title" data-aos="fade-up">
         <h2>Register Now</h2>
-        <p>Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum quidem. Sit sint consectetur velit. Quisquam quos quisquam cupiditate. Et nemo qui impedit suscipit alias ea. Quia fugiat sit in iste officiis commodi quidem hic quas.</p>
+        <p>*Please fill in your data according to your ID card.</p>
       </div>
 
-      <div class="col-lg-7 mt-5 mt-lg-0 d-flex align-items-stretch" data-aos="fade-left">
+      <div class="col-lg-7 mt-5 mt-lg-0 d-flex align-items-stretch align-self-center" data-aos="fade-left">
         <form action="" method="POST" role="form" class="php-email-form">
           <div class="form-floating mb-3">
             <input type="number" class="form-control form-control-user" value="<?php echo $ID; ?>" name="ID" placeholder="ID" required>
