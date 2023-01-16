@@ -8,6 +8,7 @@ $doB = "";
 $gender = "";
 $email = "";
 $phoneNum = "";
+$address = "";
 $patientStatus = "";
 
 $errorMessage = "";
@@ -20,17 +21,18 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' ) {
     $gender = $_POST['gender'];
     $email = $_POST['email'];
     $phoneNum = $_POST['phoneNum'];
+    $address = $_POST['address'];
     $patientStatus = $_POST['patientStatus'];
 
     do {
         if (empty($ID) || empty($name) || empty($doB) || empty($gender) || empty($email) || empty($phoneNum) || 
-        empty($patientStatus)) {
+        empty($address) || empty($patientStatus)) {
             $errorMessage = "All the fields are required";
             break;
         }
 
-        $sql = "INSERT INTO patient(ID, name, doB, gender, email, phoneNum, patientStatus)".
-                "VALUES ('$ID', '$name', '$doB', '$gender', '$email', '$phoneNum', '$patientStatus')";
+        $sql = "INSERT INTO patient(ID, name, doB, gender, email, phoneNum, address, patientStatus)".
+                "VALUES ('$ID', '$name', '$doB', '$gender', '$email', '$phoneNum', '$address', '$patientStatus')";
         $result = $conn->query($sql);
 
         if (!$result) {
@@ -44,6 +46,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' ) {
         $gender = "";
         $email = "";
         $phoneNum = "";
+        $address = "";
         $patientStatus = "";
 
         echo "<script>alert('Patient data submitted!')
@@ -51,7 +54,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' ) {
 
     } while (false);
 
-}
+  }
+
 ?>
 
 <!DOCTYPE html>
@@ -126,74 +130,75 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' ) {
         <h2>Registration Success</h2>
 
       </div>
-    </section><!-- End Breadcrumbs -->
+    </section>
+    
+    <!-- End Breadcrumbs -->
 
-    <section class="inner-page">
+    <section class="contact">
 
-    <div class="section-title" data-aos="fade-up">
-          <h2>Register Now</h2>
-          <p>Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum quidem. Sit sint consectetur velit. Quisquam quos quisquam cupiditate. Et nemo qui impedit suscipit alias ea. Quia fugiat sit in iste officiis commodi quidem hic quas.</p>
-        </div>
+      <div class="section-title" data-aos="fade-up">
+        <h2>Register Now</h2>
+        <p>Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum quidem. Sit sint consectetur velit. Quisquam quos quisquam cupiditate. Et nemo qui impedit suscipit alias ea. Quia fugiat sit in iste officiis commodi quidem hic quas.</p>
+      </div>
 
-        <div class="col-lg-7 mt-5 mt-lg-0 d-flex align-items-stretch" data-aos="fade-left">
+      <div class="col-lg-7 mt-5 mt-lg-0 d-flex align-items-stretch" data-aos="fade-left">
         <form action="" method="POST" role="form" class="php-email-form">
-                            <div class="form-floating mb-3">
-                                <input type="number" class="form-control form-control-user" value="<?php echo $ID; ?>" name="ID" placeholder="ID" required>
-                                <label for="inputID">ID</label>
-                                <div class="validate"></div>
-                            </div>
-                            <div class="form-floating mb-3">
-                                <input type="text" class="form-control form-control-user" value="<?php echo $name; ?>" name="name" placeholder="Name" required>
-                                <label for="inputName">Name</label>
-                                <div class="validate"></div>
-                            </div>
-                            <div class="form-floating mb-3">
-                                <input type="text" class="form-control form-control-user" value="<?php echo $doB; ?>" name="doB" placeholder="Date of Birth" required>
-                                <label for="inputDoB">Date of Birth</label>
-                                <div class="validate"></div>
-                            </div>
-                            <div class="form-floating mb-3">
-                                <select aria-label="Gender" title="gender-choice" type="text" class="form-control" name="gender" placeholder="Gender" required>
-                                    <option value="male" <?php echo $gender == 'male'; ?>>male</option>
-                                    <option value="female" <?php echo $gender == 'female'; ?>>female</option>
-                                </select>
-                                <label for="inputGender">Gender</label>
-                                <div class="validate"></div>
-                            </div>
-                            <div class="form-floating mb-3">
-                                <input type="email" class="form-control form-control-user" value="<?php echo $email; ?>" name="email" placeholder="Email" required>
-                                <label for="inputEmail">Email</label>
-                                <div class="validate"></div>
-                            </div>
-                            <div class="form-floating mb-3">
-                                <input type="number" class="form-control form-control-user" value="<?php echo $phoneNum; ?>" name="phoneNum" placeholder="Phone Number" required>
-                                <label for="inputPhoneNum">Phone Number</label>
-                                <div class="validate"></div>
-                            </div>
-                            <div class="form-floating mb-3">
-                                <input type="text" class="form-control form-control-user" value="<?php echo $address; ?>" name="address" placeholder="Address" required>
-                                <label for="inputAddress">Address</label>
-                                <div class="validate"></div>
-                            </div>
-                            <div class="form-floating mb-3">
-                                <select aria-label="Status" title="status-choice" type="text" class="form-control" name="patientStatus" id="patientStatus" placeholder="Vaccine Status" required>
-                                    <option value="not vaccinated" <?php echo $patientStatus == 'not vaccinated'; ?>>not vaccinated</option>
-                                    <option value="Dosage 1" <?php echo $patientStatus == 'Dosage 1'; ?>>Dosage 1</option>
-                                    <option value="Dosage 2" <?php echo $patientStatus == 'Dosage 2'; ?>>Dosage 2</option>
-                                    <option value="Dosage 3" <?php echo $patientStatus == 'Dosage 3'; ?>>Dosage 3</option>
-                                    <option value="Booster 1" <?php echo $patientStatus == 'Booster 1'; ?>>Booster 1</option>
-                                    <option value="Booster 2" <?php echo $patientStatus == 'Booster 2'; ?>>Booster 2</option>
-                                    <option value="Booster 3" <?php echo $patientStatus == 'Booster 3'; ?>>Booster 3</option>
-                                </select>
-                                <label for="inputStatus">Status</label>
-                                <div class="validate"></div>
-                            </div>
-                            <input type="submit" value="Submit" name="submit" class="btn btn-success btn-user ms-3"/>
-                            <input type="button" value="Cancel" name="cancel" class="btn btn-danger btn-user"/>
-                        </a>
-                      <hr>
-                </form>
-        </div>
+          <div class="form-floating mb-3">
+            <input type="number" class="form-control form-control-user" value="<?php echo $ID; ?>" name="ID" placeholder="ID" required>
+            <label for="inputID">ID</label>
+            <div class="validate"></div>
+          </div>
+          <div class="form-floating mb-3">
+            <input type="text" class="form-control form-control-user" value="<?php echo $name; ?>" name="name" placeholder="Name" required>
+            <label for="inputName">Name</label>
+            <div class="validate"></div>
+          </div>
+          <div class="form-floating mb-3">
+            <input type="text" class="form-control form-control-user" value="<?php echo $doB; ?>" name="doB" placeholder="Date of Birth" required>
+            <label for="inputDoB">Date of Birth</label>
+            <div class="validate"></div>
+          </div>
+          <div class="form-floating mb-3">
+            <select aria-label="Gender" title="gender-choice" type="text" class="form-control" name="gender" placeholder="Gender" required>
+              <option value="male" <?php echo $gender == 'male'; ?>>male</option>
+              <option value="female" <?php echo $gender == 'female'; ?>>female</option>
+            </select>
+            <label for="inputGender">Gender</label>
+            <div class="validate"></div>
+          </div>
+          <div class="form-floating mb-3">
+            <input type="email" class="form-control form-control-user" value="<?php echo $email; ?>" name="email" placeholder="Email" required>
+            <label for="inputEmail">Email</label>
+            <div class="validate"></div>
+          </div>
+          <div class="form-floating mb-3">
+            <input type="number" class="form-control form-control-user" value="<?php echo $phoneNum; ?>" name="phoneNum" placeholder="Phone Number" required>
+            <label for="inputPhoneNum">Phone Number</label>
+            <div class="validate"></div>
+          </div>
+          <div class="form-floating mb-3">
+            <input type="text" class="form-control form-control-user" value="<?php echo $address; ?>" name="address" placeholder="Address" required>
+            <label for="inputAddress">Address</label>
+            <div class="validate"></div>
+          </div>
+          <div class="form-floating mb-3">
+            <select aria-label="Status" title="status-choice" type="text" class="form-control" name="patientStatus" id="patientStatus" placeholder="Vaccine Status" required>
+              <option value="not vaccinated" <?php echo $patientStatus == 'not vaccinated'; ?>>not vaccinated</option>
+              <option value="Dosage 1" <?php echo $patientStatus == 'Dosage 1'; ?>>Dosage 1</option>
+              <option value="Dosage 2" <?php echo $patientStatus == 'Dosage 2'; ?>>Dosage 2</option>
+              <option value="Dosage 3" <?php echo $patientStatus == 'Dosage 3'; ?>>Dosage 3</option>
+              <option value="Booster 1" <?php echo $patientStatus == 'Booster 1'; ?>>Booster 1</option>
+              <option value="Booster 2" <?php echo $patientStatus == 'Booster 2'; ?>>Booster 2</option>
+              <option value="Booster 3" <?php echo $patientStatus == 'Booster 3'; ?>>Booster 3</option>
+            </select>
+            <label for="inputStatus">Status</label>
+            <div class="validate"></div>
+          </div>
+            <input type="submit" value="Submit" name="submit" class="btn btn-success btn-user ms-3"/>
+            <input type="button" value="Cancel" name="cancel" class="btn btn-danger btn-user"/>
+          <hr>
+        </form>
+      </div>
 
     </section>
 
