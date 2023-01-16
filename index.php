@@ -49,7 +49,7 @@
         <ul>
           <li><a class="nav-link scrollto active" href="#hero">Home</a></li>
           <li><a class="nav-link scrollto" href="#about">About Us</a></li>
-          <li><a class="nav-link scrollto" href="#faq">FAQ</a></li>
+          <li><a class="nav-link scrollto" href="#features">FAQ</a></li>
           <li><a class="nav-link scrollto" href="#footer">Contact</a></li>
         </ul>
         <i class="bi bi-list mobile-nav-toggle"></i>
@@ -203,7 +203,7 @@
             <ul>
               <li><i class="bx bx-chevron-right"></i> <a href="#hero">Home</a></li>
               <li><i class="bx bx-chevron-right"></i> <a href="#about">About us</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="#faq">FAQ</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="#features">FAQ</a></li>
               <li><i class="bx bx-chevron-right"></i> <a href="#footer">Contact</a></li>
             </ul>
           </div>
@@ -211,9 +211,9 @@
           <div class="col-lg-3 col-md-6 footer-links">
             <h4>Our Services</h4>
             <ul>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">Official Site</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">Vaccination Data Site</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">Covid Spread Map</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="https://www.kemkes.go.id">Official Site</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="https://vaksin.kemkes.go.id/#/vaccines">Vaccination Data Site</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="https://covid19.go.id/peta-sebaran">Covid Spread Map</a></li>
             </ul>
           </div>
         </div>
