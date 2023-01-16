@@ -29,7 +29,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' ) {
             break;
         }
 
-        $sql = "INSERT INTO vaccine_stock(vaccineType, stock, date)".
+        $sql = "INSERT INTO patient(ID, name, doB, gender, email, phoneNum, patientStatus)".
                 "VALUES ('$ID', '$name', '$doB', '$gender', '$email', '$phoneNum', '$patientStatus')";
         $result = $conn->query($sql);
 
@@ -189,7 +189,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' ) {
                                 <div class="validate"></div>
                             </div>
                             <input type="submit" value="Submit" name="submit" class="btn btn-success btn-user ms-3"/>
-                        <input type="button" value="Cancel" name="cancel" class="btn btn-danger btn-user"/>
+                            <input type="button" value="Cancel" name="cancel" class="btn btn-danger btn-user"/>
                         </a>
                       <hr>
                 </form>
