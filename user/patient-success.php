@@ -80,7 +80,7 @@
           <div class="col-lg-6 pt-5 pt-lg-0 order-2 order-lg-1 d-flex flex-column justify-content-center" data-aos="fade-up">
             <div>
               <h1>Registration Success!</h1>
-              <h3>please print your ticket and bring it for vaccination</h3>
+              <h3>please check your email for continue your payment!</h3>
               <a href="../index.php" class="btn-get-started scrollto">Back</a>
             </div>
           </div>

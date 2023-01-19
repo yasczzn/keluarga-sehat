@@ -200,6 +200,25 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' ) {
               <label for="inputPrice">Price</label>
               <div class="validate"></div>
             </div>
+            <fieldset>
+              <legend>Please select a payment method</legend>
+              <div>
+                <input type="radio" id="bca" name="bca" value="BCA"checked>
+                <label for="bca">BCAy</label>
+              </div>
+              <div>
+                <input type="radio" id="bsi" name="bsi" value="BSI">
+                <label for="bsi">BSI</label>
+              </div>
+              <div>
+                <input type="radio" id="gopay" name="gopay" value="GoPay">
+                <label for="gopay">GoPay</label>
+              </div>
+              <div>
+                <input type="radio" id="dana" name="dana" value="Dana">
+                <label for="dana">Dana</label>
+              </div>
+          </fieldset>
               <input type="submit" value="Submit" name="submit" class="btn btn-success btn-user ms-3"/>
               <input type="button" value="Cancel" name="cancel" class="btn btn-danger btn-user"/>
             <hr>

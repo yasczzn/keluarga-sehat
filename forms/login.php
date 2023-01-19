@@ -7,7 +7,7 @@
     session_start();
     
     if (isset($_SESSION['username'])) {
-        header("Location: forms/admin-dashboard.php");
+        header("Location: admin-dashboard.php");
     }
     
     if (isset($_POST['submit'])) {
