@@ -184,7 +184,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' ) {
               <div class="validate"></div>
             </div>
             <div class="form-floating mb-3">
-              <select aria-label="VaccineType" title="status-choice" type="text" class="form-control" name="patientStatus" id="patientStatus" placeholder="Vaccine Type" required>
+              <select aria-label="VaccineType" title="status-choice" type="text" class="form-control" name="patientStatus" id="patientStatus" placeholder="Vaccine Type" onchange="priceTotal(this.value)" required>
+                <option value="" disabled selected>Select vaccination</option>
                 <option value="Dosage 1" <?php echo $patientStatus == 'Dosage 1'; ?>>Dosage 1</option>
                 <option value="Dosage 2" <?php echo $patientStatus == 'Dosage 2'; ?>>Dosage 2</option>
                 <option value="Dosage 3" <?php echo $patientStatus == 'Dosage 3'; ?>>Dosage 3</option>
@@ -196,7 +197,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' ) {
               <div class="validate"></div>
             </div>
             <div class="form-floating mb-3">
-              <input type="text" class="form-control form-control-user" value="<?php echo $price; ?>" name="address" placeholder="Price" readonly>
+              <input type="text" class="form-control form-control-user" value="<?php echo $price; ?>" name="price" id="price" placeholder="Price" readonly>
               <label for="inputPrice">Price</label>
               <div class="validate"></div>
             </div>

@@ -250,4 +250,25 @@
     })
   });
 
+  function priceTotal(val){
+    var totalPrice;
+    if(val == 'Dosage 1'){
+      totalPrice = 45000;
+    } else if(val == 'Dosage 2'){
+      totalPrice = 50000;
+    } else if(val == 'Dosage 3'){
+      totalPrice = 55000;
+    } else if(val == 'Booster 1'){
+      totalPrice = 60000;
+    } else if(val == 'Booster 2'){
+      totalPrice = 65000;
+    } else if(val == 'Booster 3'){
+      totalPrice = 70000;
+    }
+    //display price
+    var disPrice = document.getElementById('price');
+    disPrice.value = totalPrice;
+
+  }
+
 })()
