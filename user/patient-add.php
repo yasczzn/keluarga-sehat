@@ -109,7 +109,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' ) {
         <ul>
           <li><a class="nav-link scrollto" href="../index.php#hero">Home</a></li>
           <li><a class="nav-link scrollto" href="../index.php#about">About Us</a></li>
-          <li><a class="nav-link scrollto" href="../index.php#faq">FAQ</a></li>
+          <li><a class="nav-link scrollto" href="../index.php#faq">Why Us?</a></li>
+          <li><a class="nav-link scrollto" href="../index.php#pricing">Our Services</a></li>
           <li><a class="nav-link scrollto" href="../index.php#contact">Contact</a></li>
         </ul>
         <i class="bi bi-list mobile-nav-toggle"></i>
@@ -202,7 +203,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' ) {
               <div class="validate"></div>
             </div>
             <fieldset>
-              <legend>Please select a payment method</legend>
+              <legend class="form-floating mb-3">Please select a payment method</legend>
               <div>
                 <input type="radio" id="bca" name="bca" value="BCA"checked>
                 <label for="bca">BCAy</label>
@@ -231,8 +232,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' ) {
 
   </main><!-- End #main -->
 
-    <!-- ======= Footer ======= -->
-    <footer id="footer">
+      <!-- ======= Footer ======= -->
+      <footer id="footer">
       <div class="footer-top">
         <div class="container">
           <div class="row">
@@ -255,13 +256,14 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' ) {
               <ul>
                 <li><i class="bx bx-chevron-right"></i> <a href="../index.php#hero">Home</a></li>
                 <li><i class="bx bx-chevron-right"></i> <a href="../index.php#about">About us</a></li>
-                <li><i class="bx bx-chevron-right"></i> <a href="../index.php#faq">Terms of service</a></li>
+                <li><i class="bx bx-chevron-right"></i> <a href="../index.php#faq">Why Us?</a></li>
+                <li><i class="bx bx-chevron-right"></i> <a href="../index.php#pricing">Our Services</a></li>
                 <li><i class="bx bx-chevron-right"></i> <a href="../index.php#contact">Privacy policy</a></li>
               </ul>
             </div>
   
             <div class="col-lg-3 col-md-6 footer-links">
-              <h4>Our Services</h4>
+              <h4>Our Partnerships</h4>
               <ul>
                 <li><i class="bx bx-chevron-right"></i> <a href="#">Official Site</a></li>
                 <li><i class="bx bx-chevron-right"></i> <a href="#">Vaccination Data Site</a></li>

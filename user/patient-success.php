@@ -49,7 +49,8 @@
         <ul>
           <li><a class="nav-link scrollto" href="../index.php#hero">Home</a></li>
           <li><a class="nav-link scrollto" href="../index.php#about">About Us</a></li>
-          <li><a class="nav-link scrollto" href="../index.php#faq">FAQ</a></li>
+          <li><a class="nav-link scrollto" href="../index.php#faq">Why Us?</a></li>
+          <li><a class="nav-link scrollto" href="../index.php#pricing">Our Services</a></li>
           <li><a class="nav-link scrollto" href="../index.php#contact">Contact</a></li>
         </ul>
         <i class="bi bi-list mobile-nav-toggle"></i>
@@ -118,13 +119,14 @@
               <ul>
                 <li><i class="bx bx-chevron-right"></i> <a href="../index.php#hero">Home</a></li>
                 <li><i class="bx bx-chevron-right"></i> <a href="../index.php#about">About us</a></li>
-                <li><i class="bx bx-chevron-right"></i> <a href="../index.php#faq">Terms of service</a></li>
+                <li><i class="bx bx-chevron-right"></i> <a href="../index.php#faq">Why Us?</a></li>
+                <li><i class="bx bx-chevron-right"></i> <a href="../index.php#pricing">Our Services</a></li>
                 <li><i class="bx bx-chevron-right"></i> <a href="../index.php#contact">Privacy policy</a></li>
               </ul>
             </div>
   
             <div class="col-lg-3 col-md-6 footer-links">
-              <h4>Our Services</h4>
+              <h4>Our Partnerships</h4>
               <ul>
                 <li><i class="bx bx-chevron-right"></i> <a href="#">Official Site</a></li>
                 <li><i class="bx bx-chevron-right"></i> <a href="#">Vaccination Data Site</a></li>
