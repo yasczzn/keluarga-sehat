@@ -103,9 +103,9 @@
             <div class="col-lg-3 col-md-6 footer-links">
               <h4>Our Partnerships</h4>
               <ul>
-                <li><i class="bx bx-chevron-right"></i> <a href="#">Official Site</a></li>
-                <li><i class="bx bx-chevron-right"></i> <a href="#">Vaccination Data Site</a></li>
-                <li><i class="bx bx-chevron-right"></i> <a href="#">Covid Spread Map</a></li>
+                <li><i class="bx bx-chevron-right"></i> <a href="https://www.kemkes.go.id">Official Site</a></li>
+                <li><i class="bx bx-chevron-right"></i> <a href="https://vaksin.kemkes.go.id/#/vaccines">Vaccination Data Site</a></li>
+                <li><i class="bx bx-chevron-right"></i> <a href="https://covid19.go.id/peta-sebaran">Covid Spread Map</a></li>
               </ul>
             </div>
           </div>
