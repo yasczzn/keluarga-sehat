@@ -176,7 +176,7 @@
 
         <div class="row">
 
-          <div class="col-lg-3 col-md-6">
+          <div class="col-lg-4 col-md-6">
             <div class="box" data-aos="zoom-in">
               <h3>Single package</h3>
               <h4>Free</h4>
@@ -184,63 +184,45 @@
                 <li>For 1 person</li>
                 <li>Pay for vaccination price only</li>
                 <li></li>
-                <li class="na">Pharetra massa</li>
-                <li class="na">Massa ultricies mi</li>
+                <li class="na">Discount for the next vaccination</li>
+                <li class="na">Get reward points for out other services</li>
               </ul>
               <div class="btn-wrap">
-                <a href="#" class="btn-buy">Buy Now</a>
+                <a href="user/patient-add.php" class="btn-buy">Book Now</a>
               </div>
             </div>
           </div>
 
-          <div class="col-lg-3 col-md-6 mt-4 mt-md-0">
+          <div class="col-lg-4 col-md-6 mt-4 mt-md-0">
             <div class="box featured" data-aos="zoom-in" data-aos-delay="100">
-              <h3>Business</h3>
-              <h4><sup>$</sup>19<span> / month</span></h4>
+              <h3>Duo package</h3>
+              <h4><sup>+ Rp</sup>10000<span> / person</span></h4>
               <ul>
-                <li>Aida dere</li>
-                <li>Nec feugiat nisl</li>
-                <li>Nulla at volutpat dola</li>
-                <li>Pharetra massa</li>
-                <li class="na">Massa ultricies mi</li>
+                <li>For 2 people</li>
+                <li>Pay for vaccination price and addition price/person</li>
+                <li>Get 20% off for next vaccination</li>
+                <li></li>
+                <li class="na">Get reward points for out other services</li>
               </ul>
               <div class="btn-wrap">
-                <a href="#" class="btn-buy">Buy Now</a>
+                <a href="user/patient-add.php" class="btn-buy">Book Now</a>
               </div>
             </div>
           </div>
 
-          <div class="col-lg-3 col-md-6 mt-4 mt-lg-0">
-            <div class="box" data-aos="zoom-in" data-aos-delay="200">
-              <h3>Developer</h3>
-              <h4><sup>$</sup>29<span> / month</span></h4>
-              <ul>
-                <li>Aida dere</li>
-                <li>Nec feugiat nisl</li>
-                <li>Nulla at volutpat dola</li>
-                <li>Pharetra massa</li>
-                <li>Massa ultricies mi</li>
-              </ul>
-              <div class="btn-wrap">
-                <a href="#" class="btn-buy">Buy Now</a>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-lg-3 col-md-6 mt-4 mt-lg-0">
+          <div class="col-lg-4 col-md-6 mt-4 mt-lg-0">
             <div class="box" data-aos="zoom-in" data-aos-delay="300">
-              <span class="advanced">Advanced</span>
-              <h3>Ultimate</h3>
-              <h4><sup>$</sup>49<span> / month</span></h4>
+              <span class="advanced">Best deal!</span>
+              <h3>Family package</h3>
+              <h4><sup>+ Rp</sup>15000<span> / person</span></h4>
               <ul>
-                <li>Aida dere</li>
-                <li>Nec feugiat nisl</li>
-                <li>Nulla at volutpat dola</li>
-                <li>Pharetra massa</li>
-                <li>Massa ultricies mi</li>
+                <li>Up to 6 people</li>
+                <li>Pay for vaccination price and addition price/person</li>
+                <li>Get 25% off for next vaccination</li>
+                <li>40% discount coupon for our other services for 100 lucky patient</li>
               </ul>
               <div class="btn-wrap">
-                <a href="#" class="btn-buy">Buy Now</a>
+                <a href="user/patient-add.php" class="btn-buy">Book Now</a>
               </div>
             </div>
           </div>
@@ -251,13 +233,13 @@
     </section><!-- End Pricing Section -->
 
     <!-- ======= Services Section ======= -->
-    <section id="services" class="services section-bg">
+    <section id="cta" class="cta section-bg">
       <div class="container">
 
         <div class="section-title" data-aos="fade-up">
           <h2>Have You vaccinated yet? <br> Register now!</h2>
           <p>Register in Keluarga Sehat to save your vaccination progress!</p>
-          <a href="user/patient-add.php" class="btn-get-started scrollto">Register Now</a>
+          <a href="user/patient-add.php" class="cta-btn scrollto">Register Now</a>
         </div>
 
       </div>
