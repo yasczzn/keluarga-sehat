@@ -63,7 +63,7 @@
     <section class="inner-page">
       <div class="container">
         <div class="error">
-            <img src="" alt="" class="error-page">
+            <img src="assets/img/error-404.svg" alt="" class="error-page">
         </div>
       </div>
     </section>
