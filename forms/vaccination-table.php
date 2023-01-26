@@ -64,10 +64,6 @@ if (!isset($_SESSION['username'])) {
                                 <div class="sb-nav-link-icon"><i class="fa-solid fa-shield-virus"></i></div>
                                 Vaccination Table
                             </a>
-                            <a class="nav-link" href="vaccine-stock-table.php">
-                                <div class="sb-nav-link-icon"><i class="fa-solid fa-syringe"></i></div>
-                                Vaccine Stock Table
-                            </a>
                             <div class="sb-sidenav-menu-heading">Advance</div>
                             <a class="nav-link" href="user-table.php">
                                 <div class="sb-nav-link-icon"><i class="fas fa-user-md"></i></div>
