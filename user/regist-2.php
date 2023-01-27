@@ -10,6 +10,7 @@ $email = "";
 $phoneNum = "";
 $address = "";
 $patientStatus = "";
+$price = "";
 
 $errorMessage = "";
 $successMessage = "";
@@ -23,16 +24,17 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' ) {
     $phoneNum = $_POST['phoneNum'];
     $address = $_POST['address'];
     $patientStatus = $_POST['patientStatus'];
+    $price = $_POST['price'];
 
     do {
         if (empty($ID) || empty($name) || empty($doB) || empty($gender) || empty($email) || empty($phoneNum) || 
-        empty($address) || empty($patientStatus)) {
+        empty($address) || empty($patientStatus) || empty($price) {
             $errorMessage = "All the fields are required";
             break;
         }
 
-        $sql = "INSERT INTO patient(ID, name, doB, gender, email, phoneNum, address, patientStatus)".
-                "VALUES ('$ID', '$name', '$doB', '$gender', '$email', '$phoneNum', '$address', '$patientStatus')";
+        $sql = "INSERT INTO patient(ID, name, doB, gender, email, phoneNum, address, patientStatus, price)".
+                "VALUES ('$ID', '$name', '$doB', '$gender', '$email', '$phoneNum', '$address', '$price')";
         $result = $conn->query($sql);
 
         if (!$result) {
@@ -48,6 +50,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' ) {
         $phoneNum = "";
         $address = "";
         $patientStatus = "";
+        $price = "";
 
         echo "<script>alert('Patient data submitted!')
         document.location = 'patient-success.php'</script>";

@@ -172,6 +172,9 @@
                             </div>
                         </div>
                     </div>
+                    <div class="ms-5">
+                        <a href="patient-add.php" type="button" value="Add" class="btn btn-primary">Add New Patient</a>
+                    </div>
                 </main>
                 <footer class="py-4 bg-light mt-auto">
                     <div class="container-fluid px-4">

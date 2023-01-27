@@ -1,51 +1,65 @@
-<?php 
- 
-    session_start();
-    
-    if (!isset($_SESSION['username'])) {
-        header("Location: login.php");
-    }
-    
-    include '../function/connection.php';
+<!-- <?php 
 
-    $vaccineType = "";
-    $stock = "";
-    $date = "";
+include '../function/connection.php';
 
-    $errorMessage = "";
-    $successMessage = "";
+$ID = "";
+$name = "";
+$doB = "";
+$gender = "";
+$email = "";
+$phoneNum = "";
+$address = "";
+$patientStatus = "";
+$price = "";
 
-    if ($_SERVER['REQUEST_METHOD'] == 'POST' ) {
-        $vaccineType = $_POST['vaccineType'];
-        $stock = $_POST['stock'];
-        $date = $_POST['date'];
+$errorMessage = "";
+$successMessage = "";
 
-        do {
-            if (empty($vaccineType) || empty($stock) || empty($date)) {
-                $errorMessage = "All the fields are required";
-                break;
-            }
+if ($_SERVER['REQUEST_METHOD'] == 'POST' ) {
+    $ID = $_POST['ID'];
+    $name = $_POST['name'];
+    $doB = $_POST['doB'];
+    $gender = $_POST['gender'];
+    $email = $_POST['email'];
+    $phoneNum = $_POST['phoneNum'];
+    $address = $_POST['address'];
+    $patientStatus = $_POST['patientStatus'];
+    $price = $_POST['price'];
 
-            $sql = "INSERT INTO vaccine_stock(vaccineType, stock, date)".
-                    "VALUES ('$vaccineType', '$stock', '$date')";
-            $result = $conn->query($sql);
+    do {
+        if (empty($ID) || empty($name) || empty($doB) || empty($gender) || empty($email) || empty($phoneNum) || 
+        empty($address) || empty($patientStatus) || empty($price) {
+            $errorMessage = "All the fields are required";
+            break;
+        }
 
-            if (!$result) {
-                $errorMessage = "Invalid query" . $conn->error;
-                break;
-            }
+        $sql = "INSERT INTO patient(ID, name, doB, gender, email, phoneNum, address, patientStatus, price)".
+                "VALUES ('$ID', '$name', '$doB', '$gender', '$email', '$phoneNum', '$address', '$price')";
+        $result = $conn->query($sql);
 
-            $vaccineType = "";
-            $stock = "";
-            $date = "";
+        if (!$result) {
+            $errorMessage = "Invalid query" . $conn->error;
+            break;
+        }
 
-            echo "<script>alert('Vaccination data submitted!')
-            document.location = 'vaccine-stock-table.php'</script>";
+        $ID = "";
+        $name = "";
+        $doB = "";
+        $gender = "";
+        $email = "";
+        $phoneNum = "";
+        $address = "";
+        $patientStatus = "";
+        $price = "";
 
-        } while (false);
+        echo "<script>alert('Patient data submitted!')
+        document.location = 'patient-table.php'</script>";
 
-    }
-?>
+    } while (false);
+
+  }
+
+?> -->
 
 <!DOCTYPE html>
 <html lang="en">
@@ -55,7 +69,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
         <meta name="description" content="" />
         <meta name="author" content="" />
-        <title>Admin - Add Vaccine Stock</title>
+        <title>Admin - Add Patient</title>
 
             <!-- Favicons -->
         <link href="../assets/img/keluargasehat.png" rel="icon">
@@ -103,10 +117,6 @@
                                 <div class="sb-nav-link-icon"><i class="fa-solid fa-shield-virus"></i></div>
                                 Vaccination Table
                             </a>
-                            <a class="nav-link" href="vaccine-stock-table.php">
-                                <div class="sb-nav-link-icon"><i class="fa-solid fa-syringe"></i></div>
-                                Vaccine Stock Table
-                            </a>
                             <div class="sb-sidenav-menu-heading">Advance</div>
                             <a class="nav-link" href="user-table.php">
                                 <div class="sb-nav-link-icon"><i class="fas fa-user-md"></i></div>
@@ -123,11 +133,11 @@
             <div id="layoutSidenav_content">
                 <main>
                     <div class="container-fluid px-4">
-                    <h1 class="mt-4">Add Vaccine Stock</h1>
+                    <h1 class="mt-4">Add Patient</h1>
                         <ol class="breadcrumb mb-4">
                             <li class="breadcrumb-item"><a href="admin-dashboard.php">Dashboard</a></li>
-                            <li class="breadcrumb-item"><a href="vaccine-stock-table.php">Vaccine Stock Table</a></li>
-                            <li class="breadcrumb-item active">Add Vaccine Stock</li>
+                            <li class="breadcrumb-item"><a href="vaccine-stock-table.php">Patient Table</a></li>
+                            <li class="breadcrumb-item active">Add Patient</li>
                         </ol>
 
                             <?php
@@ -145,23 +155,64 @@
 
                         <h3 class="text-center font-weight-light my-4">Vaccine Stock Form</h3>
                         <form action="" method="POST" role="form" class="php-email-form">
-                            <div class="form-floating mb-3 mx-3">
-                                <input type="text" class="form-control form-control-user" name="vaccineType" value="<?php echo $vaccineType; ?>" placeholder="Vaccine Type" required>
-                                <label for="inputVaccineType">Vaccine Type</label>
-                                <div class="validate"></div>
-                            </div>
-                            <div class="form-floating mb-3 mx-3">
-                                <input type="number" class="form-control form-control-user" name="stock" value="<?php echo !empty($_POST['stock']) ? $_POST['stock'] : ''; ?>" placeholder="Stock" required>
-                                <label for="inputStock">Stock</label>
-                                <div class="validate"></div>
-                            </div>
-                            <div class="form-floating mb-3 mx-3">
-                                <input type="date" class="form-control form-control-user" name="date" value="<?php echo !empty($_POST['date']) ? $_POST['date'] : ''; ?>" placeholder="Restock Date" required>
-                                <label for="inputVaccinationDate">Restock Date</label>
-                                <div class="validate"></div>
-                            </div>
+                        <div class="form-floating mb-3">
+                            <input type="number" class="form-control form-control-user" value="<?php echo $ID; ?>" name="ID" placeholder="ID" required>
+                            <label for="inputID">ID</label>
+                            <div class="validate"></div>
+                        </div>
+                        <div class="form-floating mb-3">
+                            <input type="text" class="form-control form-control-user" value="<?php echo $name; ?>" name="name" placeholder="Name" required>
+                            <label for="inputName">Name</label>
+                            <div class="validate"></div>
+                        </div>
+                        <div class="form-floating mb-3">
+                            <input type="text" class="form-control form-control-user" value="<?php echo $doB; ?>" name="doB" placeholder="Date of Birth" required>
+                            <label for="inputDoB">Date of Birth</label>
+                            <div class="validate"></div>
+                        </div>
+                        <div class="form-floating mb-3">
+                            <select aria-label="Gender" title="gender-choice" type="text" class="form-control" name="gender" placeholder="Gender" required>
+                                <option value="male" <?php echo $gender == 'male'; ?>>male</option>
+                                <option value="female" <?php echo $gender == 'female'; ?>>female</option>
+                            </select>
+                            <label for="inputGender">Gender</label>
+                            <div class="validate"></div>
+                        </div>
+                        <div class="form-floating mb-3">
+                            <input type="email" class="form-control form-control-user" value="<?php echo $email; ?>" name="email" placeholder="Email" required>
+                            <label for="inputEmail">Email</label>
+                            <div class="validate"></div>
+                        </div>
+                        <div class="form-floating mb-3">
+                            <input type="number" class="form-control form-control-user" value="<?php echo $phoneNum; ?>" name="phoneNum" placeholder="Phone Number" required>
+                            <label for="inputPhoneNum">Phone Number</label>
+                            <div class="validate"></div>
+                        </div>
+                        <div class="form-floating mb-3">
+                            <input type="text" class="form-control form-control-user" value="<?php echo $address; ?>" name="address" placeholder="Address" required>
+                            <label for="inputAddress">Address</label>
+                            <div class="validate"></div>
+                        </div>
+                        <div class="form-floating mb-3">
+                            <select aria-label="VaccineType" title="status-choice" type="text" class="form-control" name="patientStatus" id="patientStatus" placeholder="Vaccine Type" onchange="priceTotal(this.value)" required>
+                                <option value="" disabled selected>Select vaccination</option>
+                                <option value="Dosage 1" <?php echo $patientStatus == 'Dosage 1'; ?>>Dosage 1</option>
+                                <option value="Dosage 2" <?php echo $patientStatus == 'Dosage 2'; ?>>Dosage 2</option>
+                                <option value="Dosage 3" <?php echo $patientStatus == 'Dosage 3'; ?>>Dosage 3</option>
+                                <option value="Booster 1" <?php echo $patientStatus == 'Booster 1'; ?>>Booster 1</option>
+                                <option value="Booster 2" <?php echo $patientStatus == 'Booster 2'; ?>>Booster 2</option>
+                                <option value="Booster 3" <?php echo $patientStatus == 'Booster 3'; ?>>Booster 3</option>
+                            </select>
+                            <label for="inputStatus">Vaccine Type</label>
+                            <div class="validate"></div>
+                        </div>
+                        <div class="form-floating mb-3">
+                            <input type="text" class="form-control form-control-user" value="<?php echo $price; ?>" name="price" id="price" placeholder="Price" readonly>
+                            <label for="inputPrice">Price</label>
+                            <div class="validate"></div>
+                        </div>
                         <input type="submit" value="Submit" name="submit" class="btn btn-success btn-user ms-3"/>
-                        <a href='vaccine-stock-table.php'>
+                        <a href='patient-table.php'>
                             <input type='button' value='Cancel' class='btn btn-danger btn-user'>
                         </a>
                         <hr>

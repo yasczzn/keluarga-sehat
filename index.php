@@ -188,7 +188,7 @@
                 <li class="na">Get reward points for out other services</li>
               </ul>
               <div class="btn-wrap">
-                <a href="user/patient-add-1.php" class="btn-buy">Book Now</a>
+                <a href="user/regist-1.php" class="btn-buy">Book Now</a>
               </div>
             </div>
           </div>
@@ -205,7 +205,7 @@
                 <li class="na">Get reward points for out other services</li>
               </ul>
               <div class="btn-wrap">
-                <a href="user/patient-add-1.php" class="btn-buy">Book Now</a>
+                <a href="user/regist-1.php" class="btn-buy">Book Now</a>
               </div>
             </div>
           </div>
@@ -222,7 +222,7 @@
                 <li>40% discount coupon for our other services for 100 lucky patient</li>
               </ul>
               <div class="btn-wrap">
-                <a href="user/patient-add-1.php" class="btn-buy">Book Now</a>
+                <a href="user/regist-1.php" class="btn-buy">Book Now</a>
               </div>
             </div>
           </div>
@@ -239,7 +239,7 @@
         <div class="section-title" data-aos="fade-up">
           <h2>Have You vaccinated yet? <br> Register now!</h2>
           <p>Register in Keluarga Sehat to save your vaccination progress!</p>
-          <a href="user/patient-add-1.php" class="cta-btn scrollto">Register Now</a>
+          <a href="user/regist-1.php" class="cta-btn scrollto">Register Now</a>
         </div>
 
       </div>
