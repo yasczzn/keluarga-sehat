@@ -28,7 +28,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' ) {
 
     do {
         if (empty($ID) || empty($name) || empty($doB) || empty($gender) || empty($email) || empty($phoneNum) || 
-        empty($address) || empty($patientStatus) || empty($price) {
+        empty($address) || empty($patientStatus) || empty($price)) {
             $errorMessage = "All the fields are required";
             break;
         }
