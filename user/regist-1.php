@@ -2,19 +2,21 @@
 
 include '../function/connection.php';
 
+$d = date("d M", strtotime("tomorrow"));
+
 $s1 = mktime(10);
 $s2 = mktime(12);
 $s3 = mktime(14);
 $s4 = mktime(16);
 
-if ($s1 <= date("H")) {
-  $sch1 = date("h.00 a, d M", strtotime("tomorrow"));
-}
-
 $sch1 = date("h.00 a, d M", $s1); 
 $sch2 = date("h.00 a, d M", $s2);
 $sch3 = date("h.00 a, d M", $s3);
 $sch4 = date("h.00 a, d M", $s4);
+
+if ($s1 <= date("H")) {
+  $sch1 = date("h.00 a, d M", strtotime("tomorrow"));
+}
 
 $vaccinationDate = "";
 
@@ -126,7 +128,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' ) {
             <div class="col-lg-12 d-block align-items-center mb-lg-2" data-aos="zoom-in">
               <div class="icon-box icon-box-pink">
                 <h4 class="title mb-0 d-flex align-items-center">
-                  <a href=""><?php echo $sch1; ?></a>
+                  <a href=""><?php echo $d; ?></a>
                   <p class="description">Voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate</p>
                 </h4>
               </div>
