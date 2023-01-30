@@ -4,15 +4,19 @@ include '../function/connection.php';
 
 $d = strtotime("today");
 
+$monthNum = date("m");
+$dateObj   = DateTime::createFromFormat('!m', $monthNum);
+$mName = $dateObj->format('M');
+
 $s1 = mktime(10);
 $s2 = mktime(12);
 $s3 = mktime(14);
 $s4 = mktime(16);
 
-$sch1 = $s1 + $d;
-$sch2 = $s1 + $d;
-$sch3 = $s1 + $d;
-$sch4 = $s1 + $d;
+$sch1 = $s1 + $mName + $d;
+$sch2 = $s2 + $mName + $d;
+$sch3 = $s3 + $mName + $d;
+$sch4 = $s4 + $mName + $d;
 
 if (date("h") <= date("h")) {
   $d = strtotime("tomorrow");
@@ -128,7 +132,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' ) {
             <div class="col-lg-12 d-block align-items-center mb-lg-2" data-aos="zoom-in">
               <div class="icon-box icon-box-pink">
                 <h4 class="title mb-0 d-flex align-items-center">
-                  <a href=""><?php echo date("h.00 a", $sch1); ?></a>
+                  <a href=""><?php echo date("h.00 a, d m", $sch1); ?></a>
                   <p class="description">Voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate</p>
                 </h4>
               </div>
@@ -137,7 +141,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' ) {
             <div class="col-lg-12 d-block align-items-center mb-lg-2" data-aos="zoom-in" data-aos-delay="100">
               <div class="icon-box icon-box-cyan">
                 <h4 class="title mb-0 d-flex align-items-center">
-                  <a href=""><?php echo date("h.00 a", $sch2); ?></a>
+                  <a href=""><?php echo date("h.00 a, d m", $sch2); ?></a>
                   <p class="description">Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla</p>
                 </h4>
               </div>
@@ -146,7 +150,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' ) {
             <div class="col-lg-12 d-block align-items-center mb-lg-2" data-aos="zoom-in" data-aos-delay="200">
               <div class="icon-box icon-box-green">
                 <h4 class="title mb-0 d-flex align-items-center">
-                  <a href=""><?php echo date("h.00 a", $sch3); ?></a>
+                  <a href=""><?php echo date("h.00 a, d m", $sch3); ?></a>
                   <p class="description">Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim</p>
                 </h4>
               </div>
@@ -155,7 +159,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' ) {
             <div class="col-lg-12 d-block align-items-center mb-lg-2" data-aos="zoom-in" data-aos-delay="300">
               <div class="icon-box icon-box-blue">
                 <h4 class="title mb-0 d-flex align-items-center">
-                  <a href=""><?php echo date("h.00 a", $sch4); ?></a>
+                  <a href=""><?php echo date("h.00 a, d m", $sch4); ?></a>
                   <p class="description">At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum</p>
                 </h4>
               </div>
