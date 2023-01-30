@@ -2,7 +2,7 @@
 
 include '../function/connection.php';
 
-$d = strtotime('today UTC');
+$d = strtotime("today UTC");
 
 $s1 = mktime(10, 0, 0, $d, $d, 0);
 $s2 = mktime(12, 0, 0, $d, $d, 0);
@@ -19,13 +19,6 @@ $sch2 = date("h.00 a, d M", $s2);
 $sch3 = date("h.00 a, d M", $s3);
 $sch4 = date("h.00 a, d M", $s4);
 
-<<<<<<< HEAD
-=======
-if (date("h") <= date("h")) {
-  $d = strtotime('tomorrow');
-}
-
->>>>>>> bcc2fd656e989b59f5a80e2f4225e6c3ebf34fc4
 $vaccinationDate = "";
 
 $errorMessage = "";
