@@ -2,6 +2,22 @@
 
 include '../function/connection.php';
 
+$d = strtotime("today");
+
+$s1 = mktime(10);
+$s2 = mktime(12);
+$s3 = mktime(14);
+$s4 = mktime(16);
+
+$sch1 = $s1 + $d;
+$sch2 = $s1 + $d;
+$sch3 = $s1 + $d;
+$sch4 = $s1 + $d;
+
+if (date("h") <= date("h")) {
+  $d = strtotime("tomorrow");
+}
+
 $vaccinationDate = "";
 
 $errorMessage = "";
@@ -99,7 +115,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' ) {
     
     <!-- End Breadcrumbs -->
 
-    <section id="services" class="services section-bg">
+    <section id="services" class="services">
       <div class="container">
 
         <div class="section-title" data-aos="fade-up">
@@ -107,37 +123,41 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' ) {
           <p>for book your vaccination.</p>
         </div>
 
-        <div class="vstack gap-3">
+        <div class="vstack col-lg-8 mt-5 m-auto">
           <div class="row">
-            <div class="d-flex align-items-stretch mb-5 mb-lg-0" data-aos="zoom-in">
+            <div class="col-lg-12 d-block align-items-center mb-lg-2" data-aos="zoom-in">
               <div class="icon-box icon-box-pink">
-                <div class="icon"><i class="bx bxl-dribbble"></i></div>
-                <h4 class="title"><a href="">Lorem Ipsum</a></h4>
-                <p class="description">Voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate</p>
+                <h4 class="title mb-0 d-flex align-items-center">
+                  <a href=""><?php echo date("h.00 a", $sch1); ?></a>
+                  <p class="description">Voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate</p>
+                </h4>
               </div>
             </div>
 
-            <div class="d-flex align-items-stretch mb-5 mb-lg-0" data-aos="zoom-in" data-aos-delay="100">
+            <div class="col-lg-12 d-block align-items-center mb-lg-2" data-aos="zoom-in" data-aos-delay="100">
               <div class="icon-box icon-box-cyan">
-                <div class="icon"><i class="bx bx-file"></i></div>
-                <h4 class="title"><a href="">Sed ut perspiciatis</a></h4>
-                <p class="description">Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla</p>
+                <h4 class="title mb-0 d-flex align-items-center">
+                  <a href=""><?php echo date("h.00 a", $sch2); ?></a>
+                  <p class="description">Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla</p>
+                </h4>
               </div>
             </div>
 
-            <div class="d-flex align-items-stretch mb-5 mb-lg-0" data-aos="zoom-in" data-aos-delay="200">
+            <div class="col-lg-12 d-block align-items-center mb-lg-2" data-aos="zoom-in" data-aos-delay="200">
               <div class="icon-box icon-box-green">
-                <div class="icon"><i class="bx bx-tachometer"></i></div>
-                <h4 class="title"><a href="">Magni Dolores</a></h4>
-                <p class="description">Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim</p>
+                <h4 class="title mb-0 d-flex align-items-center">
+                  <a href=""><?php echo date("h.00 a", $sch3); ?></a>
+                  <p class="description">Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim</p>
+                </h4>
               </div>
             </div>
 
-            <div class="d-flex align-items-stretch mb-5 mb-lg-0" data-aos="zoom-in" data-aos-delay="300">
+            <div class="col-lg-12 d-block align-items-center mb-lg-2" data-aos="zoom-in" data-aos-delay="300">
               <div class="icon-box icon-box-blue">
-                <div class="icon"><i class="bx bx-world"></i></div>
-                <h4 class="title"><a href="">Nemo Enim</a></h4>
-                <p class="description">At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum</p>
+                <h4 class="title mb-0 d-flex align-items-center">
+                  <a href=""><?php echo date("h.00 a", $sch4); ?></a>
+                  <p class="description">At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum</p>
+                </h4>
               </div>
             </div>
 

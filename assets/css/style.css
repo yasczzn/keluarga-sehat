@@ -588,7 +588,7 @@ section {
 # Services
 --------------------------------------------------------------*/
 .services .icon-box {
-  padding: 30px;
+  padding: 10px;
   position: relative;
   overflow: hidden;
   margin: 0;
@@ -597,6 +597,7 @@ section {
   transition: all 0.3s ease-in-out;
   border-radius: 4px;
   text-align: center;
+  border: 3px solid #f7f8f9;
   border-bottom: 3px solid #fff;
 }
 
@@ -621,9 +622,9 @@ section {
 }
 
 .services .description {
+  font-weight: 500;
   font-size: 15px;
   line-height: 28px;
-  margin-bottom: 0;
 }
 
 .services .icon-box-pink .icon i {
@@ -1674,4 +1675,8 @@ section {
   text-align: center;
   font-size: 13px;
   color: #364146;
+}
+
+.d-flex {
+  display: flex !important;
 }
