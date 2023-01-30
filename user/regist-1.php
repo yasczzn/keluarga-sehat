@@ -2,7 +2,6 @@
 
 include '../function/connection.php';
 
-$d = date("d M", strtotime('today GMT'));
 
 $s1 = mktime(10);
 $s2 = mktime(12);
@@ -15,7 +14,7 @@ $sch3 = date("h.00 a, d M", $s3);
 $sch4 = date("h.00 a, d M", $s4);
 
 if ($sch1.date("h") <= date("h")) {
-  $sch1 = date("h.00 a, d M", $s1 + $d);
+  $sch1 = date("h.00 a, d M", strtotime('tomorrow', 'today'));
 }
 
 $vaccinationDate = "";
