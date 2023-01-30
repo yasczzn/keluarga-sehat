@@ -4,15 +4,15 @@ include '../function/connection.php';
 
 $d = strtotime("today");
 
-$s1 = mktime(10);
-$s2 = mktime(12);
-$s3 = mktime(14);
-$s4 = mktime(16);
+$s1 = mktime(10, 0, 0, $d, $d, $d);
+$s2 = mktime(12, 0, 0, $d, $d, $d);
+$s3 = mktime(14, 0, 0, $d, $d, $d);
+$s4 = mktime(16, 0, 0, $d, $d, $d);
 
-$sch1 = date("h.00 a, d M", $s1 + $d); 
-$sch2 = date("h.00 a, d M", $s2 + $d);
-$sch3 = date("h.00 a, d M", $s3 + $d);
-$sch4 = date("h.00 a, d M", $s4 + $d);
+$sch1 = date("h.00 a, d M", $s1); 
+$sch2 = date("h.00 a, d M", $s2);
+$sch3 = date("h.00 a, d M", $s3);
+$sch4 = date("h.00 a, d M", $s4);
 
 if (date("h") <= date("h")) {
   $d = strtotime("tomorrow");
