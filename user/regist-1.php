@@ -14,7 +14,7 @@ $sch3 = date("h.00 a, d M", $s3);
 $sch4 = date("h.00 a, d M", $s4);
 
 if ($sch1.date("h") <= date("h")) {
-  $sch1 = date("h.00 a, d M", strtotime("tomorrow", $s1));
+  $sch1 = date("h.00 a, d M", strtotime("tomorrow"));
 }
 
 $vaccinationDate = "";
