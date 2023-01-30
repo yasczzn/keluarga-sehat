@@ -2,20 +2,19 @@
 
 include '../function/connection.php';
 
-
 $s1 = mktime(10);
 $s2 = mktime(12);
 $s3 = mktime(14);
 $s4 = mktime(16);
 
-$sch1 = date("h.00 a, d M", $s1); 
-$sch2 = date("h.00 a, d M", $s2);
-$sch3 = date("h.00 a, d M", $s3);
-$sch4 = date("h.00 a, d M", $s4);
+$sch1 = DateTime::createFromFormat("h.00 a, d M", $s1); 
+$sch2 = DateTime::createFromFormat("h.00 a, d M", $s2);
+$sch3 = DateTime::createFromFormat("h.00 a, d M", $s3);
+$sch4 = DateTime::createFromFormat("h.00 a, d M", $s4);
 
-if ($sch1.date("h") <= date("h")) {
-  $sch1 = date("h.00 a, d M", strtotime("+1 day"));
-}
+// if ($sch1->format('h') <= date("h")) {
+//   $sch1 = date("h.00 a, d M", strtotime("+1 day"));
+// }
 
 $vaccinationDate = "";
 
