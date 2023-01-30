@@ -13,27 +13,27 @@ $sch3 = "";
 $sch4 = "";
 
 if ($s1 <= date("h")) {
-  $sch1 = date("10.00 am, d M", strtotime("tomorrow"));
+  $sch1 = date("10.00 a, d M", strtotime("tomorrow"));
 } else {
-  $sch1 = date("10.00 am, d M", strtotime("today"));
+  $sch1 = date("10.00 a, d M", strtotime("today"));
 }
 
 if ($s2 <= date("h")) {
-  $sch2 = date("12.00 am, d M", strtotime("tomorrow"));
+  $sch2 = date("12.00 a, d M", strtotime("tomorrow"));
 } else {
-  $sch2 = date("12.00 am, d M", strtotime("today"));
+  $sch2 = date("12.00 a, d M", strtotime("today"));
 }
 
 if ($s3 <= date("h")) {
-  $sch3 = date("02.00 pm, d M", strtotime("tomorrow"));
+  $sch3 = date("14.00 a, d M", strtotime("tomorrow"));
 } else {
-  $sch3 = date("02.00 pm, d M", strtotime("today"));
+  $sch3 = date("14.00 a, d M", strtotime("today"));
 }
 
 if ($s4 <= date("h")) {
-  $sch4 = date("04.00 pm, d M", strtotime("tomorrow"));
+  $sch4 = date("16.00 a, d M", strtotime("tomorrow"));
 } else {
-  $sch4 = date("04.00 pm, d M", strtotime("today"));
+  $sch4 = date("16.00 a, d M", strtotime("today"));
 }
 
 $vaccinationDate = "";
@@ -144,7 +144,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' ) {
         <div class="vstack col-lg-8 mt-5 m-auto">
           <div class="row">
             <div class="col-lg-12 d-block align-items-center mb-lg-2" data-aos="zoom-in">
-              <div class="icon-box icon-box-pink">
+              <div class="icon-box icon-box-green">
                 <h4 class="title mb-0 d-flex align-items-center">
                   <a href=""><?php echo $sch1; ?></a>
                   <p class="description">Voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate</p>
@@ -153,7 +153,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' ) {
             </div>
 
             <div class="col-lg-12 d-block align-items-center mb-lg-2" data-aos="zoom-in" data-aos-delay="100">
-              <div class="icon-box icon-box-cyan">
+              <div class="icon-box icon-box-green">
                 <h4 class="title mb-0 d-flex align-items-center">
                   <a href=""><?php echo $sch2; ?></a>
                   <p class="description">Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla</p>
@@ -171,7 +171,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' ) {
             </div>
 
             <div class="col-lg-12 d-block align-items-center mb-lg-2" data-aos="zoom-in" data-aos-delay="300">
-              <div class="icon-box icon-box-blue">
+              <div class="icon-box icon-box-green">
                 <h4 class="title mb-0 d-flex align-items-center">
                   <a href=""><?php echo $sch4; ?></a>
                   <p class="description">At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum</p>
