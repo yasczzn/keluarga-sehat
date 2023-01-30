@@ -2,12 +2,12 @@
 
 include '../function/connection.php';
 
-$d = strtotime("today");
+$d = strtotime("today UTC");
 
-$s1 = mktime(10, 0, 0, $d, $d, $d);
-$s2 = mktime(12, 0, 0, $d, $d, $d);
-$s3 = mktime(14, 0, 0, $d, $d, $d);
-$s4 = mktime(16, 0, 0, $d, $d, $d);
+$s1 = mktime(10, 0, 0, $d, $d, 0);
+$s2 = mktime(12, 0, 0, $d, $d, 0);
+$s3 = mktime(14, 0, 0, $d, $d, 0);
+$s4 = mktime(16, 0, 0, $d, $d, 0);
 
 $sch1 = date("h.00 a, d M", $s1); 
 $sch2 = date("h.00 a, d M", $s2);
