@@ -9,10 +9,10 @@ $s2 = mktime(12);
 $s3 = mktime(14);
 $s4 = mktime(16);
 
-$sch1 = $s1 + $d;
-$sch2 = $s2 + $d;
-$sch3 = $s3 + $d;
-$sch4 = $s4 + $d;
+$sch1 = date("h.00 a, d M", $s1 + $d); 
+$sch2 = date("h.00 a, d M", $s2 + $d);
+$sch3 = date("h.00 a, d M", $s3 + $d);
+$sch4 = date("h.00 a, d M", $s4 + $d);
 
 if (date("h") <= date("h")) {
   $d = strtotime("tomorrow");
@@ -128,7 +128,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' ) {
             <div class="col-lg-12 d-block align-items-center mb-lg-2" data-aos="zoom-in">
               <div class="icon-box icon-box-pink">
                 <h4 class="title mb-0 d-flex align-items-center">
-                  <a href=""><?php echo date("h.00 a, d M", $sch1); ?></a>
+                  <a href=""><?php echo $sch1; ?></a>
                   <p class="description">Voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate</p>
                 </h4>
               </div>
@@ -137,7 +137,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' ) {
             <div class="col-lg-12 d-block align-items-center mb-lg-2" data-aos="zoom-in" data-aos-delay="100">
               <div class="icon-box icon-box-cyan">
                 <h4 class="title mb-0 d-flex align-items-center">
-                  <a href=""><?php echo date("h.00 a, d M", $sch2); ?></a>
+                  <a href=""><?php echo $sch2; ?></a>
                   <p class="description">Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla</p>
                 </h4>
               </div>
@@ -146,7 +146,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' ) {
             <div class="col-lg-12 d-block align-items-center mb-lg-2" data-aos="zoom-in" data-aos-delay="200">
               <div class="icon-box icon-box-green">
                 <h4 class="title mb-0 d-flex align-items-center">
-                  <a href=""><?php echo date("h.00 a, d M", $sch3); ?></a>
+                  <a href=""><?php echo $sch3; ?></a>
                   <p class="description">Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim</p>
                 </h4>
               </div>
@@ -155,7 +155,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' ) {
             <div class="col-lg-12 d-block align-items-center mb-lg-2" data-aos="zoom-in" data-aos-delay="300">
               <div class="icon-box icon-box-blue">
                 <h4 class="title mb-0 d-flex align-items-center">
-                  <a href=""><?php echo date("h.00 a, d M", $sch4); ?></a>
+                  <a href=""><?php echo $sch4; ?></a>
                   <p class="description">At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum</p>
                 </h4>
               </div>
