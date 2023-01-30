@@ -4,15 +4,15 @@ include '../function/connection.php';
 
 $d = date("d M", strtotime('today GMT'));
 
-$s1 = mktime(10);
-$s2 = mktime(12);
-$s3 = mktime(14);
-$s4 = mktime(16);
+$s1 = mktime(10, 0, 0, $d, $d, 0);
+$s2 = mktime(12, 0, 0, $d, $d, 0);
+$s3 = mktime(14, 0, 0, $d, $d, 0);
+$s4 = mktime(16, 0, 0, $d, $d, 0);
 
-// if ($s1.date("h") <= date("h") || $s2.date("h") <= date("h") || $s3.date("h") <= date("h") || 
-//     $s4.date("h") <= date("h")) {
-//   $d = strtotime("tomorrow");
-// }
+if ($s1.date("h") <= date("h") || $s2.date("h") <= date("h") || $s3.date("h") <= date("h") || 
+    $s4.date("h") <= date("h")) {
+      $d = date("d M", strtotime('tomorrow'));
+}
 
 $sch1 = date("h.00 a, d M", $s1); 
 $sch2 = date("h.00 a, d M", $s2);
@@ -129,7 +129,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' ) {
             <div class="col-lg-12 d-block align-items-center mb-lg-2" data-aos="zoom-in">
               <div class="icon-box icon-box-pink">
                 <h4 class="title mb-0 d-flex align-items-center">
-                  <a href=""><?php echo $d; ?></a>
+                  <a href=""><?php echo $sch1; ?></a>
                   <p class="description">Voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate</p>
                 </h4>
               </div>
