@@ -1,40 +1,6 @@
-<!-- <?php 
+<?php 
 
 include '../function/connection.php';
-
-$s1 = mktime(10);
-$s2 = mktime(12);
-$s3 = mktime(14);
-$s4 = mktime(16);
-
-$sch1 = "";
-$sch2 = "";
-$sch3 = "";
-$sch4 = "";
-
-if ($s1 <= date("h")) {
-  $sch1 = date("10.00 a, d M", strtotime("tomorrow"));
-} else {
-  $sch1 = date("10.00 a, d M", strtotime("today"));
-}
-
-if ($s2 <= date("h")) {
-  $sch2 = date("12.00 a, d M", strtotime("tomorrow"));
-} else {
-  $sch2 = date("12.00 a, d M", strtotime("today"));
-}
-
-if ($s3 <= date("h")) {
-  $sch3 = date("14.00 a, d M", strtotime("tomorrow"));
-} else {
-  $sch3 = date("14.00 a, d M", strtotime("today"));
-}
-
-if ($s4 <= date("h")) {
-  $sch4 = date("16.00 a, d M", strtotime("tomorrow"));
-} else {
-  $sch4 = date("16.00 a, d M", strtotime("today"));
-}
 
 $vaccinationDate = "";
 
@@ -54,7 +20,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' ) {
 
   }
 
-?> -->
+?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -143,46 +109,34 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' ) {
 
         <div class="vstack col-lg-8 mt-5 m-auto">
           <div class="row">
-            <div class="col-lg-12 d-block align-items-center mb-lg-2" data-aos="zoom-in">
-              <div class="icon-box icon-box-green">
-                <h4 class="title mb-0 d-flex align-items-center">
-                  <a href=""><?php echo $sch1; ?></a>
-                  <p class="description">Voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate</p>
-                </h4>
-              </div>
-            </div>
-
-            <div class="col-lg-12 d-block align-items-center mb-lg-2" data-aos="zoom-in" data-aos-delay="100">
-              <div class="icon-box icon-box-green">
-                <h4 class="title mb-0 d-flex align-items-center">
-                  <a href=""><?php echo $sch2; ?></a>
-                  <p class="description">Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla</p>
-                </h4>
-              </div>
-            </div>
-
-            <div class="col-lg-12 d-block align-items-center mb-lg-2" data-aos="zoom-in" data-aos-delay="200">
-              <div class="icon-box icon-box-green">
-                <h4 class="title mb-0 d-flex align-items-center">
-                  <a href=""><?php echo $sch3; ?></a>
-                  <p class="description">Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim</p>
-                </h4>
-              </div>
-            </div>
-
-            <div class="col-lg-12 d-block align-items-center mb-lg-2" data-aos="zoom-in" data-aos-delay="300">
-              <div class="icon-box icon-box-green">
-                <h4 class="title mb-0 d-flex align-items-center">
-                  <a href=""><?php echo $sch4; ?></a>
-                  <p class="description">At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum</p>
-                </h4>
-              </div>
-            </div>
-
+            <?php
+              include '../function/connection.php';
+                                            
+              $no=1;
+              $pulldata = mysqli_query($conn, "SELECT * FROM schedule WHERE DATE('time') = CURDATE()");
+              while ($display = mysqli_fetch_array($pulldata)){
+                echo "
+                <div class='col-lg-12 d-block align-items-center mb-lg-2' data-aos='zoom-in' data-aos-delay='100'>
+                  <div class='icon-box icon-box-green'>
+                    <h4 class='title mb-0 d-flex align-items-center'>
+                      <a href=''>$display[time]</a>
+                      <p class='description'>$display[day]</p>
+                      <p class='description'>$display[month]</p>
+                    </h4>
+                  </div>
+                </div>>";
+                                        
+                $no++;
+              }
+            ?>            
           </div>
         </div>
 
       </div>
+
+      <a href="regist-2.php?schedule=<?php echo $time; echo $day; echo $month; ?>">Next</a>
+      <input type="submit" value="Next" name="submit" class="btn btn-success btn-user ms-3"/>
+      <input type="button" value="Cancel" name="cancel" class="btn btn-danger btn-user"/>
     </section>
 
   </main><!-- End #main -->

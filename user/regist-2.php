@@ -9,7 +9,7 @@ $gender = "";
 $email = "";
 $phoneNum = "";
 $address = "";
-$patientStatus = "";
+$vaccineType = "";
 $price = "";
 $vaccinationDate = "";
 
@@ -24,19 +24,19 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' ) {
     $email = $_POST['email'];
     $phoneNum = $_POST['phoneNum'];
     $address = $_POST['address'];
-    $patientStatus = $_POST['patientStatus'];
+    $vaccineType = $_POST['vaccineType'];
     $price = $_POST['price'];
     $vaccinationDate = $_POST['vaccinationDate'];
 
     do {
         if (empty($ID) || empty($name) || empty($doB) || empty($gender) || empty($email) || empty($phoneNum) || 
-        empty($address) || empty($patientStatus) || empty($price)) {
+        empty($address) || empty($vaccineType) || empty($price)) {
             $errorMessage = "All the fields are required";
             break;
         }
 
-        $sql = "INSERT INTO patient(ID, name, doB, gender, email, phoneNum, address, patientStatus, price)".
-                "VALUES ('$ID', '$name', '$doB', '$gender', '$email', '$phoneNum', '$address', '$price')";
+        $sql = "INSERT INTO patient(ID, name, doB, gender, email, phoneNum, address, vaccineType, price)".
+                "VALUES ('$ID', '$name', '$doB', '$gender', '$email', '$phoneNum', '$address', '$vaccineType', '$price')";
         $result = $conn->query($sql);
 
         if (!$result) {
@@ -51,7 +51,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' ) {
         $email = "";
         $phoneNum = "";
         $address = "";
-        $patientStatus = "";
+        $vaccineType = "";
         $price = "";
 
         echo "<script>alert('Patient data submitted!')
@@ -190,14 +190,14 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' ) {
               <div class="validate"></div>
             </div>
             <div class="form-floating mb-3">
-              <select aria-label="VaccineType" title="status-choice" type="text" class="form-control" name="patientStatus" id="patientStatus" placeholder="Vaccine Type" onchange="priceTotal(this.value)" required>
+              <select aria-label="VaccineType" title="status-choice" type="text" class="form-control" name="vaccineType" id="vaccineType" placeholder="Vaccine Type" onchange="priceTotal(this.value)" required>
                 <option value="" disabled selected>Select vaccination</option>
-                <option value="Dosage 1" <?php echo $patientStatus == 'Dosage 1'; ?>>Dosage 1</option>
-                <option value="Dosage 2" <?php echo $patientStatus == 'Dosage 2'; ?>>Dosage 2</option>
-                <option value="Dosage 3" <?php echo $patientStatus == 'Dosage 3'; ?>>Dosage 3</option>
-                <option value="Booster 1" <?php echo $patientStatus == 'Booster 1'; ?>>Booster 1</option>
-                <option value="Booster 2" <?php echo $patientStatus == 'Booster 2'; ?>>Booster 2</option>
-                <option value="Booster 3" <?php echo $patientStatus == 'Booster 3'; ?>>Booster 3</option>
+                <option value="Dosage 1" <?php echo $vaccineType == 'Dosage 1'; ?>>Dosage 1</option>
+                <option value="Dosage 2" <?php echo $vaccineType == 'Dosage 2'; ?>>Dosage 2</option>
+                <option value="Dosage 3" <?php echo $vaccineType == 'Dosage 3'; ?>>Dosage 3</option>
+                <option value="Booster 1" <?php echo $vaccineType == 'Booster 1'; ?>>Booster 1</option>
+                <option value="Booster 2" <?php echo $vaccineType == 'Booster 2'; ?>>Booster 2</option>
+                <option value="Booster 3" <?php echo $vaccineType == 'Booster 3'; ?>>Booster 3</option>
               </select>
               <label for="inputStatus">Vaccine Type</label>
               <div class="validate"></div>
@@ -209,23 +209,23 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' ) {
             </div>
             <fieldset>
               <legend class="form-floating mb-3">Please select a payment method</legend>
-              <div>
-                <input type="radio" id="bca" name="bca" value="BCA"checked>
-                <label for="bca">BCAy</label>
-              </div>
-              <div>
-                <input type="radio" id="bsi" name="bsi" value="BSI">
-                <label for="bsi">BSI</label>
-              </div>
-              <div>
-                <input type="radio" id="gopay" name="gopay" value="GoPay">
-                <label for="gopay">GoPay</label>
-              </div>
-              <div>
-                <input type="radio" id="dana" name="dana" value="Dana">
-                <label for="dana">Dana</label>
-              </div>
-          </fieldset>
+                <div>
+                  <input type="radio" id="bca" name="bca" value="BCA"checked>
+                  <label for="bca">BCA</label>
+                </div>
+                <div>
+                  <input type="radio" id="bsi" name="bsi" value="BSI">
+                  <label for="bsi">BSI</label>
+                </div>
+                <div>
+                  <input type="radio" id="gopay" name="gopay" value="GoPay">
+                  <label for="gopay">GoPay</label>
+                </div>
+                <div>
+                  <input type="radio" id="dana" name="dana" value="Dana">
+                  <label for="dana">Dana</label>
+                </div>
+            </fieldset>
               <input type="submit" value="Submit" name="submit" class="btn btn-success btn-user ms-3"/>
               <input type="button" value="Cancel" name="cancel" class="btn btn-danger btn-user"/>
             <hr>
