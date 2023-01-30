@@ -150,7 +150,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' ) {
 
       <div class="row">
         <div class="col-lg-8 mt-5 d-flex m-auto" data-aos="fade-left">
-          <form action="regist-3.php" method="POST" role="form" class="php-email-form">
+          <form action="" method="POST" role="form" class="php-email-form">
             <div class="form-floating mb-3">
               <input type="number" class="form-control form-control-user" value="<?php echo $ID; ?>" name="ID" placeholder="ID" required>
               <label for="inputID">ID</label>

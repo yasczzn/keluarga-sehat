@@ -2,55 +2,19 @@
 
 include '../function/connection.php';
 
-$ID = "";
-$name = "";
-$doB = "";
-$gender = "";
-$email = "";
-$phoneNum = "";
-$address = "";
-$patientStatus = "";
+$vaccinationDate = "";
 
 $errorMessage = "";
 $successMessage = "";
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST' ) {
-    $ID = $_POST['ID'];
-    $name = $_POST['name'];
-    $doB = $_POST['doB'];
-    $gender = $_POST['gender'];
-    $email = $_POST['email'];
-    $phoneNum = $_POST['phoneNum'];
-    $address = $_POST['address'];
-    $patientStatus = $_POST['patientStatus'];
+    $vaccinationDate = $_POST['vaccinationDate'];
 
     do {
-        if (empty($ID) || empty($name) || empty($doB) || empty($gender) || empty($email) || empty($phoneNum) || 
-        empty($address) || empty($patientStatus)) {
-            $errorMessage = "All the fields are required";
+        if (empty($vaccinationDate)) {
+            $errorMessage = "Please choose the available time!";
             break;
         }
-
-        $sql = "INSERT INTO patient(ID, name, doB, gender, email, phoneNum, address, patientStatus)".
-                "VALUES ('$ID', '$name', '$doB', '$gender', '$email', '$phoneNum', '$address', '$patientStatus')";
-        $result = $conn->query($sql);
-
-        if (!$result) {
-            $errorMessage = "Invalid query" . $conn->error;
-            break;
-        }
-
-        $ID = "";
-        $name = "";
-        $doB = "";
-        $gender = "";
-        $email = "";
-        $phoneNum = "";
-        $address = "";
-        $patientStatus = "";
-
-        echo "<script>alert('Patient data submitted!')
-        document.location = 'patient-success.php'</script>";
 
     } while (false);
 
@@ -65,7 +29,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' ) {
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-  <title>Keluarga Sehat Website - Registration Form</title>
+  <title>Keluarga Sehat Website - Choose Available Schedule</title>
   <meta content="" name="description">
   <meta content="" name="keywords">
 
@@ -126,108 +90,59 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' ) {
 
         <ol>
           <li><a href="../index.html">Home</a></li>
-          <li class="active">Registration Form</li>
+          <li class="active">Choose Time</li>
         </ol>
-        <h2>Registration Form</h2>
+        <h2>Choose Available Schedule</h2>
 
       </div>
     </section>
     
     <!-- End Breadcrumbs -->
 
-    <section id="contact" class="contact">
+    <section id="services" class="services section-bg">
+      <div class="container">
 
-      <div class="section-title" data-aos="fade-up">
-        <h2>Register Now</h2>
-        <p>*Please fill in your data according to your ID card.</p>
-      </div>
-
-
-      <div class="row">
-        <div class="col-lg-8 mt-5 d-flex m-auto" data-aos="fade-left">
-          <form action="" method="POST" role="form" class="php-email-form">
-            <div class="form-floating mb-3">
-              <input type="number" class="form-control form-control-user" value="<?php echo $ID; ?>" name="ID" placeholder="ID" required>
-              <label for="inputID">ID</label>
-              <div class="validate"></div>
-            </div>
-            <div class="form-floating mb-3">
-              <input type="text" class="form-control form-control-user" value="<?php echo $name; ?>" name="name" placeholder="Name" required>
-              <label for="inputName">Name</label>
-              <div class="validate"></div>
-            </div>
-            <div class="form-floating mb-3">
-              <input type="text" class="form-control form-control-user" value="<?php echo $doB; ?>" name="doB" placeholder="Date of Birth" required>
-              <label for="inputDoB">Date of Birth</label>
-              <div class="validate"></div>
-            </div>
-            <div class="form-floating mb-3">
-              <select aria-label="Gender" title="gender-choice" type="text" class="form-control" name="gender" placeholder="Gender" required>
-                <option value="male" <?php echo $gender == 'male'; ?>>male</option>
-                <option value="female" <?php echo $gender == 'female'; ?>>female</option>
-              </select>
-              <label for="inputGender">Gender</label>
-              <div class="validate"></div>
-            </div>
-            <div class="form-floating mb-3">
-              <input type="email" class="form-control form-control-user" value="<?php echo $email; ?>" name="email" placeholder="Email" required>
-              <label for="inputEmail">Email</label>
-              <div class="validate"></div>
-            </div>
-            <div class="form-floating mb-3">
-              <input type="number" class="form-control form-control-user" value="<?php echo $phoneNum; ?>" name="phoneNum" placeholder="Phone Number" required>
-              <label for="inputPhoneNum">Phone Number</label>
-              <div class="validate"></div>
-            </div>
-            <div class="form-floating mb-3">
-              <input type="text" class="form-control form-control-user" value="<?php echo $address; ?>" name="address" placeholder="Address" required>
-              <label for="inputAddress">Address</label>
-              <div class="validate"></div>
-            </div>
-            <div class="form-floating mb-3">
-              <select aria-label="VaccineType" title="status-choice" type="text" class="form-control" name="patientStatus" id="patientStatus" placeholder="Vaccine Type" onchange="priceTotal(this.value)" required>
-                <option value="" disabled selected>Select vaccination</option>
-                <option value="Dosage 1" <?php echo $patientStatus == 'Dosage 1'; ?>>Dosage 1</option>
-                <option value="Dosage 2" <?php echo $patientStatus == 'Dosage 2'; ?>>Dosage 2</option>
-                <option value="Dosage 3" <?php echo $patientStatus == 'Dosage 3'; ?>>Dosage 3</option>
-                <option value="Booster 1" <?php echo $patientStatus == 'Booster 1'; ?>>Booster 1</option>
-                <option value="Booster 2" <?php echo $patientStatus == 'Booster 2'; ?>>Booster 2</option>
-                <option value="Booster 3" <?php echo $patientStatus == 'Booster 3'; ?>>Booster 3</option>
-              </select>
-              <label for="inputStatus">Vaccine Type</label>
-              <div class="validate"></div>
-            </div>
-            <div class="form-floating mb-3">
-              <input type="text" class="form-control form-control-user" value="<?php echo $price; ?>" name="price" id="price" placeholder="Price" readonly>
-              <label for="inputPrice">Price</label>
-              <div class="validate"></div>
-            </div>
-            <fieldset>
-              <legend class="form-floating mb-3">Please select a payment method</legend>
-              <div>
-                <input type="radio" id="bca" name="bca" value="BCA"checked>
-                <label for="bca">BCAy</label>
-              </div>
-              <div>
-                <input type="radio" id="bsi" name="bsi" value="BSI">
-                <label for="bsi">BSI</label>
-              </div>
-              <div>
-                <input type="radio" id="gopay" name="gopay" value="GoPay">
-                <label for="gopay">GoPay</label>
-              </div>
-              <div>
-                <input type="radio" id="dana" name="dana" value="Dana">
-                <label for="dana">Dana</label>
-              </div>
-          </fieldset>
-              <input type="submit" value="Submit" name="submit" class="btn btn-success btn-user ms-3"/>
-              <input type="button" value="Cancel" name="cancel" class="btn btn-danger btn-user"/>
-            <hr>
-          </form>
+        <div class="section-title" data-aos="fade-up">
+          <h2>Please Choose the Available Schedule</h2>
+          <p>for book your vaccination.</p>
         </div>
-      </div>
 
+        <div class="row">
+          <div class="col-md-6 col-lg-3 d-flex align-items-stretch mb-5 mb-lg-0" data-aos="zoom-in">
+            <div class="icon-box icon-box-pink">
+              <div class="icon"><i class="bx bxl-dribbble"></i></div>
+              <h4 class="title"><a href="">Lorem Ipsum</a></h4>
+              <p class="description">Voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate</p>
+            </div>
+          </div>
+
+          <div class="col-md-6 col-lg-3 d-flex align-items-stretch mb-5 mb-lg-0" data-aos="zoom-in" data-aos-delay="100">
+            <div class="icon-box icon-box-cyan">
+              <div class="icon"><i class="bx bx-file"></i></div>
+              <h4 class="title"><a href="">Sed ut perspiciatis</a></h4>
+              <p class="description">Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla</p>
+            </div>
+          </div>
+
+          <div class="col-md-6 col-lg-3 d-flex align-items-stretch mb-5 mb-lg-0" data-aos="zoom-in" data-aos-delay="200">
+            <div class="icon-box icon-box-green">
+              <div class="icon"><i class="bx bx-tachometer"></i></div>
+              <h4 class="title"><a href="">Magni Dolores</a></h4>
+              <p class="description">Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim</p>
+            </div>
+          </div>
+
+          <div class="col-md-6 col-lg-3 d-flex align-items-stretch mb-5 mb-lg-0" data-aos="zoom-in" data-aos-delay="300">
+            <div class="icon-box icon-box-blue">
+              <div class="icon"><i class="bx bx-world"></i></div>
+              <h4 class="title"><a href="">Nemo Enim</a></h4>
+              <p class="description">At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum</p>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
     </section>
 
   </main><!-- End #main -->
