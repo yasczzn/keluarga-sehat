@@ -2,20 +2,38 @@
 
 include '../function/connection.php';
 
-$d = date("d M", strtotime("tomorrow"));
-
 $s1 = mktime(10);
 $s2 = mktime(12);
 $s3 = mktime(14);
 $s4 = mktime(16);
 
-$sch1 = date("h.00 a, d M", $s1); 
-$sch2 = date("h.00 a, d M", $s2);
-$sch3 = date("h.00 a, d M", $s3);
-$sch4 = date("h.00 a, d M", $s4);
+$sch1 = "";
+$sch2 = "";
+$sch3 = "";
+$sch4 = "";
 
-if ($s1 <= date("H")) {
-  $sch1 = date("h.00 a, d M", strtotime("tomorrow"));
+if ($s1 <= date("h")) {
+  $sch1 = date("10.00 a, d M", strtotime("tomorrow"));
+} else {
+  $sch1 = date("10.00 am, d M", strtotime("today"));
+}
+
+if ($s2 <= date("h")) {
+  $sch2 = date("12.00 a, d M", strtotime("tomorrow"));
+} else {
+  $sch2 = date("12.00 am, d M", strtotime("today"));
+}
+
+if ($s3 <= date("h")) {
+  $sch3 = date("14.00 a, d M", strtotime("tomorrow"));
+} else {
+  $sch3 = date("14.00 pm, d M", strtotime("today"));
+}
+
+if ($s4 <= date("h")) {
+  $sch4 = date("16.00 a, d M", strtotime("tomorrow"));
+} else {
+  $sch4 = date("16.00 pm, d M", strtotime("today"));
 }
 
 $vaccinationDate = "";
