@@ -13,27 +13,27 @@ $sch3 = "";
 $sch4 = "";
 
 if ($s1 <= date("h")) {
-  $sch1 = date("10.00 a, d M", strtotime("tomorrow"));
+  $sch1 = date("10.00 am, d M", strtotime("tomorrow"));
 } else {
   $sch1 = date("10.00 am, d M", strtotime("today"));
 }
 
 if ($s2 <= date("h")) {
-  $sch2 = date("12.00 a, d M", strtotime("tomorrow"));
+  $sch2 = date("12.00 am, d M", strtotime("tomorrow"));
 } else {
   $sch2 = date("12.00 am, d M", strtotime("today"));
 }
 
 if ($s3 <= date("h")) {
-  $sch3 = date("14.00 a, d M", strtotime("tomorrow"));
+  $sch3 = date("02.00 pm, d M", strtotime("tomorrow"));
 } else {
-  $sch3 = date("14.00 pm, d M", strtotime("today"));
+  $sch3 = date("02.00 pm, d M", strtotime("today"));
 }
 
 if ($s4 <= date("h")) {
-  $sch4 = date("16.00 a, d M", strtotime("tomorrow"));
+  $sch4 = date("04.00 pm, d M", strtotime("tomorrow"));
 } else {
-  $sch4 = date("16.00 pm, d M", strtotime("today"));
+  $sch4 = date("04.00 pm, d M", strtotime("today"));
 }
 
 $vaccinationDate = "";
@@ -146,7 +146,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' ) {
             <div class="col-lg-12 d-block align-items-center mb-lg-2" data-aos="zoom-in">
               <div class="icon-box icon-box-pink">
                 <h4 class="title mb-0 d-flex align-items-center">
-                  <a href=""><?php echo $d; ?></a>
+                  <a href=""><?php echo $sch1; ?></a>
                   <p class="description">Voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate</p>
                 </h4>
               </div>
