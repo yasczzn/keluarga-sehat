@@ -2,7 +2,7 @@
 
 include '../function/connection.php';
 
-$d = strtotime("today");
+$d = strtotime('today GMT');
 
 $s1 = mktime(10);
 $s2 = mktime(12);
