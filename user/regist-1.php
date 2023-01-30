@@ -4,20 +4,19 @@ include '../function/connection.php';
 
 $d = date("d M", strtotime('today GMT'));
 
-$s1 = mktime(10, 0, 0, $d, $d, 0);
-$s2 = mktime(12, 0, 0, $d, $d, 0);
-$s3 = mktime(14, 0, 0, $d, $d, 0);
-$s4 = mktime(16, 0, 0, $d, $d, 0);
-
-// if ($s1.date("h") <= date("h") || $s2.date("h") <= date("h") || $s3.date("h") <= date("h") || 
-//     $s4.date("h") <= date("h")) {
-//       $d = date("d M", strtotime('tomorrow'));
-// }
+$s1 = mktime(10);
+$s2 = mktime(12);
+$s3 = mktime(14);
+$s4 = mktime(16);
 
 $sch1 = date("h.00 a, d M", $s1); 
 $sch2 = date("h.00 a, d M", $s2);
 $sch3 = date("h.00 a, d M", $s3);
 $sch4 = date("h.00 a, d M", $s4);
+
+if ($sch1.date("h") <= date("h")) {
+  $sch1 = date("h.00 a, d M", $s1 + $d);
+}
 
 $vaccinationDate = "";
 
