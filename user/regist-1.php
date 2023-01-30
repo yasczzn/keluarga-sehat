@@ -2,21 +2,21 @@
 
 include '../function/connection.php';
 
-$d = strtotime("today");
-
 $monthNum = date("m");
-$dateObj   = DateTime::createFromFormat('!m', $monthNum);
+$dateObj   = DateTime::createFromFormat("!m", $monthNum);
 $mName = $dateObj->format('M');
 
-$s1 = mktime(10);
-$s2 = mktime(12);
-$s3 = mktime(14);
-$s4 = mktime(16);
+$d = strtotime("today");
 
-$sch1 = $s1 + $mName + $d;
-$sch2 = $s2 + $mName + $d;
-$sch3 = $s3 + $mName + $d;
-$sch4 = $s4 + $mName + $d;
+$s1 = mktime(10, $mName);
+$s2 = mktime(12, $mName);
+$s3 = mktime(14, $mName);
+$s4 = mktime(16, $mName);
+
+$sch1 = $s1 + $d;
+$sch2 = $s2 + $d;
+$sch3 = $s3 + $d;
+$sch4 = $s4 + $d;
 
 if (date("h") <= date("h")) {
   $d = strtotime("tomorrow");
