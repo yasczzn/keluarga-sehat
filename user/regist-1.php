@@ -13,7 +13,7 @@ $sch2 = date("h.00 a, d M", $s2);
 $sch3 = date("h.00 a, d M", $s3);
 $sch4 = date("h.00 a, d M", $s4);
 
-if ($s1 <= date("h")) {
+if ($s1 <= date("H")) {
   $sch1 = date("h.00 a, d M", strtotime("tomorrow"));
 }
 
