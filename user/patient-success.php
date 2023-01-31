@@ -66,7 +66,8 @@
 
         <ol>
           <li><a href="../index.php">Home</a></li>
-          <li>Registration Form</li>
+          <li><a href="regist-1.php">Registration Form</a></li>
+          <li><a href="regist-1.php">Registration Check</a></li>
           <li class="active">Registration Success</li>
         </ol>
         <h2>Registration Success</h2>

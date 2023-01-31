@@ -24,40 +24,41 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' ) {
     $email = $_POST['email'];
     $phoneNum = $_POST['phoneNum'];
     $address = $_POST['address'];
-    $vaccineType = $_POST['vaccineType'];
+    $patientStatus = $_POST['vaccineType'];
     $price = $_POST['price'];
     $vaccinationDate = $_POST['vaccinationDate'];
 
     do {
-        if (empty($ID) || empty($name) || empty($doB) || empty($gender) || empty($email) || empty($phoneNum) || 
-        empty($address) || empty($vaccineType) || empty($price)) {
-            $errorMessage = "All the fields are required";
-            break;
-        }
+      if (empty($ID) || empty($name) || empty($doB) || empty($gender) || empty($email) || empty($phoneNum) || 
+      empty($address) || empty($vaccineType) || empty($price) || empty($vaccinationDate)) {
+          $errorMessage = "All the fields are required";
+          break;
+      }
 
-        $sql = "INSERT INTO patient(ID, name, doB, gender, email, phoneNum, address, vaccineType, price)".
-                "VALUES ('$ID', '$name', '$doB', '$gender', '$email', '$phoneNum', '$address', '$vaccineType', '$price')";
-        $result = $conn->query($sql);
+      $sql = "INSERT INTO vaccination(ID, name, doB, gender, email, phoneNum, address, vaccineType, price, vaccinationDate)".
+              "VALUES ('$ID', '$name', '$doB', '$gender', '$email', '$phoneNum', '$address', '$vaccineType', '$price', '$vaccinationDate')";
+      $result = $conn->query($sql);
 
-        if (!$result) {
-            $errorMessage = "Invalid query" . $conn->error;
-            break;
-        }
+      if (!$result) {
+          $errorMessage = "Invalid query" . $conn->error;
+          break;
+      }
 
-        $ID = "";
-        $name = "";
-        $doB = "";
-        $gender = "";
-        $email = "";
-        $phoneNum = "";
-        $address = "";
-        $vaccineType = "";
-        $price = "";
+      $ID = "";
+      $name = "";
+      $doB = "";
+      $gender = "";
+      $email = "";
+      $phoneNum = "";
+      $address = "";
+      $vaccineType = "";
+      $price = "";
+      $vaccinationDate = "";
 
-        echo "<script>alert('Patient data submitted!')
-        document.location = 'patient-success.php'</script>";
+      echo "<script>alert('Patient data submitted!')
+      document.location = 'patient-success.php'</script>";
 
-    } while (false);
+  } while (false);
 
   }
 
@@ -70,7 +71,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' ) {
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-  <title>Keluarga Sehat Website - Registration Form</title>
+  <title>Keluarga Sehat Website - Registration Check</title>
   <meta content="" name="description">
   <meta content="" name="keywords">
 
@@ -130,10 +131,11 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' ) {
       <div class="container">
 
         <ol>
-          <li><a href="../index.html">Home</a></li>
-          <li class="active">Registration Form</li>
+          <li><a href="../index.php">Home</a></li>
+          <li><a href="regist-1.php">Registration Form</a></li>
+          <li class="active">Registration Check</li>
         </ol>
-        <h2>Registration Form</h2>
+        <h2>Registration Check</h2>
 
       </div>
     </section>
@@ -143,14 +145,13 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' ) {
     <section id="contact" class="contact">
 
       <div class="section-title" data-aos="fade-up">
-        <h2>Register Now</h2>
-        <p>*Please fill in your data according to your ID card.</p>
+        <h2>Registration Check</h2>
       </div>
 
 
       <div class="row">
         <div class="col-lg-8 mt-5 d-flex m-auto" data-aos="fade-left">
-          <form action="regist-3.php" method="POST" role="form" class="php-email-form">
+          <form action="" method="POST" role="form" class="php-email-form">
             <div class="form-floating mb-3">
               <input type="number" class="form-control form-control-user" value="<?php echo $ID; ?>" name="ID" placeholder="ID" required>
               <label for="inputID">ID</label>
@@ -190,14 +191,14 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' ) {
               <div class="validate"></div>
             </div>
             <div class="form-floating mb-3">
-              <select aria-label="VaccineType" title="status-choice" type="text" class="form-control" name="vaccineType" id="vaccineType" placeholder="Vaccine Type" onchange="priceTotal(this.value)" required>
+              <select aria-label="VaccineType" title="status-choice" type="text" class="form-control" name="patientStatus" id="patientStatus" placeholder="Vaccine Type" onchange="priceTotal(this.value)" required>
                 <option value="" disabled selected>Select vaccination</option>
-                <option value="Dosage 1" <?php echo $vaccineType == 'Dosage 1'; ?>>Dosage 1</option>
-                <option value="Dosage 2" <?php echo $vaccineType == 'Dosage 2'; ?>>Dosage 2</option>
-                <option value="Dosage 3" <?php echo $vaccineType == 'Dosage 3'; ?>>Dosage 3</option>
-                <option value="Booster 1" <?php echo $vaccineType == 'Booster 1'; ?>>Booster 1</option>
-                <option value="Booster 2" <?php echo $vaccineType == 'Booster 2'; ?>>Booster 2</option>
-                <option value="Booster 3" <?php echo $vaccineType == 'Booster 3'; ?>>Booster 3</option>
+                <option value="Dosage 1" <?php echo $patientStatus == 'Dosage 1'; ?>>Dosage 1</option>
+                <option value="Dosage 2" <?php echo $patientStatus == 'Dosage 2'; ?>>Dosage 2</option>
+                <option value="Dosage 3" <?php echo $patientStatus == 'Dosage 3'; ?>>Dosage 3</option>
+                <option value="Booster 1" <?php echo $patientStatus == 'Booster 1'; ?>>Booster 1</option>
+                <option value="Booster 2" <?php echo $patientStatus == 'Booster 2'; ?>>Booster 2</option>
+                <option value="Booster 3" <?php echo $patientStatus == 'Booster 3'; ?>>Booster 3</option>
               </select>
               <label for="inputStatus">Vaccine Type</label>
               <div class="validate"></div>
@@ -209,23 +210,23 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' ) {
             </div>
             <fieldset>
               <legend class="form-floating mb-3">Please select a payment method</legend>
-                <div>
-                  <input type="radio" id="bca" name="bca" value="BCA"checked>
-                  <label for="bca">BCA</label>
-                </div>
-                <div>
-                  <input type="radio" id="bsi" name="bsi" value="BSI">
-                  <label for="bsi">BSI</label>
-                </div>
-                <div>
-                  <input type="radio" id="gopay" name="gopay" value="GoPay">
-                  <label for="gopay">GoPay</label>
-                </div>
-                <div>
-                  <input type="radio" id="dana" name="dana" value="Dana">
-                  <label for="dana">Dana</label>
-                </div>
-            </fieldset>
+              <div>
+                <input type="radio" id="bca" name="bca" value="BCA"checked>
+                <label for="bca">BCAy</label>
+              </div>
+              <div>
+                <input type="radio" id="bsi" name="bsi" value="BSI">
+                <label for="bsi">BSI</label>
+              </div>
+              <div>
+                <input type="radio" id="gopay" name="gopay" value="GoPay">
+                <label for="gopay">GoPay</label>
+              </div>
+              <div>
+                <input type="radio" id="dana" name="dana" value="Dana">
+                <label for="dana">Dana</label>
+              </div>
+          </fieldset>
               <input type="submit" value="Submit" name="submit" class="btn btn-success btn-user ms-3"/>
               <input type="button" value="Cancel" name="cancel" class="btn btn-danger btn-user"/>
             <hr>

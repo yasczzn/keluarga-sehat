@@ -63,7 +63,9 @@
     <section class="inner-page">
       <div class="container">
         <div class="error">
+            <p>Looks like the page you looking for does not exist...</p>
             <img src="assets/img/error-404.svg" alt="" class="error-page">
+            <a href="../index.php" class="btn-get-started scrollto">Go back to main page</a>
         </div>
       </div>
     </section>

@@ -1,26 +1,36 @@
-<?php 
+<!-- <?php 
 
 include '../function/connection.php';
 
+$ID = "";
+$name = "";
+$doB = "";
+$gender = "";
+$email = "";
+$phoneNum = "";
+$address = "";
+$vaccineType = "";
+$price = "";
 $vaccinationDate = "";
 
 $errorMessage = "";
 $successMessage = "";
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST' ) {
+    $ID = $_POST['ID'];
+    $name = $_POST['name'];
+    $doB = $_POST['doB'];
+    $gender = $_POST['gender'];
+    $email = $_POST['email'];
+    $phoneNum = $_POST['phoneNum'];
+    $address = $_POST['address'];
+    $vaccineType = $_POST['vaccineType'];
+    $price = $_POST['price'];
     $vaccinationDate = $_POST['vaccinationDate'];
-
-    do {
-        if (empty($vaccinationDate)) {
-            $errorMessage = "Please choose the available time!";
-            break;
-        }
-
-    } while (false);
 
   }
 
-?>
+?> -->
 
 <!DOCTYPE html>
 <html lang="en">
@@ -29,7 +39,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' ) {
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-  <title>Keluarga Sehat Website - Choose Available Schedule</title>
+  <title>Keluarga Sehat Website - Registration Form</title>
   <meta content="" name="description">
   <meta content="" name="keywords">
 
@@ -89,54 +99,114 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' ) {
       <div class="container">
 
         <ol>
-          <li><a href="../index.html">Home</a></li>
-          <li class="active">Choose Time</li>
+          <li><a href="../index.php">Home</a></li>
+          <li class="active">Registration Form</li>
         </ol>
-        <h2>Choose Available Schedule</h2>
+        <h2>Registration Form</h2>
 
       </div>
     </section>
     
     <!-- End Breadcrumbs -->
 
-    <section id="services" class="services">
-      <div class="container">
+    <section id="contact" class="contact">
 
-        <div class="section-title" data-aos="fade-up">
-          <h2>Please Choose the Available Schedule</h2>
-          <p>for book your vaccination.</p>
-        </div>
-
-        <div class="vstack col-lg-8 mt-5 m-auto">
-          <div class="row">
-            <?php
-              include '../function/connection.php';
-                                            
-              $no=1;
-              $pulldata = mysqli_query($conn, "SELECT * FROM schedule WHERE DATE('time') = CURDATE()");
-              while ($display = mysqli_fetch_array($pulldata)){
-                echo "
-                <div class='col-lg-12 d-block align-items-center mb-lg-2' data-aos='zoom-in' data-aos-delay='100'>
-                  <div class='icon-box icon-box-green'>
-                    <h4 class='title mb-0 d-flex align-items-center'>
-                      <a href=''>$display[time]</a>
-                      <p class='description'>$display[day]</p>
-                      <p class='description'>$display[month]</p>
-                    </h4>
-                  </div>
-                </div>>";
-                                        
-                $no++;
-              }
-            ?>            
-          </div>
-        </div>
-
+      <div class="section-title" data-aos="fade-up">
+        <h2>Register Now</h2>
+        <p>*Please fill in your data according to your ID card.</p>
       </div>
 
-      <a href="regist-2.php?schedule=<?php echo $time; echo $day; echo $month; ?>">Next</a>
-      <input type="submit" value="Next" name="submit" class="btn btn-success btn-user ms-3"/>
-      <input type="button" value="Cancel" name="cancel" class="btn btn-danger btn-user"/>
+
+      <div class="row">
+        <div class="col-lg-8 mt-5 d-flex m-auto" data-aos="fade-left">
+          <form action="regist-2.php" method="POST" role="form" class="php-email-form">
+            <div class="form-floating mb-3">
+              <input type="number" class="form-control form-control-user" value="<?php echo $ID; ?>" name="ID" placeholder="ID" required>
+              <label for="inputID">ID</label>
+              <div class="validate"></div>
+            </div>
+            <div class="form-floating mb-3">
+              <input type="text" class="form-control form-control-user" value="<?php echo $name; ?>" name="name" placeholder="Name" required>
+              <label for="inputName">Name</label>
+              <div class="validate"></div>
+            </div>
+            <div class="form-floating mb-3">
+              <input type="text" class="form-control form-control-user" value="<?php echo $doB; ?>" name="doB" placeholder="Date of Birth" required>
+              <label for="inputDoB">Date of Birth</label>
+              <div class="validate"></div>
+            </div>
+            <div class="form-floating mb-3">
+              <select aria-label="Gender" title="gender-choice" type="text" class="form-control" name="gender" placeholder="Gender" required>
+                <option value="male" <?php echo $gender == 'male'; ?>>male</option>
+                <option value="female" <?php echo $gender == 'female'; ?>>female</option>
+              </select>
+              <label for="inputGender">Gender</label>
+              <div class="validate"></div>
+            </div>
+            <div class="form-floating mb-3">
+              <input type="email" class="form-control form-control-user" value="<?php echo $email; ?>" name="email" placeholder="Email" required>
+              <label for="inputEmail">Email</label>
+              <div class="validate"></div>
+            </div>
+            <div class="form-floating mb-3">
+              <input type="number" class="form-control form-control-user" value="<?php echo $phoneNum; ?>" name="phoneNum" placeholder="Phone Number" required>
+              <label for="inputPhoneNum">Phone Number</label>
+              <div class="validate"></div>
+            </div>
+            <div class="form-floating mb-3">
+              <input type="text" class="form-control form-control-user" value="<?php echo $address; ?>" name="address" placeholder="Address" required>
+              <label for="inputAddress">Address</label>
+              <div class="validate"></div>
+            </div>
+            <div class="form-floating mb-3">
+              <select aria-label="VaccineType" title="status-choice" type="text" class="form-control" name="vaccineType" id="vaccineType" placeholder="Vaccine Type" onchange="priceTotal(this.value)" required>
+                <option value="" disabled selected>Select vaccination</option>
+                <option value="Dosage 1" <?php echo $vaccineType == 'Dosage 1'; ?>>Dosage 1</option>
+                <option value="Dosage 2" <?php echo $vaccineType == 'Dosage 2'; ?>>Dosage 2</option>
+                <option value="Dosage 3" <?php echo $vaccineType == 'Dosage 3'; ?>>Dosage 3</option>
+                <option value="Booster 1" <?php echo $vaccineType == 'Booster 1'; ?>>Booster 1</option>
+                <option value="Booster 2" <?php echo $vaccineType == 'Booster 2'; ?>>Booster 2</option>
+                <option value="Booster 3" <?php echo $vaccineType == 'Booster 3'; ?>>Booster 3</option>
+              </select>
+              <label for="inputStatus">Vaccine Type</label>
+              <div class="validate"></div>
+            </div>
+            <div class="form-floating mb-3">
+              <input type="text" class="form-control form-control-user" value="<?php echo $price; ?>" name="price" id="price" placeholder="Price" readonly>
+              <label for="inputPrice">Price</label>
+              <div class="validate"></div>
+            </div>
+            <fieldset>
+              <legend class="form-floating mb-3">Please select a payment method</legend>
+                <div>
+                  <input type="radio" id="bca" name="bca" value="BCA"checked>
+                  <label for="bca">BCA</label>
+                </div>
+                <div>
+                  <input type="radio" id="bsi" name="bsi" value="BSI">
+                  <label for="bsi">BSI</label>
+                </div>
+                <div>
+                  <input type="radio" id="gopay" name="gopay" value="GoPay">
+                  <label for="gopay">GoPay</label>
+                </div>
+                <div>
+                  <input type="radio" id="dana" name="dana" value="Dana">
+                  <label for="dana">Dana</label>
+                </div>
+            </fieldset>
+            <div class="form-floating mb-3">
+              <input type="date" class="form-control form-control-user" value="<?php echo date('Y-m-d', strtotime($data['vaccinationDate'])); ?>" id="vaccinationDate" required>
+              <label for="inputVaccinationDate">Vaccination Date</label>
+              <div class="validate"></div>
+            </div>
+              <input type="submit" value="Submit" name="submit" class="btn btn-success btn-user ms-3"/>
+              <input type="button" value="Cancel" name="cancel" class="btn btn-danger btn-user"/>
+            <hr>
+          </form>
+        </div>
+      </div>
+
     </section>
 
   </main><!-- End #main -->
