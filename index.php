@@ -66,7 +66,7 @@
         <div class="col-lg-6 pt-5 pt-lg-0 order-2 order-lg-1 d-flex flex-column justify-content-center" data-aos="fade-up">
           <div>
             <h1>Keluarga Sehat helps you to track your vaccination history</h1>
-            <h2>Together we can eradict Covid-19</h2>
+            <h2>Together we can cope Covid-19</h2>
             <a href="#about" class="btn-get-started scrollto">Find out more</a>
           </div>
         </div>
