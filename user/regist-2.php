@@ -10,8 +10,9 @@ $email = "";
 $phoneNum = "";
 $address = "";
 $vaccineType = "";
-$price = "";
 $vaccinationDate = "";
+$price = "";
+$payment = "";
 
 $errorMessage = "";
 $successMessage = "";
@@ -24,19 +25,20 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' ) {
     $email = $_POST['email'];
     $phoneNum = $_POST['phoneNum'];
     $address = $_POST['address'];
-    $patientStatus = $_POST['vaccineType'];
-    $price = $_POST['price'];
+    $vaccineType = $_POST['vaccineType'];
     $vaccinationDate = $_POST['vaccinationDate'];
+    $price = $_POST['price'];
+    $payment = $_POST['payment'];
 
     do {
       if (empty($ID) || empty($name) || empty($doB) || empty($gender) || empty($email) || empty($phoneNum) || 
-      empty($address) || empty($vaccineType) || empty($price) || empty($vaccinationDate)) {
+      empty($address) || empty($vaccineType) || empty($vaccinationDate) || empty($price) || empty($payment)) {
           $errorMessage = "All the fields are required";
           break;
       }
 
-      $sql = "INSERT INTO vaccination(ID, name, doB, gender, email, phoneNum, address, vaccineType, price, vaccinationDate)".
-              "VALUES ('$ID', '$name', '$doB', '$gender', '$email', '$phoneNum', '$address', '$vaccineType', '$price', '$vaccinationDate')";
+      $sql = "INSERT INTO vaccination(ID, name, doB, gender, email, phoneNum, address, vaccineType, vaccinationDate, price, payment)".
+              "VALUES ('$ID', '$name', '$doB', '$gender', '$email', '$phoneNum', '$address', '$vaccineType', '$vaccinationDate', '$price', '$payment')";
       $result = $conn->query($sql);
 
       if (!$result) {
@@ -52,8 +54,9 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' ) {
       $phoneNum = "";
       $address = "";
       $vaccineType = "";
-      $price = "";
       $vaccinationDate = "";
+      $price = "";
+      $payment = "";
 
       echo "<script>alert('Patient data submitted!')
       document.location = 'patient-success.php'</script>";
@@ -151,6 +154,82 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' ) {
 
       <div class="row">
         <div class="col-lg-8 mt-5 d-flex m-auto" data-aos="fade-left">
+          <div class="header">
+            <div class="section-title" data-aos="fade-up">
+              <h4>Please check your form submission before book your vaccination</h4>
+            </div>
+          </div>
+            <table id="datatablesSimple">
+              <thead>
+                <tr>
+                  <th hidden>No</th>
+                  <th hidden>User Registration Number</th>
+                  <th hidden>ID</th>
+                  <th hidden>Patient Name</th>
+                  <th hidden>Date of Birth</th>
+                  <th hidden>Gender</th>
+                  <th hidden>Email</th>
+                  <th hidden>Phone Number</th>
+                  <th hidden>Address</th>
+                </tr>
+              </thead>
+                <tr>
+                </tr>
+                <?php
+                  include '../function/connection.php';
+                                            
+                  $no=1;
+                  $pulldata = mysqli_query($conn, "SELECT * FROM patient");
+                  while ($display = mysqli_fetch_array($pulldata)){
+                  echo "
+                      <tr>
+                        <td hidden>$no</td>
+                        <td hidden>$no</td>
+                      </tr>
+                      <tr>
+                        <td>ID</td>
+                        <td>$display[ID]</td>
+                      </tr>
+                      <tr>
+                        <td>Name</td>
+                        <td>$display[name]</td>
+                      </tr>
+                      <tr>
+                        <td>Date of Birth</td>
+                        <td>$display[doB]</td>
+                      </tr>                          
+                      <tr>
+                        <td>Gender</td>
+                        <td>$display[gender]</td>
+                      </tr>                          
+                      <tr>
+                        <td>Email</td>
+                        <td>$display[email]</td>
+                      </tr>                       
+                      <tr>
+                        <td>Phone Number</td>
+                        <td>$display[phoneNum]</td>
+                      </tr>                           
+                      <tr>
+                        <td>Address</td>
+                        <td>$display[address]</td>
+                      </tr>                           
+
+                  <a href='patient-edit.php?update=$display[userRegNum]' type='button' value='Update' class='btn btn-primary'>Update</a>
+                  <a href='?delete=$display[userRegNum]' onClick=\"return confirm('Proceed to delete data?');\">
+                    <input type='button' value='delete' class='btn btn-danger btn-user'>
+                  </a>";
+                                        
+                  $no++;
+                }
+                ?>
+              </tbody>
+            </table>
+
+
+
+
+
           <form action="" method="POST" role="form" class="php-email-form">
             <div class="form-floating mb-3">
               <input type="number" class="form-control form-control-user" value="<?php echo $ID; ?>" name="ID" placeholder="ID" required>
@@ -212,7 +291,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' ) {
               <legend class="form-floating mb-3">Please select a payment method</legend>
               <div>
                 <input type="radio" id="bca" name="bca" value="BCA"checked>
-                <label for="bca">BCAy</label>
+                <label for="bca">BCA</label>
               </div>
               <div>
                 <input type="radio" id="bsi" name="bsi" value="BSI">

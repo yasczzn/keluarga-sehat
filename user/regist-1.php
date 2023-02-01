@@ -10,8 +10,9 @@ $email = "";
 $phoneNum = "";
 $address = "";
 $vaccineType = "";
-$price = "";
 $vaccinationDate = "";
+$price = "";
+$payment = "";
 
 $errorMessage = "";
 $successMessage = "";
@@ -25,8 +26,9 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' ) {
     $phoneNum = $_POST['phoneNum'];
     $address = $_POST['address'];
     $vaccineType = $_POST['vaccineType'];
-    $price = $_POST['price'];
     $vaccinationDate = $_POST['vaccinationDate'];
+    $price = $_POST['price'];
+    $payment = $_POST['payment'];
 
   }
 
@@ -172,6 +174,11 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' ) {
               <div class="validate"></div>
             </div>
             <div class="form-floating mb-3">
+              <input type="date" class="form-control form-control-user" value="<?php echo date('Y-m-d', strtotime($data['vaccinationDate'])); ?>" id="vaccinationDate" required>
+              <label for="inputVaccinationDate">Vaccination Date</label>
+              <div class="validate"></div>
+            </div>
+            <div class="form-floating mb-3">
               <input type="text" class="form-control form-control-user" value="<?php echo $price; ?>" name="price" id="price" placeholder="Price" readonly>
               <label for="inputPrice">Price</label>
               <div class="validate"></div>
@@ -195,11 +202,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' ) {
                   <label for="dana">Dana</label>
                 </div>
             </fieldset>
-            <div class="form-floating mb-3">
-              <input type="date" class="form-control form-control-user" value="<?php echo date('Y-m-d', strtotime($data['vaccinationDate'])); ?>" id="vaccinationDate" required>
-              <label for="inputVaccinationDate">Vaccination Date</label>
-              <div class="validate"></div>
-            </div>
               <input type="submit" value="Submit" name="submit" class="btn btn-success btn-user ms-3"/>
               <input type="button" value="Cancel" name="cancel" class="btn btn-danger btn-user"/>
             <hr>
