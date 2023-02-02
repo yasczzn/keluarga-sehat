@@ -193,11 +193,12 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' ) {
                   <td>Payment with</td>
                   <td><?php echo $_POST['payment'] ?></td>
                 </tr>
-                <
               </tbody>
             </table>
-            <input type="submit" value="Submit" name="submit" class="btn btn-success btn-user ms-3"/>
-            <input type="button" value="Cancel" name="cancel" class="btn btn-danger btn-user"/>
+        </div>
+        <div class="ms-5">
+          <input type="submit" value="Submit" name="submit" class="btn btn-success btn-user ms-3"/>
+          <input type="button" value="Cancel" name="cancel" class="btn btn-danger btn-user"/>
         </div>
       </div>
 
