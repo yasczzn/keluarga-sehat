@@ -196,10 +196,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' ) {
                 <
               </tbody>
             </table>
-            <a href='patient-edit.php?update=$display[userRegNum]' type='button' value='Update' class='btn btn-primary'>Submit</a>
-            <a href='?delete=$display[userRegNum]' onClick="return confirm('Proceed to delete data?')">
-              <input type='button' value='delete' class='btn btn-danger btn-user'>
-            </a>
+            <input type="submit" value="Submit" name="submit" class="btn btn-success btn-user ms-3"/>
+            <input type="button" value="Cancel" name="cancel" class="btn btn-danger btn-user"/>
         </div>
       </div>
 
