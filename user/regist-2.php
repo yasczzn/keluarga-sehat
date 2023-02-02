@@ -170,28 +170,44 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' ) {
                       </tr>
                       <tr>
                         <td>Name</td>
-                        <td>$display[name]</td>
+                        <td>htmlspecialchars($_POST[name])</td>
                       </tr>
                       <tr>
                         <td>Date of Birth</td>
-                        <td>$display[doB]</td>
+                        <td>htmlspecialchars($_POST[doB])</td>
                       </tr>                          
                       <tr>
                         <td>Gender</td>
-                        <td>$display[gender]</td>
+                        <td>htmlspecialchars($_POST[gender])</td>
                       </tr>                          
                       <tr>
                         <td>Email</td>
-                        <td>$display[email]</td>
+                        <td>htmlspecialchars($_POST[email])</td>
                       </tr>                       
                       <tr>
                         <td>Phone Number</td>
-                        <td>$display[phoneNum]</td>
+                        <td>htmlspecialchars($_POST[phoneNum])</td>
                       </tr>                           
                       <tr>
                         <td>Address</td>
-                        <td>$display[address]</td>
+                        <td>htmlspecialchars($_POST[address])</td>
                       </tr>                           
+                      <tr>
+                        <td>Address</td>
+                        <td>htmlspecialchars($_POST[vaccineType])</td>
+                      </tr>
+                      <tr>
+                        <td>Address</td>
+                        <td>htmlspecialchars($_POST[vaccinationDate])</td>
+                      </tr>
+                      <tr>
+                        <td>Address</td>
+                        <td>htmlspecialchars($_POST[price])</td>
+                      </tr>
+                      <tr>
+                        <td>Address</td>
+                        <td>htmlspecialchars($_POST[payment])</td>
+                      </tr>
 
                   <a href='patient-edit.php?update=$display[userRegNum]' type='button' value='Update' class='btn btn-primary'>Update</a>
                   <a href='?delete=$display[userRegNum]' onClick=\"return confirm('Proceed to delete data?');\">

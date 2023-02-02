@@ -1,22 +1,5 @@
 <!-- <?php 
 
-include '../function/connection.php';
-
-$ID = "";
-$name = "";
-$doB = "";
-$gender = "";
-$email = "";
-$phoneNum = "";
-$address = "";
-$vaccineType = "";
-$vaccinationDate = "";
-$price = "";
-$payment = "";
-
-$errorMessage = "";
-$successMessage = "";
-
 if (isset($_POST['Submit'])) {
     $ID = $_POST['ID'];
     $name = $_POST['name'];
