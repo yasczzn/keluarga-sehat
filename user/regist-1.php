@@ -30,9 +30,8 @@ if (isset($_POST['Submit'])) {
     $price = $_POST['price'];
     $payment = $_POST['payment'];
 
+    header("Location: admin-dashboard.php");
   }
-
-  echo "<script>document.location = 'regist-2.php'</script>";
 
 ?> -->
 
