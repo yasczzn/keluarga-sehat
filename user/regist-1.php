@@ -170,23 +170,14 @@ if (isset($_POST['Submit'])) {
             </div>
             <fieldset>
               <legend class="form-floating mb-3">Please select a payment method</legend>
-                <div>
                   <input type="radio" id="bca" name="bca" value="BCA" <?php echo $payment == 'bca'; ?>>
                   <label for="bca">BCA</label>
-                </div>
-                <div>
                   <input type="radio" id="bsi" name="bsi" value="BSI" <?php echo $payment == 'bsi'; ?>>
                   <label for="bsi">BSI</label>
-                </div>
-                <div>
                   <input type="radio" id="gopay" name="gopay" value="GoPay" <?php echo $payment == 'gopay'; ?>>
                   <label for="gopay">GoPay</label>
-                </div>
-                <div>
                   <input type="radio" id="dana" name="dana" value="Dana" <?php echo $payment == 'dana'; ?>>
-                  <label for="dana">Dana</label>
-                </div>
-              </fieldset>
+            </fieldset>
               <input type="submit" value="Submit" name="submit" class="btn btn-success btn-user ms-3"/>
               <input type="button" value="Cancel" name="cancel" class="btn btn-danger btn-user"/>
             <hr>
