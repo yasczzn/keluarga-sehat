@@ -1,18 +1,6 @@
-<!-- <?php 
+<?php 
 
 include '../function/connection.php';
-
-$ID = "";
-$name = "";
-$doB = "";
-$gender = "";
-$email = "";
-$phoneNum = "";
-$address = "";
-$vaccineType = "";
-$vaccinationDate = "";
-$price = "";
-$payment = "";
 
 $errorMessage = "";
 $successMessage = "";
@@ -65,7 +53,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' ) {
 
   }
 
-?> -->
+?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -160,66 +148,58 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' ) {
             </div>
           </div>
             <table id="datatablesSimple">
-                <?php
-                  include '../function/connection.php';
-
-                  echo "
-                      <tr>
-                        <td>ID</td>
-                        <td>htmlspecialchars($_POST[ID])</td>
-                      </tr>
-                      <tr>
-                        <td>Name</td>
-                        <td>htmlspecialchars($_POST[name])</td>
-                      </tr>
-                      <tr>
-                        <td>Date of Birth</td>
-                        <td>htmlspecialchars($_POST[doB])</td>
-                      </tr>                          
-                      <tr>
-                        <td>Gender</td>
-                        <td>htmlspecialchars($_POST[gender])</td>
-                      </tr>                          
-                      <tr>
-                        <td>Email</td>
-                        <td>htmlspecialchars($_POST[email])</td>
-                      </tr>                       
-                      <tr>
-                        <td>Phone Number</td>
-                        <td>htmlspecialchars($_POST[phoneNum])</td>
-                      </tr>                           
-                      <tr>
-                        <td>Address</td>
-                        <td>htmlspecialchars($_POST[address])</td>
-                      </tr>                           
-                      <tr>
-                        <td>Address</td>
-                        <td>htmlspecialchars($_POST[vaccineType])</td>
-                      </tr>
-                      <tr>
-                        <td>Address</td>
-                        <td>htmlspecialchars($_POST[vaccinationDate])</td>
-                      </tr>
-                      <tr>
-                        <td>Address</td>
-                        <td>htmlspecialchars($_POST[price])</td>
-                      </tr>
-                      <tr>
-                        <td>Address</td>
-                        <td>htmlspecialchars($_POST[payment])</td>
-                      </tr>
-
-                  <a href='patient-edit.php?update=$display[userRegNum]' type='button' value='Update' class='btn btn-primary'>Update</a>
-                  <a href='?delete=$display[userRegNum]' onClick=\"return confirm('Proceed to delete data?');\">
-                    <input type='button' value='delete' class='btn btn-danger btn-user'>
-                  </a>";
-                                        
-                  $no++;
-
-                ?>
+              <tbody>
+                <tr>
+                  <td>ID</td>
+                  <td><?php echo htmlspecialchars($_POST['ID']) ?></td>
+                </tr>
+                <tr>
+                  <td>Name</td>
+                  <td><?php echo htmlspecialchars($_POST['name']) ?></td>
+                </tr>
+                <tr>
+                  <td>doB</td>
+                  <td><?php echo htmlspecialchars($_POST['doB']) ?></td>
+                </tr>
+                <tr>
+                  <td>Gender</td>
+                  <td><?php echo htmlspecialchars($_POST['gender']) ?></td>
+                </tr>
+                <tr>
+                  <td>Email</td>
+                  <td><?php echo htmlspecialchars($_POST['email']) ?></td>
+                </tr>
+                <tr>
+                  <td>Phone Number</td>
+                  <td><?php echo htmlspecialchars($_POST['phoneNum']) ?></td>
+                </tr>
+                <tr>
+                  <td>Address</td>
+                  <td><?php echo htmlspecialchars($_POST['address']) ?></td>
+                </tr>
+                <tr>
+                  <td>Vacine Type</td>
+                  <td><?php echo htmlspecialchars($_POST['vaccineType']) ?></td>
+                </tr>
+                <tr>
+                  <td>Vaccination Date</td>
+                  <td><?php echo htmlspecialchars($_POST['vaccinationDate']) ?></td>
+                </tr>
+                <tr>
+                  <td>Price</td>
+                  <td><?php echo htmlspecialchars($_POST['price']) ?></td>
+                </tr>
+                <tr>
+                  <td>Payment with</td>
+                  <td><?php echo htmlspecialchars($_POST['payment']) ?></td>
+                </tr>
+                <
               </tbody>
             </table>
-
+            <a href='patient-edit.php?update=$display[userRegNum]' type='button' value='Update' class='btn btn-primary'>Submit</a>
+            <a href='?delete=$display[userRegNum]' onClick="return confirm('Proceed to delete data?')">
+              <input type='button' value='delete' class='btn btn-danger btn-user'>
+            </a>
         </div>
       </div>
 
