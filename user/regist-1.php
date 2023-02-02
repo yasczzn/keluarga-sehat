@@ -32,6 +32,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' ) {
 
   }
 
+  echo "<script>document.location = 'regist-2.php'</script>";
+
 ?> -->
 
 <!DOCTYPE html>
@@ -186,7 +188,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' ) {
             <fieldset>
               <legend class="form-floating mb-3">Please select a payment method</legend>
                 <div>
-                  <input type="radio" id="bca" name="bca" value="BCA" <?php echo $payment == 'bca'; ?> checked>
+                  <input type="radio" id="bca" name="bca" value="BCA" <?php echo $payment == 'bca'; ?>>
                   <label for="bca">BCA</label>
                 </div>
                 <div>

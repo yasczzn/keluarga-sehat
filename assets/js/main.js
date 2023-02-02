@@ -250,6 +250,8 @@
     })
   });
 
+  document.getElementById('vaccinationDate').valueAsDate = new Date();
+
   function priceTotal(val){
     var totalPrice;
     if(val == 'Dosage 1'){
