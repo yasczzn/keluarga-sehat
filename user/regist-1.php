@@ -174,7 +174,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' ) {
               <div class="validate"></div>
             </div>
             <div class="form-floating mb-3">
-              <input type="date" class="form-control form-control-user" value="<?php echo date('Y-m-d', strtotime($data['vaccinationDate'])); ?>" id="vaccinationDate" required>
+              <input type="date" class="form-control form-control-user" value="<?php echo date('Y-m-d', strtotime($vaccinationDate)); ?>" id="vaccinationDate" required>
               <label for="inputVaccinationDate">Vaccination Date</label>
               <div class="validate"></div>
             </div>
@@ -186,22 +186,22 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' ) {
             <fieldset>
               <legend class="form-floating mb-3">Please select a payment method</legend>
                 <div>
-                  <input type="radio" id="bca" name="bca" value="BCA"checked>
+                  <input type="radio" id="bca" name="bca" value="BCA" <?php echo $payment == 'bca'; ?> checked>
                   <label for="bca">BCA</label>
                 </div>
                 <div>
-                  <input type="radio" id="bsi" name="bsi" value="BSI">
+                  <input type="radio" id="bsi" name="bsi" value="BSI" <?php echo $payment == 'bsi'; ?>>
                   <label for="bsi">BSI</label>
                 </div>
                 <div>
-                  <input type="radio" id="gopay" name="gopay" value="GoPay">
+                  <input type="radio" id="gopay" name="gopay" value="GoPay" <?php echo $payment == 'gopay'; ?>>
                   <label for="gopay">GoPay</label>
                 </div>
                 <div>
-                  <input type="radio" id="dana" name="dana" value="Dana">
+                  <input type="radio" id="dana" name="dana" value="Dana" <?php echo $payment == 'dana'; ?>>
                   <label for="dana">Dana</label>
                 </div>
-            </fieldset>
+              </fieldset>
               <input type="submit" value="Submit" name="submit" class="btn btn-success btn-user ms-3"/>
               <input type="button" value="Cancel" name="cancel" class="btn btn-danger btn-user"/>
             <hr>
@@ -278,6 +278,29 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' ) {
   <script src="../assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
   <script src="../assets/vendor/swiper/swiper-bundle.min.js"></script>
   <script src="../assets/vendor/php-email-form/validate.js"></script>
+
+  <script>
+    function priceTotal(val){
+    var totalPrice;
+    if(val == 'Dosage 1'){
+      totalPrice = 45000;
+    } else if(val == 'Dosage 2'){
+      totalPrice = 50000;
+    } else if(val == 'Dosage 3'){
+      totalPrice = 55000;
+    } else if(val == 'Booster 1'){
+      totalPrice = 60000;
+    } else if(val == 'Booster 2'){
+      totalPrice = 65000;
+    } else if(val == 'Booster 3'){
+      totalPrice = 70000;
+    }
+    //display price
+    var disPrice = document.getElementById('price');
+    disPrice.value = totalPrice;
+
+  }
+  </script>
 
   <!-- Template Main JS File -->
   <script src="../assets/js/main.js"></script>
