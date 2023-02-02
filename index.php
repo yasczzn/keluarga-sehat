@@ -170,13 +170,13 @@
       <div class="container">
 
         <div class="section-title" data-aos="fade-up">
-          <h2>Vaccination Packages</h2>
-          <p>Take your friends/family to vaccinate and get wholesome discount bundles! </p>
+          <h2>Vaccination Fee</h2>
+          <p>Our available vaccination services.</p>
         </div>
 
         <div class="row">
 
-          <div class="col-lg-4 col-md-6">
+          <div class="col-6 col-md-6">
             <div class="box" data-aos="zoom-in">
               <h3>Single package</h3>
               <h4>Free</h4>
@@ -193,24 +193,7 @@
             </div>
           </div>
 
-          <div class="col-lg-4 col-md-6 mt-4 mt-md-0">
-            <div class="box featured" data-aos="zoom-in" data-aos-delay="100">
-              <h3>Duo package</h3>
-              <h4><sup>+ Rp</sup>10000<span> / person</span></h4>
-              <ul>
-                <li>For 2 people</li>
-                <li>Pay for vaccination price and addition price/person</li>
-                <li>Get 20% off for next vaccination</li>
-                <li></li>
-                <li class="na">Get reward points for out other services</li>
-              </ul>
-              <div class="btn-wrap">
-                <a href="user/regist-1.php" class="btn-buy">Book Now</a>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-lg-4 col-md-6 mt-4 mt-lg-0">
+          <div class="col-6 col-md-6 mt-4 mt-lg-0">
             <div class="box" data-aos="zoom-in" data-aos-delay="300">
               <span class="advanced">Best deal!</span>
               <h3>Family package</h3>

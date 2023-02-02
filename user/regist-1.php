@@ -200,20 +200,20 @@ if (isset($_POST['Submit'])) {
             </div>
             <fieldset>
               <legend class="form-floating mb-3">Please select a payment method</legend>
-              <div class="col-6">
-                <input type="radio" id="bca" name="bca" value="bca" <?php echo $payment == 'bca'; ?>>
+              <div class="form-group col-6">
+                <input type="radio" id="bca" name="payment" value="bca" <?php echo $payment == 'bca'; ?>>
                 <label for="bca">BCA</label>
               </div>
-              <div class="col-6">
-                <input type="radio" id="bsi" name="bsi" value="bsi" <?php echo $payment == 'bsi'; ?>>
+              <div class="form-group col-md-6 mt-3 mt-md-0">
+                <input type="radio" id="bsi" name="payment" value="bsi" <?php echo $payment == 'bsi'; ?>>
                 <label for="bsi">BSI</label>
               </div>    
-              <div class="col-6">
-                <input type="radio" id="gopay" name="gopay" value="gopay" <?php echo $payment == 'gopay'; ?>>
+              <div class="form-group col-6">
+                <input type="radio" id="gopay" name="payment" value="gopay" <?php echo $payment == 'gopay'; ?>>
                 <label for="gopay">GoPay</label>
               </div>    
-              <div class="col-6">
-                <input type="radio" id="dana" name="dana" value="dana" <?php echo $payment == 'dana'; ?>>
+              <div class="form-group col-md-6 mt-3 mt-md-0">
+                <input type="radio" id="dana" name="payment" value="dana" <?php echo $payment == 'dana'; ?>>
                 <label for="dana">Dana</label>
               </div>
             </fieldset>
