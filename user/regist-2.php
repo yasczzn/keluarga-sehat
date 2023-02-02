@@ -160,35 +160,13 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' ) {
             </div>
           </div>
             <table id="datatablesSimple">
-              <thead>
-                <tr>
-                  <th hidden>No</th>
-                  <th hidden>User Registration Number</th>
-                  <th hidden>ID</th>
-                  <th hidden>Patient Name</th>
-                  <th hidden>Date of Birth</th>
-                  <th hidden>Gender</th>
-                  <th hidden>Email</th>
-                  <th hidden>Phone Number</th>
-                  <th hidden>Address</th>
-                </tr>
-              </thead>
-                <tr>
-                </tr>
                 <?php
                   include '../function/connection.php';
-                                            
-                  $no=1;
-                  $pulldata = mysqli_query($conn, "SELECT * FROM patient");
-                  while ($display = mysqli_fetch_array($pulldata)){
+
                   echo "
                       <tr>
-                        <td hidden>$no</td>
-                        <td hidden>$no</td>
-                      </tr>
-                      <tr>
                         <td>ID</td>
-                        <td>$display[ID]</td>
+                        <td>htmlspecialchars($_POST[ID])</td>
                       </tr>
                       <tr>
                         <td>Name</td>
@@ -221,16 +199,14 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' ) {
                   </a>";
                                         
                   $no++;
-                }
+
                 ?>
               </tbody>
             </table>
 
 
 
-
-
-          <form action="" method="POST" role="form" class="php-email-form">
+          <!-- <form action="" method="POST" role="form" class="php-email-form">
             <div class="form-floating mb-3">
               <input type="number" class="form-control form-control-user" value="<?php echo $ID; ?>" name="ID" placeholder="ID" required>
               <label for="inputID">ID</label>
@@ -309,7 +285,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' ) {
               <input type="submit" value="Submit" name="submit" class="btn btn-success btn-user ms-3"/>
               <input type="button" value="Cancel" name="cancel" class="btn btn-danger btn-user"/>
             <hr>
-          </form>
+          </form> -->
         </div>
       </div>
 
