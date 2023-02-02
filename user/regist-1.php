@@ -1,5 +1,22 @@
 <!-- <?php 
 
+include '../function/connection.php';
+
+$ID = "";
+$name = "";
+$doB = "";
+$gender = "";
+$email = "";
+$phoneNum = "";
+$address = "";
+$vaccineType = "";
+$vaccinationDate = "";
+$price = "";
+$payment = "";
+
+$errorMessage = "";
+$successMessage = "";
+
 if (isset($_POST['Submit'])) {
     $ID = $_POST['ID'];
     $name = $_POST['name'];
@@ -101,6 +118,20 @@ if (isset($_POST['Submit'])) {
       <div class="section-title" data-aos="fade-up">
         <h2>Register Now</h2>
         <p>*Please fill in your data according to your ID card.</p>
+
+        <?php
+          if (!empty($errorMessage)) {
+          echo "
+            <div class='col-xl-3 col-md-6'>
+              <div class='card bg-warning text-white mb-4'>
+                <div class='card-body'$errorMessage</div>
+                <button class='btn-close' data-bs-dismiss='alert'>Close</button>
+              </div>
+            </div>                                
+          ";
+           }
+        ?>
+
       </div>
 
 
