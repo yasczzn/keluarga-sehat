@@ -17,7 +17,7 @@ $payment = "";
 $errorMessage = "";
 $successMessage = "";
 
-if ($_SERVER['REQUEST_METHOD'] == 'POST' ) {
+if (isset($_POST['Submit'])) {
     $ID = $_POST['ID'];
     $name = $_POST['name'];
     $doB = $_POST['doB'];
