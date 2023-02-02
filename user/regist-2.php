@@ -183,15 +183,15 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' ) {
                 </tr>
                 <tr>
                   <td>Vaccination Date</td>
-                  <td><?php echo htmlspecialchars($_POST['vaccinationDate']) ?></td>
+                  <td><?php echo $_POST['vaccinationDate'] ?></td>
                 </tr>
                 <tr>
                   <td>Price</td>
-                  <td><?php echo htmlspecialchars($_POST['price']) ?></td>
+                  <td><?php echo $_POST['price'] ?></td>
                 </tr>
                 <tr>
                   <td>Payment with</td>
-                  <td><?php echo htmlspecialchars($_POST['payment']) ?></td>
+                  <td><?php echo $_POST['payment'] ?></td>
                 </tr>
                 <
               </tbody>
