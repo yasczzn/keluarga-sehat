@@ -32,7 +32,7 @@
             $mail->Password = 'cwxwxcphuotcexsh';
 
             $mail->setFrom('putriyasminarahmaz@gmail.com', 'Keluarga Sehat');
-            $mail->addAddress($_POST["email"]);
+            $mail->addAddress($email);
             $mail->addCC('keluarga-sehat-production.up.railway.app');
 
             $mail->isHTML(true);
