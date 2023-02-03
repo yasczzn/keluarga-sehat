@@ -33,7 +33,7 @@
             $mail->send();   
             
             echo "<script>alert('Email send!')
-            document.location = 'regist-3.php'</script>";
+            document.location = 'patient-success.php'</script>";
         } catch (Exception $e) {
             echo "Message could not be sent. Mailer Error: {$mail->ErrorInfo}";
         }
