@@ -30,7 +30,7 @@ if (isset($_POST['Submit'])) {
     $price = $_POST['price'];
     $payment = $_POST['payment'];
 
-    header("Location: regist-2.php");
+    header("Location: old-regist-3.php");
   }
 
 ?> -->
@@ -42,7 +42,7 @@ if (isset($_POST['Submit'])) {
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-  <title>Keluarga Sehat Website - Registration Form</title>
+  <title>Keluarga Sehat Website - Patient Appointment Form</title>
   <meta content="" name="description">
   <meta content="" name="keywords">
 
@@ -104,9 +104,10 @@ if (isset($_POST['Submit'])) {
 
         <ol>
           <li><a href="../index.php">Home</a></li>
-          <li class="active">Registration Form</li>
+          <li><a href="old-regist-1.php">Patient Check</a></li>
+          <li class="active">Patient Appointment Form</li>
         </ol>
-        <h2>Registration Form</h2>
+        <h2>Patient Appointment Form</h2>
 
       </div>
     </section>
@@ -116,8 +117,8 @@ if (isset($_POST['Submit'])) {
     <section id="contact" class="contact">
 
       <div class="section-title" data-aos="fade-up">
-        <h2>Register Now</h2>
-        <p>*Please fill in your data according to your ID card.</p>
+        <h2>Patient Appointment</h2>
+        <p>*Please choose your vaccination day and packages.</p>
 
         <?php
           if (!empty($errorMessage)) {
@@ -139,22 +140,19 @@ if (isset($_POST['Submit'])) {
         <div class="col-lg-8 mt-5 d-flex m-auto" data-aos="fade-left">
           <form action="regist-2.php" method="POST" role="form" class="php-email-form">
             <div class="form-floating mb-3">
-              <input type="number" class="form-control form-control-user" value="<?php echo $ID; ?>" name="ID" placeholder="ID" required>
+              <input type="number" class="form-control form-control-user" value="<?php echo $ID; ?>" name="ID" placeholder="ID" readonly>
               <label for="inputID">ID</label>
-              <div class="validate"></div>
             </div>
             <div class="form-floating mb-3">
-              <input type="text" class="form-control form-control-user" value="<?php echo $name; ?>" name="name" placeholder="Name" required>
+              <input type="text" class="form-control form-control-user" value="<?php echo $name; ?>" name="name" placeholder="Name" readonly>
               <label for="inputName">Name</label>
-              <div class="validate"></div>
             </div>
             <div class="form-floating mb-3">
-              <input type="text" class="form-control form-control-user" value="<?php echo $doB; ?>" name="doB" placeholder="Date of Birth" required>
+              <input type="text" class="form-control form-control-user" value="<?php echo $doB; ?>" name="doB" placeholder="Date of Birth" readonly>
               <label for="inputDoB">Date of Birth</label>
-              <div class="validate"></div>
             </div>
             <div class="form-floating mb-3">
-              <select aria-label="Gender" title="gender-choice" type="text" class="form-control" name="gender" placeholder="Gender" required>
+              <select aria-label="Gender" title="gender-choice" type="text" class="form-control" name="gender" placeholder="Gender" aria-readonly="">
                 <option value="male" <?php echo $gender == 'male'; ?>>male</option>
                 <option value="female" <?php echo $gender == 'female'; ?>>female</option>
               </select>
@@ -162,19 +160,16 @@ if (isset($_POST['Submit'])) {
               <div class="validate"></div>
             </div>
             <div class="form-floating mb-3">
-              <input type="email" class="form-control form-control-user" value="<?php echo $email; ?>" name="email" placeholder="Email" required>
+              <input type="email" class="form-control form-control-user" value="<?php echo $email; ?>" name="email" placeholder="Email" readonly>
               <label for="inputEmail">Email</label>
-              <div class="validate"></div>
             </div>
             <div class="form-floating mb-3">
-              <input type="number" class="form-control form-control-user" value="<?php echo $phoneNum; ?>" name="phoneNum" placeholder="Phone Number" required>
+              <input type="number" class="form-control form-control-user" value="<?php echo $phoneNum; ?>" name="phoneNum" placeholder="Phone Number" readonly>
               <label for="inputPhoneNum">Phone Number</label>
-              <div class="validate"></div>
             </div>
             <div class="form-floating mb-3">
-              <input type="text" class="form-control form-control-user" value="<?php echo $address; ?>" name="address" placeholder="Address" required>
+              <input type="text" class="form-control form-control-user" value="<?php echo $address; ?>" name="address" placeholder="Address" readonly>
               <label for="inputAddress">Address</label>
-              <div class="validate"></div>
             </div>
             <div class="form-floating mb-3">
               <select aria-label="VaccineType" title="status-choice" type="text" class="form-control" name="vaccineType" id="vaccineType" placeholder="Vaccine Type" onchange="priceTotal(this.value)" required>

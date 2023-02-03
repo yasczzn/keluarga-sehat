@@ -198,8 +198,10 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' ) {
             </table>
         </div>
         <div class="ms-5">
-          <input type="submit" value="Submit" name="submit" class="btn btn-success btn-user ms-3"/>
-          <input type="button" value="Cancel" name="cancel" class="btn btn-danger btn-user"/>
+        <input type="submit" value="Submit" name="submit" class="btn btn-success btn-user ms-3"/>
+        <a href='regist-1.php'>
+          <input type='button' value='Cancel' class='btn btn-danger btn-user'>
+        </a>
         </div>
       </div>
 

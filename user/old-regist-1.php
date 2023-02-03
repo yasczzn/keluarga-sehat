@@ -2,35 +2,15 @@
 
 include '../function/connection.php';
 
-$ID = "";
-$name = "";
-$doB = "";
-$gender = "";
 $email = "";
-$phoneNum = "";
-$address = "";
-$vaccineType = "";
-$vaccinationDate = "";
-$price = "";
-$payment = "";
 
 $errorMessage = "";
 $successMessage = "";
 
 if (isset($_POST['Submit'])) {
-    $ID = $_POST['ID'];
-    $name = $_POST['name'];
-    $doB = $_POST['doB'];
-    $gender = $_POST['gender'];
     $email = $_POST['email'];
-    $phoneNum = $_POST['phoneNum'];
-    $address = $_POST['address'];
-    $vaccineType = $_POST['vaccineType'];
-    $vaccinationDate = $_POST['vaccinationDate'];
-    $price = $_POST['price'];
-    $payment = $_POST['payment'];
 
-    header("Location: regist-2.php");
+    header("Location: old-regist-2.php");
   }
 
 ?> -->
@@ -42,7 +22,7 @@ if (isset($_POST['Submit'])) {
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-  <title>Keluarga Sehat Website - Registration Form</title>
+  <title>Keluarga Sehat Website - Patient Check</title>
   <meta content="" name="description">
   <meta content="" name="keywords">
 
@@ -104,9 +84,9 @@ if (isset($_POST['Submit'])) {
 
         <ol>
           <li><a href="../index.php">Home</a></li>
-          <li class="active">Registration Form</li>
+          <li class="active">Patient Check</li>
         </ol>
-        <h2>Registration Form</h2>
+        <h2>Patient Registration Check</h2>
 
       </div>
     </section>
@@ -116,8 +96,8 @@ if (isset($_POST['Submit'])) {
     <section id="contact" class="contact">
 
       <div class="section-title" data-aos="fade-up">
-        <h2>Register Now</h2>
-        <p>*Please fill in your data according to your ID card.</p>
+        <h2>Enter your email here</h2>
+        <p>*Please enter the email you use when register for vaccination for the first time.</p>
 
         <?php
           if (!empty($errorMessage)) {
@@ -139,85 +119,10 @@ if (isset($_POST['Submit'])) {
         <div class="col-lg-8 mt-5 d-flex m-auto" data-aos="fade-left">
           <form action="regist-2.php" method="POST" role="form" class="php-email-form">
             <div class="form-floating mb-3">
-              <input type="number" class="form-control form-control-user" value="<?php echo $ID; ?>" name="ID" placeholder="ID" required>
-              <label for="inputID">ID</label>
-              <div class="validate"></div>
-            </div>
-            <div class="form-floating mb-3">
-              <input type="text" class="form-control form-control-user" value="<?php echo $name; ?>" name="name" placeholder="Name" required>
-              <label for="inputName">Name</label>
-              <div class="validate"></div>
-            </div>
-            <div class="form-floating mb-3">
-              <input type="text" class="form-control form-control-user" value="<?php echo $doB; ?>" name="doB" placeholder="Date of Birth" required>
-              <label for="inputDoB">Date of Birth</label>
-              <div class="validate"></div>
-            </div>
-            <div class="form-floating mb-3">
-              <select aria-label="Gender" title="gender-choice" type="text" class="form-control" name="gender" placeholder="Gender" required>
-                <option value="male" <?php echo $gender == 'male'; ?>>male</option>
-                <option value="female" <?php echo $gender == 'female'; ?>>female</option>
-              </select>
-              <label for="inputGender">Gender</label>
-              <div class="validate"></div>
-            </div>
-            <div class="form-floating mb-3">
               <input type="email" class="form-control form-control-user" value="<?php echo $email; ?>" name="email" placeholder="Email" required>
               <label for="inputEmail">Email</label>
               <div class="validate"></div>
             </div>
-            <div class="form-floating mb-3">
-              <input type="number" class="form-control form-control-user" value="<?php echo $phoneNum; ?>" name="phoneNum" placeholder="Phone Number" required>
-              <label for="inputPhoneNum">Phone Number</label>
-              <div class="validate"></div>
-            </div>
-            <div class="form-floating mb-3">
-              <input type="text" class="form-control form-control-user" value="<?php echo $address; ?>" name="address" placeholder="Address" required>
-              <label for="inputAddress">Address</label>
-              <div class="validate"></div>
-            </div>
-            <div class="form-floating mb-3">
-              <select aria-label="VaccineType" title="status-choice" type="text" class="form-control" name="vaccineType" id="vaccineType" placeholder="Vaccine Type" onchange="priceTotal(this.value)" required>
-                <option value="" disabled selected>Select vaccination</option>
-                <option value="Dosage 1" <?php echo $vaccineType == 'Dosage 1'; ?>>Dosage 1</option>
-                <option value="Dosage 2" <?php echo $vaccineType == 'Dosage 2'; ?>>Dosage 2</option>
-                <option value="Dosage 3" <?php echo $vaccineType == 'Dosage 3'; ?>>Dosage 3</option>
-                <option value="Booster 1" <?php echo $vaccineType == 'Booster 1'; ?>>Booster 1</option>
-                <option value="Booster 2" <?php echo $vaccineType == 'Booster 2'; ?>>Booster 2</option>
-                <option value="Booster 3" <?php echo $vaccineType == 'Booster 3'; ?>>Booster 3</option>
-              </select>
-              <label for="inputStatus">Vaccine Type</label>
-              <div class="validate"></div>
-            </div>
-            <div class="form-floating mb-3">
-              <input type="date" class="form-control form-control-user" value="<?php echo date('Y-m-d', strtotime($vaccinationDate)); ?>" id="vaccinationDate" required>
-              <label for="inputVaccinationDate">Vaccination Date</label>
-              <div class="validate"></div>
-            </div>
-            <div class="form-floating mb-3">
-              <input type="text" class="form-control form-control-user" value="<?php echo $price; ?>" name="price" id="price" placeholder="Price" readonly>
-              <label for="inputPrice">Price</label>
-              <div class="validate"></div>
-            </div>
-            <fieldset>
-              <legend class="form-floating mb-3">Please select a payment method</legend>
-              <div class="form-group col-6">
-                <input type="radio" id="bca" name="payment" value="bca" <?php echo $payment == 'bca'; ?>>
-                <label for="bca">BCA</label>
-              </div>
-              <div class="form-group col-md-6 mt-3 mt-md-0">
-                <input type="radio" id="bsi" name="payment" value="bsi" <?php echo $payment == 'bsi'; ?>>
-                <label for="bsi">BSI</label>
-              </div>    
-              <div class="form-group col-6">
-                <input type="radio" id="gopay" name="payment" value="gopay" <?php echo $payment == 'gopay'; ?>>
-                <label for="gopay">GoPay</label>
-              </div>    
-              <div class="form-group col-md-6 mt-3 mt-md-0">
-                <input type="radio" id="dana" name="payment" value="dana" <?php echo $payment == 'dana'; ?>>
-                <label for="dana">Dana</label>
-              </div>
-            </fieldset>
             <input type="submit" value="Submit" name="submit" class="btn btn-success btn-user ms-3"/>
             <a href='../index.php'>
               <input type='button' value='Cancel' class='btn btn-danger btn-user'>
@@ -297,29 +202,6 @@ if (isset($_POST['Submit'])) {
   <script src="../assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
   <script src="../assets/vendor/swiper/swiper-bundle.min.js"></script>
   <!-- <script src="../assets/vendor/php-email-form/validate.js"></script> -->
-
-  <script>
-    function priceTotal(val){
-    var totalPrice;
-    if(val == 'Dosage 1'){
-      totalPrice = 45000;
-    } else if(val == 'Dosage 2'){
-      totalPrice = 50000;
-    } else if(val == 'Dosage 3'){
-      totalPrice = 55000;
-    } else if(val == 'Booster 1'){
-      totalPrice = 60000;
-    } else if(val == 'Booster 2'){
-      totalPrice = 65000;
-    } else if(val == 'Booster 3'){
-      totalPrice = 70000;
-    }
-    //display price
-    var disPrice = document.getElementById('price');
-    disPrice.value = totalPrice;
-
-  }
-  </script>
 
   <!-- Template Main JS File -->
   <script src="../assets/js/main.js"></script>

@@ -265,25 +265,6 @@
           </div>
         </div>
 
-        <div class="row">
-          <div class="col-6 col-md-6 mt-4 mt-lg-0">
-            <div class="box" data-aos="zoom-in" data-aos-delay="300">
-              <span class="advanced">Best deal!</span>
-              <h3>Family package</h3>
-              <h4><sup>+ Rp</sup>15000<span> / person</span></h4>
-              <ul>
-                <li>Up to 6 people</li>
-                <li>Pay for vaccination price and addition price/person</li>
-                <li>Get 25% off for next vaccination</li>
-                <li>40% discount coupon for our other services for 100 lucky patient</li>
-              </ul>
-              <div class="btn-wrap">
-                <a href="user/regist-1.php" class="btn-buy">Book Now</a>
-              </div>
-            </div>
-          </div>
-        </div>
-
       </div>
     </section><!-- End Pricing Section -->
 
@@ -298,10 +279,10 @@
         <ul class="faq-list">
 
           <li>
-            <div data-bs-toggle="collapse" class="collapsed question" href="#faq1">How I can know when the vaccination schedule will start? <i class="bi bi-chevron-down icon-show"></i><i class="bi bi-chevron-up icon-close"></i></div>
+            <div data-bs-toggle="collapse" class="collapsed question" href="#faq1">Does Keluarga Sehat registration is available for every public health center? <i class="bi bi-chevron-down icon-show"></i><i class="bi bi-chevron-up icon-close"></i></div>
             <div id="faq1" class="collapse" data-bs-parent=".faq-list">
               <p>
-                We open our vaccination service everyday. Patient only need to choose the date and we will send you the date and time for your vaccination appointment via email, after finishing your payment.
+                Keluarga Sehat is available only at the address listed on the website.
               </p>
             </div>
           </li>
@@ -316,37 +297,29 @@
           </li>
 
           <li>
-            <div data-bs-toggle="collapse" href="#faq3" class="collapsed question">Dolor sit amet consectetur adipiscing elit pellentesque habitant morbi? <i class="bi bi-chevron-down icon-show"></i><i class="bi bi-chevron-up icon-close"></i></div>
+            <div data-bs-toggle="collapse" href="#faq3" class="collapsed question">Does Keluarga Sehat accept offline payment? <i class="bi bi-chevron-down icon-show"></i><i class="bi bi-chevron-up icon-close"></i></div>
             <div id="faq3" class="collapse" data-bs-parent=".faq-list">
               <p>
-                Eleifend mi in nulla posuere sollicitudin aliquam ultrices sagittis orci. Faucibus pulvinar elementum integer enim. Sem nulla pharetra diam sit amet nisl suscipit. Rutrum tellus pellentesque eu tincidunt. Lectus urna duis convallis convallis tellus. Urna molestie at elementum eu facilisis sed odio morbi quis
+                We also accepting offline payment. However, patient only receive the appointment queue number after the transaction.
               </p>
             </div>
           </li>
 
           <li>
-            <div data-bs-toggle="collapse" href="#faq4" class="collapsed question">Ac odio tempor orci dapibus. Aliquam eleifend mi in nulla? <i class="bi bi-chevron-down icon-show"></i><i class="bi bi-chevron-up icon-close"></i></div>
+            <div data-bs-toggle="collapse" href="#faq4" class="collapsed question">If I want to book for my next appointment, do i need to fill the registration form once again? <i class="bi bi-chevron-down icon-show"></i><i class="bi bi-chevron-up icon-close"></i></div>
             <div id="faq4" class="collapse" data-bs-parent=".faq-list">
               <p>
-                Dolor sit amet consectetur adipiscing elit pellentesque habitant morbi. Id interdum velit laoreet id donec ultrices. Fringilla phasellus faucibus scelerisque eleifend donec pretium. Est pellentesque elit ullamcorper dignissim. Mauris ultrices eros in cursus turpis massa tincidunt dui.
+                Your personal data will stored in our database from the first time you register in our form. You can register through the link below or the link at the end of the page.
               </p>
+              <a href="">Registration for our patient</a>
             </div>
           </li>
 
           <li>
-            <div data-bs-toggle="collapse" href="#faq5" class="collapsed question">Tempus quam pellentesque nec nam aliquam sem et tortor consequat? <i class="bi bi-chevron-down icon-show"></i><i class="bi bi-chevron-up icon-close"></i></div>
-            <div id="faq5" class="collapse" data-bs-parent=".faq-list">
-              <p>
-                Molestie a iaculis at erat pellentesque adipiscing commodo. Dignissim suspendisse in est ante in. Nunc vel risus commodo viverra maecenas accumsan. Sit amet nisl suscipit adipiscing bibendum est. Purus gravida quis blandit turpis cursus in
-              </p>
-            </div>
-          </li>
-
-          <li>
-            <div data-bs-toggle="collapse" href="#faq6" class="collapsed question">Tortor vitae purus faucibus ornare. Varius vel pharetra vel turpis nunc eget lorem dolor? <i class="bi bi-chevron-down icon-show"></i><i class="bi bi-chevron-up icon-close"></i></div>
+            <div data-bs-toggle="collapse" href="#faq6" class="collapsed question">If i want to book for another person appoinment, do i need to fill the form again? <i class="bi bi-chevron-down icon-show"></i><i class="bi bi-chevron-up icon-close"></i></div>
             <div id="faq6" class="collapse" data-bs-parent=".faq-list">
               <p>
-                Laoreet sit amet cursus sit amet dictum sit amet justo. Mauris vitae ultricies leo integer malesuada nunc vel. Tincidunt eget nullam non nisi est sit amet. Turpis nunc eget lorem dolor sed. Ut venenatis tellus in metus vulputate eu scelerisque. Pellentesque diam volutpat commodo sed egestas egestas fringilla phasellus faucibus. Nibh tellus molestie nunc non blandit massa enim nec.
+                Yes, you need to fill the form once again because the registration system is procesing single appointment each.              
               </p>
             </div>
           </li>
@@ -363,7 +336,9 @@
         <div class="section-title" data-aos="fade-up">
           <h2>Have You vaccinated yet? <br> Register now!</h2>
           <p>Register in Keluarga Sehat to save your vaccination progress!</p>
-          <a href="user/regist-1.php" class="cta-btn scrollto">Register Now</a>
+          <a href="user/regist-1.php" class="cta-btn scrollto">Register Now!</a>
+          <p>Or click here if you have vaccinated here before!</p>
+          <a href="user/old-regist-1.php" class="cta-btn scrollto">Patient Register</a>
         </div>
 
       </div>
