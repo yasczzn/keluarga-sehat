@@ -190,7 +190,7 @@ if (isset($_POST['Submit'])) {
               <div class="validate"></div>
             </div>
             <div class="form-floating mb-3">
-              <input type="date" class="form-control form-control-user" value="<?php echo date('Y-m-d', strtotime($vaccinationDate)); ?>" id="vaccinationDate" required>
+              <input type="date" class="form-control form-control-user" value="<?php echo isset(date('Y-m-d', strtotime($vaccinationDate))); ?>" id="vaccinationDate" required>
               <label for="inputVaccinationDate">Vaccination Date</label>
               <div class="validate"></div>
             </div>
