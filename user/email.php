@@ -27,10 +27,10 @@
             $mail->isSMTP();
             $mail->Host = 'smtp.gmail.com';
             $mail->SMTPAuth = true;
+            $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;
+            $mail->Port = "587";
             $mail->Username = 'putriyasminarahmaz@gmail.com';
             $mail->Password = 'cwxwxcphuotcexsh';
-            $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;
-            $mail->Port = 587;
 
             $mail->setFrom('putriyasminarahmaz@gmail.com', 'Keluarga Sehat');
             $mail->addAddress($_POST["email"]);
@@ -47,10 +47,11 @@
             echo "<script>alert('Email send!')</script>";
 
             header("Location: regist-3.php");
-            
+
         } catch (Exception $e) {
             echo "Message could not be sent. Mailer Error: {$mail->ErrorInfo}";
         }
+        $mail->smtpClose(); 
     }
         
 ?>
