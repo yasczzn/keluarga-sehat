@@ -32,7 +32,8 @@
 
             $mail->send();   
             
-            echo "<script>alert('Email send!')</script>";
+            echo "<script>alert('Email send!')
+            document.location = 'regist-3.php'</script>";
         } catch (Exception $e) {
             echo "Message could not be sent. Mailer Error: {$mail->ErrorInfo}";
         }

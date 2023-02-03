@@ -18,7 +18,7 @@ if (isset($_POST['Submit'])) {
     $price = $_POST['price'];
     $payment = $_POST['payment'];
 
-    header("Location: regist-2.php");
+    header("Location: regist-3.php");
 
   } else if (isset($_POST['Back'])) {
     $ID = $_POST['ID'];
