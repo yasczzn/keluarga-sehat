@@ -10,6 +10,18 @@
     $mail = new PHPMailer(true);
 
     if (isset($_POST['Submit'])) {
+        $ID = $_POST['ID'];
+        $name = $_POST['name'];
+        $doB = $_POST['doB'];
+        $gender = $_POST['gender'];
+        $email = $_POST['email'];
+        $phoneNum = $_POST['phoneNum'];
+        $address = $_POST['address'];
+        $vaccineType = $_POST['vaccineType'];
+        $vaccinationDate = $_POST['vaccinationDate'];
+        $price = $_POST['price'];
+        $payment = $_POST['payment'];
+        
         try {
             // $mail->SMTPDebug = SMTP::DEBUG_SERVER;
             $mail->isSMTP();
@@ -17,8 +29,8 @@
             $mail->SMTPAuth = true;
             $mail->Username = 'putriyasminarahmaz@gmail.com';
             $mail->Password = 'cwxwxcphuotcexsh';
-            $mail->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS;
-            $mail->Port = 465;
+            $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;
+            $mail->Port = 587;
 
             $mail->setFrom('putriyasminarahmaz@gmail.com', 'Keluarga Sehat');
             $mail->addAddress($_POST["email"]);
