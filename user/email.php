@@ -17,7 +17,7 @@
             $mail->SMTPAuth = true;
             $mail->Username = 'putriyasminarahmaz@gmail.com';
             $mail->Password = 'cwxwxcphuotcexsh';
-            $mail->SMTPSecure = 'ssl';
+            $mail->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS;
             $mail->Port = 465;
 
             $mail->setFrom('putriyasminarahmaz@gmail.com', 'Keluarga Sehat');
