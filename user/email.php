@@ -24,22 +24,21 @@
         try {
             // $mail->SMTPDebug = SMTP::DEBUG_SERVER;
             $mail->isSMTP();
-            $mail->Host = 'smtp.gmail.com';
+            $mail->Host = "smtp.gmail.com";
             $mail->SMTPAuth = true;
             $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;
             $mail->Port = "587";
-            $mail->Username = 'putriyasminarahmaz@gmail.com';
-            $mail->Password = 'cwxwxcphuotcexsh';
+            $mail->Username = "putriyasminarahmaz@gmail.com";
+            $mail->Password = "cwxwxcphuotcexsh";
 
-            $mail->setFrom('putriyasminarahmaz@gmail.com', 'Keluarga Sehat');
+            $mail->setFrom("putriyasminarahmaz@gmail.com", "Keluarga Sehat");
             $mail->addAddress($email);
-            $mail->addCC('keluarga-sehat-production.up.railway.app');
 
             $mail->isHTML(true);
             $mail->Subject = "Payment va for Vaccination Appointment Keluarga Sehat";
-            $mail->Body = '<b>Hello ' . $name . ', Thank you for trust and using our services at Keluarga Sehat!.</b><br>
-                                <h3>Please continue your payment by send Rp' . $price . ' to 081234567890 via ' . $payment . ' We will send you 
-                                the vaccination schedule and the queue number after the transaction is complete.</h3>';
+            $mail->Body = "<b>Hello " . $name . " Thank you for trust and using our services at Keluarga Sehat!.</b><br>
+                                <h3>Please continue your payment by send Rp" . $price . " to 081234567890 via " . $payment . ". We will send you 
+                                the vaccination schedule and the queue number after the transaction is complete.</h3>";
 
             $mail->send();   
             
