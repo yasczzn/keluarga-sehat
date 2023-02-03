@@ -51,6 +51,7 @@
           <li><a class="nav-link scrollto" href="../index.php#about">About Us</a></li>
           <li><a class="nav-link scrollto" href="../index.php#faq">Why Us?</a></li>
           <li><a class="nav-link scrollto" href="../index.php#pricing">Our Services</a></li>
+          <li><a class="nav-link scrollto" href="../index.php#faq">FAQ</a></li>
           <li><a class="nav-link scrollto" href="../index.php#contact">Contact</a></li>
         </ul>
         <i class="bi bi-list mobile-nav-toggle"></i>
@@ -98,6 +99,7 @@
                 <li><i class="bx bx-chevron-right"></i> <a href="../index.php#about">About us</a></li>
                 <li><i class="bx bx-chevron-right"></i> <a href="../index.php#faq">Why Us?</a></li>
                 <li><i class="bx bx-chevron-right"></i> <a href="../index.php#pricing">Our Services</a></li>
+                <li><i class="bx bx-chevron-right"></i> <a href="../index.php#faq">FAQ</a></li>
                 <li><i class="bx bx-chevron-right"></i> <a href="../index.php#contact">Privacy policy</a></li>
               </ul>
             </div>

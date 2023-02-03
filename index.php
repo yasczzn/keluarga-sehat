@@ -51,6 +51,7 @@
           <li><a class="nav-link scrollto" href="#about">About Us</a></li>
           <li><a class="nav-link scrollto" href="#features">Why Us?</a></li>
           <li><a class="nav-link scrollto" href="#pricing">Our Services</a></li>
+          <li><a class="nav-link scrollto" href="#faq">FAQ</a></li>
           <li><a class="nav-link scrollto" href="#footer">Contact</a></li>
         </ul>
         <i class="bi bi-list mobile-nav-toggle"></i>
@@ -175,17 +176,13 @@
         </div>
 
         <div class="row">
-
           <div class="col-6 col-md-6">
             <div class="box" data-aos="zoom-in">
-              <h3>Single package</h3>
-              <h4>Free</h4>
+              <h3>Dosage 1</h3>
+              <h4><sup>Rp</sup>45.000<span> / person</span></h4>
               <ul>
                 <li>For 1 person</li>
-                <li>Pay for vaccination price only</li>
-                <li></li>
-                <li class="na">Discount for the next vaccination</li>
-                <li class="na">Get reward points for out other services</li>
+                <li>Get discount for next vaccination</li>
               </ul>
               <div class="btn-wrap">
                 <a href="user/regist-1.php" class="btn-buy">Book Now</a>
@@ -193,6 +190,82 @@
             </div>
           </div>
 
+          <div class="col-6 col-md-6 mt-4 mt-lg-0">
+            <div class="box" data-aos="zoom-in">
+              <h3>Dosage 2</h3>
+              <h4><sup>Rp</sup>50.000<span> / person</span></h4>
+              <ul>
+                <li>For 1 person</li>
+                <li>Get discount for next vaccination</li>
+              </ul>
+              <div class="btn-wrap">
+                <a href="user/regist-1.php" class="btn-buy">Book Now</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-6 col-md-6">
+            <div class="box" data-aos="zoom-in">
+              <h3>Dosage 3</h3>
+              <h4><sup>Rp</sup>55.000<span> / person</span></h4>
+              <ul>
+                <li>For 1 person</li>
+                <li>Get discount for next vaccination</li>
+              </ul>
+              <div class="btn-wrap">
+                <a href="user/regist-1.php" class="btn-buy">Book Now</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-6 col-md-6 mt-4 mt-lg-0">
+            <div class="box" data-aos="zoom-in">
+              <h3>Booster 1</h3>
+              <h4><sup>Rp</sup>60.000<span> / person</span></h4>
+              <ul>
+                <li>For 1 person</li>
+                <li>Get discount for next vaccination</li>
+              </ul>
+              <div class="btn-wrap">
+                <a href="user/regist-1.php" class="btn-buy">Book Now</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-6 col-md-6">
+            <div class="box" data-aos="zoom-in">
+              <h3>Booster 2</h3>
+              <h4><sup>Rp</sup>65.000<span> / person</span></h4>
+              <ul>
+                <li>For 1 person</li>
+                <li>Get discount for next vaccination</li>
+              </ul>
+              <div class="btn-wrap">
+                <a href="user/regist-1.php" class="btn-buy">Book Now</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-6 col-md-6 mt-4 mt-lg-0">
+            <div class="box" data-aos="zoom-in">
+              <h3>Booster 3</h3>
+              <h4><sup>Rp</sup>70.000<span> / person</span></h4>
+              <ul>
+                <li>For 1 person</li>
+                <li>Get discount for next vaccination</li>
+              </ul>
+              <div class="btn-wrap">
+                <a href="user/regist-1.php" class="btn-buy">Book Now</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="row">
           <div class="col-6 col-md-6 mt-4 mt-lg-0">
             <div class="box" data-aos="zoom-in" data-aos-delay="300">
               <span class="advanced">Best deal!</span>
@@ -209,7 +282,6 @@
               </div>
             </div>
           </div>
-
         </div>
 
       </div>
@@ -325,6 +397,7 @@
               <li><i class="bx bx-chevron-right"></i> <a href="#about">About us</a></li>
               <li><i class="bx bx-chevron-right"></i> <a href="#features">Why Us?</a></li>
               <li><i class="bx bx-chevron-right"></i> <a href="#pricing">Our Services</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="#faq">FAQ</a></li>
               <li><i class="bx bx-chevron-right"></i> <a href="#footer">Contact</a></li>
             </ul>
           </div>
