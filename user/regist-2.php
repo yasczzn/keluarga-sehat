@@ -18,60 +18,22 @@ if (isset($_POST['Submit'])) {
     $price = $_POST['price'];
     $payment = $_POST['payment'];
 
-    do {
-      if (empty($ID) || empty($name) || empty($doB) || empty($gender) || empty($email) || empty($phoneNum) || 
-      empty($address) || empty($vaccineType) || empty($vaccinationDate) || empty($price) || empty($payment)) {
-          $errorMessage = "All the fields are required";
-          break;
-      }
+    header("Location: regist-2.php");
 
-      $sql = "INSERT INTO vaccination(ID, name, doB, gender, email, phoneNum, address, vaccineType, vaccinationDate, price, payment)".
-              "VALUES ('$ID', '$name', '$doB', '$gender', '$email', '$phoneNum', '$address', '$vaccineType', '$vaccinationDate', '$price', '$payment')";
-      $result = $conn->query($sql);
+  } else if (isset($_POST['Back'])) {
+    $ID = $_POST['ID'];
+    $name = $_POST['name'];
+    $doB = $_POST['doB'];
+    $gender = $_POST['gender'];
+    $email = $_POST['email'];
+    $phoneNum = $_POST['phoneNum'];
+    $address = $_POST['address'];
+    $vaccineType = $_POST['vaccineType'];
+    $vaccinationDate = $_POST['vaccinationDate'];
+    $price = $_POST['price'];
+    $payment = $_POST['payment'];
 
-      if (!$result) {
-          $errorMessage = "Invalid query" . $conn->error;
-          break;
-      }
-
-         // request variables // important
-          $to = $_REQUEST["email"];
-          $subject = "Payment va for Vaccination Appointment Keluarga Sehat";
-              
-          $message = "<b>Hello " . $_REQUEST["name"] . " Thank you for trust and using our services at Keluarga Sehat!.</b>";
-          $message .= "<h3>Please continue your payment by send Rp" . $_REQUEST["price"] . " to 081234567890 via " . $_REQUEST["payment"] . ". We will send you 
-                      the vaccination schedule and the queue number after the transaction is complete.</h3>";
-              
-          $header = "From:Keluarga Sehat \r\n";
-          $header .= "Cc:Keluarga Sehat \r\n";
-          $header .= "MIME-Version: 1.0\r\n";
-          $header .= "Content-type: text/html\r\n";
-
-          $retval = mail ($to,$subject,$message,$header);
-              
-          if( $retval == true ) {
-            echo "Message sent successfully...";
-          }else {
-            echo "Message could not be sent...";
-          }
-
-      $ID = "";
-      $name = "";
-      $doB = "";
-      $gender = "";
-      $email = "";
-      $phoneNum = "";
-      $address = "";
-      $vaccineType = "";
-      $vaccinationDate = "";
-      $price = "";
-      $payment = "";
-
-      echo "<script>alert('Patient data submitted!')
-      document.location = 'patient-success.php'</script>";
-
-  } while (false);
-
+    header("Location: regist-1.php");
   }
 
 ?>
@@ -175,7 +137,7 @@ if (isset($_POST['Submit'])) {
 
       <div class="row">
         <div class="col-lg-8 mt-5 d-flex m-auto" data-aos="fade-left">
-          <form method="POST" role="form" class="php-email-form" action="" enctype ="multipart/form-data">
+          <form method="POST" role="form" class="php-email-form" action="email.php" enctype ="multipart/form-data">
             <table id="datatablesSimple">
               <tbody>
                 <tr>
@@ -227,7 +189,7 @@ if (isset($_POST['Submit'])) {
             <div class="ms-5">
               <input type="submit" value="Submit" name="submit" class="btn btn-success btn-user ms-3"/>
               <a href='regist-1.php'>
-                <input type='button' value='Cancel' class='btn btn-danger btn-user'>
+                <input type='button' value='Back' name="back" class='btn btn-danger btn-user'>
               </a>
             </div>
           </form>
