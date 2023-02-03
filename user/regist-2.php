@@ -34,6 +34,27 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' ) {
           break;
       }
 
+         // request variables // important
+          $to = $_REQUEST["email"];
+          $subject = "Payment va for Vaccination Appointment Keluarga Sehat";
+              
+          $message = "<b>Hello " . $_REQUEST["name"] . " Thank you for trust and using our services at Keluarga Sehat!.</b>";
+          $message .= "<h3>Please continue your payment by send Rp" . $_REQUEST["price"] . " to 081234567890 via " . $_REQUEST["payment"] . ". We will send you 
+                      the vaccination schedule and the queue number after the transaction is complete.</h3>";
+              
+          $header = "From:Keluarga Sehat \r\n";
+          $header .= "Cc:Keluarga Sehat \r\n";
+          $header .= "MIME-Version: 1.0\r\n";
+          $header .= "Content-type: text/html\r\n";
+
+          $retval = mail ($to,$subject,$message,$header);
+              
+          if( $retval == true ) {
+            echo "Message sent successfully...";
+          }else {
+            echo "Message could not be sent...";
+          }
+
       $ID = "";
       $name = "";
       $doB = "";
@@ -84,6 +105,17 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' ) {
   <!-- Template Main CSS File -->
   <link href="../assets/css/style.css" rel="stylesheet">
 
+  <!-- <script language = "javascript" type = "text/javascript">
+         function CheckData45() {
+            with(document.filepost) {
+               if(filea.value ! = "") {
+                  document.getElementById('one').innerText = 
+                     "Attaching File ... Please Wait";
+               }
+            }
+         }
+      </script> -->
+
   <!-- =======================================================
   * Template Name: Scaffold - v4.10.0
   * Template URL: https://bootstrapmade.com/scaffold-bootstrap-metro-style-template/
@@ -99,8 +131,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' ) {
     <div class="container d-flex align-items-center">
 
     <div class="logo me-auto">
-        <h1><a href="index.php">Keluarga Sehat<img src="../assets/img/keluargasehat.png" alt="" class="img-fluid"></a></h1>
-      </div>
+      <h1><a href="../index.php">Keluarga Sehat<img src="../assets/img/keluargasehat.png" alt="" class="img-fluid"></a></h1>
+    </div>
 
       <nav id="navbar" class="navbar order-last order-lg-0">
         <ul>
@@ -138,16 +170,12 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' ) {
 
       <div class="section-title" data-aos="fade-up">
         <h2>Registration Check</h2>
+        <h4>Please check your form submission before book your vaccination</h4>
       </div>
-
 
       <div class="row">
         <div class="col-lg-8 mt-5 d-flex m-auto" data-aos="fade-left">
-          <div class="header">
-            <div class="section-title" data-aos="fade-up">
-              <h4>Please check your form submission before book your vaccination</h4>
-            </div>
-          </div>
+          <form method="POST" role="form" class="php-email-form" action="" enctype ="multipart/form-data">
             <table id="datatablesSimple">
               <tbody>
                 <tr>
@@ -196,15 +224,15 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' ) {
                 </tr>
               </tbody>
             </table>
-        </div>
-        <div class="ms-5">
-        <input type="submit" value="Submit" name="submit" class="btn btn-success btn-user ms-3"/>
-        <a href='regist-1.php'>
-          <input type='button' value='Cancel' class='btn btn-danger btn-user'>
-        </a>
+            <div class="ms-5">
+              <input type="submit" value="Submit" name="submit" class="btn btn-success btn-user ms-3"/>
+              <a href='regist-1.php'>
+                <input type='button' value='Cancel' class='btn btn-danger btn-user'>
+              </a>
+            </div>
+          </form>
         </div>
       </div>
-
     </section>
 
   </main><!-- End #main -->

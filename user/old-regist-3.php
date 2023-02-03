@@ -99,8 +99,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' ) {
     <div class="container d-flex align-items-center">
 
     <div class="logo me-auto">
-        <h1><a href="index.php">Keluarga Sehat<img src="../assets/img/keluargasehat.png" alt="" class="img-fluid"></a></h1>
-      </div>
+      <h1><a href="../index.php">Keluarga Sehat<img src="../assets/img/keluargasehat.png" alt="" class="img-fluid"></a></h1>
+    </div>
 
       <nav id="navbar" class="navbar order-last order-lg-0">
         <ul>
