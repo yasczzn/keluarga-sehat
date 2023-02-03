@@ -47,7 +47,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' ) {
       $payment = "";
 
       echo "<script>alert('Patient data submitted!')
-      document.location = 'email.php'</script>";
+      document.location = 'patient-success.php'</script>";
 
   } while (false);
 

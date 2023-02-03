@@ -21,7 +21,7 @@
         $vaccinationDate = $_POST['vaccinationDate'];
         $price = $_POST['price'];
         $payment = $_POST['payment'];
-        
+
         try {
             // $mail->SMTPDebug = SMTP::DEBUG_SERVER;
             $mail->isSMTP();
@@ -44,8 +44,10 @@
 
             $mail->send();   
             
-            echo "<script>alert('Email send!')
-            document.location = 'patient-success.php'</script>";
+            echo "<script>alert('Email send!')</script>";
+
+            header("Location: regist-3.php");
+            
         } catch (Exception $e) {
             echo "Message could not be sent. Mailer Error: {$mail->ErrorInfo}";
         }
