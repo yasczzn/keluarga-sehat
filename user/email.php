@@ -9,18 +9,6 @@
     $mail = new PHPMailer(true);
 
     if (isset($_POST['Submit'])) {
-        $ID = $_POST['ID'];
-        $name = $_POST['name'];
-        $doB = $_POST['doB'];
-        $gender = $_POST['gender'];
-        $email = $_POST['email'];
-        $phoneNum = $_POST['phoneNum'];
-        $address = $_POST['address'];
-        $vaccineType = $_POST['vaccineType'];
-        $vaccinationDate = $_POST['vaccinationDate'];
-        $price = $_POST['price'];
-        $payment = $_POST['payment'];
-
         try {
             // $mail->SMTPDebug = SMTP::DEBUG_SERVER;
             $mail->isSMTP();
