@@ -18,7 +18,7 @@ if (isset($_POST['Submit'])) {
     $price = $_POST['price'];
     $payment = $_POST['payment'];
 
-    header("Location: email.php");
+    header("Location: regist-3.php");
 
   } else if (isset($_POST['Back'])) {
     $ID = $_POST['ID'];
@@ -137,7 +137,7 @@ if (isset($_POST['Submit'])) {
 
       <div class="row">
         <div class="col-lg-8 mt-5 d-flex m-auto" data-aos="fade-left">
-          <form method="POST" role="form" class="php-email-form" action="email.php" enctype ="multipart/form-data">
+          <form method="POST" role="form" class="php-email-form" action="regist-3.php" enctype ="multipart/form-data">
             <table id="datatablesSimple">
               <tbody>
                 <tr>
