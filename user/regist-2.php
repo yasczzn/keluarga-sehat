@@ -142,47 +142,47 @@ if (isset($_POST['Submit'])) {
               <tbody>
                 <tr>
                   <td>ID</td>
-                  <td><?php echo htmlspecialchars($_POST['ID']); ?></td>
+                  <td><input type="hidden" value="<?php echo htmlspecialchars($_POST['ID']); ?>" name="ID"></td>
                 </tr>
                 <tr>
                   <td>Name</td>
-                  <td><?php echo htmlspecialchars($_POST['name']); ?></td>
+                  <td><input type="hidden" value="<?php echo htmlspecialchars($_POST['name']); ?>" name="name"></td>
                 </tr>
                 <tr>
                   <td>doB</td>
-                  <td><?php echo htmlspecialchars($_POST['doB']); ?></td>
+                  <td><input type="hidden" value="<?php echo htmlspecialchars($_POST['doB']); ?>" name="doB"></td>
                 </tr>
                 <tr>
                   <td>Gender</td>
-                  <td><?php echo htmlspecialchars($_POST['gender']); ?></td>
+                  <td><input type="hidden" value="<?php echo htmlspecialchars($_POST['gender']); ?>" name="gender"></td>
                 </tr>
                 <tr>
                   <td>Email</td>
-                  <td><?php echo htmlspecialchars($_POST['email']); ?></td>
+                  <td><input type="hidden" value="<?php echo htmlspecialchars($_POST['email']); ?>" name="email"></td>
                 </tr>
                 <tr>
                   <td>Phone Number</td>
-                  <td><?php echo htmlspecialchars($_POST['phoneNum']); ?></td>
+                  <td><input type="hidden" value="<?php echo htmlspecialchars($_POST['phoneNum']); ?>" name="phoneNum"></td>
                 </tr>
                 <tr>
                   <td>Address</td>
-                  <td><?php echo htmlspecialchars($_POST['address']); ?></td>
+                  <td><input type="hidden" value="<?php echo htmlspecialchars($_POST['address']); ?>" name="address"></td>
                 </tr>
                 <tr>
                   <td>Vacine Type</td>
-                  <td><?php echo htmlspecialchars(!empty($_POST['vaccinationDate']) ? $_POST['vaccinationDate'] : ''); ?></td>
+                  <td><input type="hidden" value="<?php echo htmlspecialchars($_POST['vaccineType']); ?>" name="vaccineType"></td>
                 </tr>
                 <tr>
                   <td>Vaccination Date</td>
-                  <td><?php echo $_POST['vaccinationDate']; ?></td>
+                  <td><input type="hidden" value="<?php echo htmlspecialchars(!empty($_POST['vaccinationDate']) ? $_POST['vaccinationDate'] : ''); ?>" name="address"></td>
                 </tr>
                 <tr>
                   <td>Price</td>
-                  <td><?php echo $_POST['price']; ?></td>
+                  <td><input type="hidden" value="<?php echo $_POST['price']; ?>" name="price"></td>
                 </tr>
                 <tr>
                   <td>Payment with</td>
-                  <td><?php echo $_POST['payment']; ?></td>
+                  <td><input type="hidden" value="<?php echo $_POST['payment']; ?>" name="payment"></td>
                 </tr>
               </tbody>
             </table>
