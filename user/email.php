@@ -5,9 +5,9 @@
     use PHPMailer\PHPMailer\PHPMailer;
     use PHPMailer\PHPMailer\Exception;
 
-    require "../assets/vendor/src/PHPMailer.php";
-    require "../assets/vendor/src/Exception.php";
-    require "../assets/vendor/src/SMTP.php";
+    require "../assets/vendor/phpmailer/phpmailer/src/PHPMailer.php";
+    require "../assets/vendor/phpmailer/phpmailer/src/Exception.php";
+    require "../assets/vendor/phpmailer/phpmailer/src/SMTP.php";
     require '../assets/vendor/autoload.php';
 
     if (isset($_POST['Submit'])) {
