@@ -8,6 +8,7 @@
     require "../assets/phpmailer/src/PHPMailer.php";
     require "../assets/phpmailer/src/Exception.php";
     require "../assets/phpmailer/src/SMTP.php";
+    require '../assets/vendor/autoload.php';
 
     if (isset($_POST['Submit'])) {
         try {
@@ -18,7 +19,7 @@
             $mail->SMTPAuth = true;
             $mail->SMTPSecure = 'tls';
             $mail->Mailer = "smtp";
-            $mail->Port = "587";
+            $mail->Port = 587;
             $mail->Username = "putriyasminarahmaz@gmail.com";
             $mail->Password = "cwxwxcphuotcexsh";
 
