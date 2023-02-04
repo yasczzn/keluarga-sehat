@@ -28,9 +28,9 @@
 
             $mail->isHTML(true);
             $mail->Subject = "Payment va for Vaccination Appointment Keluarga Sehat";
-            $mail->Body = "<b>Hello " . $_POST['name'] . " Thank you for trust and using our services at Keluarga Sehat!.</b><br>
+            $mail->msgHTML("<b>Hello " . $_POST['name'] . " Thank you for trust and using our services at Keluarga Sehat!.</b><br>
                                 <h3>Please continue your payment by send Rp" . $_POST['price'] . " to 081234567890 via " . $_POST['payment'] . ". We will send you 
-                                the vaccination schedule and the queue number after the transaction is complete.</h3>";
+                                the vaccination schedule and the queue number after the transaction is complete.</h3>");
 
             $mail->send();   
             
