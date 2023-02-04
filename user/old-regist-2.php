@@ -140,46 +140,45 @@ if (isset($_POST['Submit'])) {
         <div class="col-lg-8 mt-5 d-flex m-auto" data-aos="fade-left">
           <form action="regist-2.php" method="POST" role="form" class="php-email-form">
             <div class="form-floating mb-3">
-              <input type="number" class="form-control form-control-user" value="<?php echo $ID; ?>" name="ID" placeholder="ID" readonly>
+              <input type="number" class="form-control form-control-user" value="<?php echo $_POST['ID']; ?>" name="ID" placeholder="ID" readonly>
               <label for="inputID">ID</label>
             </div>
             <div class="form-floating mb-3">
-              <input type="text" class="form-control form-control-user" value="<?php echo $name; ?>" name="name" placeholder="Name" readonly>
+              <input type="text" class="form-control form-control-user" value="<?php echo $_POST['name']; ?>" name="name" placeholder="Name" readonly>
               <label for="inputName">Name</label>
             </div>
             <div class="form-floating mb-3">
-              <input type="text" class="form-control form-control-user" value="<?php echo $doB; ?>" name="doB" placeholder="Date of Birth" readonly>
+              <input type="text" class="form-control form-control-user" value="<?php echo $_POST['doB']; ?>" name="doB" placeholder="Date of Birth" readonly>
               <label for="inputDoB">Date of Birth</label>
             </div>
             <div class="form-floating mb-3">
               <select aria-label="Gender" title="gender-choice" type="text" class="form-control" name="gender" placeholder="Gender" aria-readonly="">
-                <option value="male" <?php echo $gender == 'male'; ?>>male</option>
-                <option value="female" <?php echo $gender == 'female'; ?>>female</option>
+              <option value="male" <?php if($data['gender']== 'male'){ echo 'selected'; }?>>male</option>
+                                    <option value="female" <?php if($data['gender']== 'female'){ echo 'selected'; }?>>female</option>
               </select>
               <label for="inputGender">Gender</label>
               <div class="validate"></div>
             </div>
             <div class="form-floating mb-3">
-              <input type="email" class="form-control form-control-user" value="<?php echo $email; ?>" name="email" placeholder="Email" readonly>
+              <input type="email" class="form-control form-control-user" value="<?php echo $_POST['email']; ?>" name="email" placeholder="Email" readonly>
               <label for="inputEmail">Email</label>
             </div>
             <div class="form-floating mb-3">
-              <input type="number" class="form-control form-control-user" value="<?php echo $phoneNum; ?>" name="phoneNum" placeholder="Phone Number" readonly>
+              <input type="number" class="form-control form-control-user" value="<?php echo $_POST['phoneNum']; ?>" name="phoneNum" placeholder="Phone Number" readonly>
               <label for="inputPhoneNum">Phone Number</label>
             </div>
             <div class="form-floating mb-3">
-              <input type="text" class="form-control form-control-user" value="<?php echo $address; ?>" name="address" placeholder="Address" readonly>
+              <input type="text" class="form-control form-control-user" value="<?php echo $_POST['address']; ?>" name="address" placeholder="Address" readonly>
               <label for="inputAddress">Address</label>
             </div>
             <div class="form-floating mb-3">
               <select aria-label="VaccineType" title="status-choice" type="text" class="form-control" name="vaccineType" id="vaccineType" placeholder="Vaccine Type" onchange="priceTotal(this.value)" required>
-                <option value="" disabled selected>Select vaccination</option>
-                <option value="Dosage 1" <?php echo $vaccineType == 'Dosage 1'; ?>>Dosage 1</option>
-                <option value="Dosage 2" <?php echo $vaccineType == 'Dosage 2'; ?>>Dosage 2</option>
-                <option value="Dosage 3" <?php echo $vaccineType == 'Dosage 3'; ?>>Dosage 3</option>
-                <option value="Booster 1" <?php echo $vaccineType == 'Booster 1'; ?>>Booster 1</option>
-                <option value="Booster 2" <?php echo $vaccineType == 'Booster 2'; ?>>Booster 2</option>
-                <option value="Booster 3" <?php echo $vaccineType == 'Booster 3'; ?>>Booster 3</option>
+                <option value="Dosage 1" <?php if($data['vaccineType']== 'Dosage 1'){ echo 'selected'; }?>>Dosage 1</option>
+                <option value="Dosage 2" <?php if($data['vaccineType']== 'Dosage 2'){ echo 'selected'; }?>>Dosage 2</option>
+                <option value="Dosage 3" <?php if($data['vaccineType']== 'Dosage 3'){ echo 'selected'; }?>>Dosage 3</option>
+                                    <option value="Booster 1" <?php if($data['vaccineType']== 'Booster 1'){ echo 'selected'; }?>>Booster 1</option>
+                                    <option value="Booster 2" <?php if($data['vaccineType']== 'Booster 2'){ echo 'selected'; }?>>Booster 2</option>
+                                    <option value="Booster 3" <?php if($data['vaccineType']== 'Booster 3'){ echo 'selected'; }?>>Booster 3</option>
               </select>
               <label for="inputStatus">Vaccine Type</label>
               <div class="validate"></div>
@@ -190,29 +189,29 @@ if (isset($_POST['Submit'])) {
               <div class="validate"></div>
             </div>
             <div class="form-floating mb-3">
-              <input type="text" class="form-control form-control-user" value="<?php echo $price; ?>" name="price" id="price" placeholder="Price" readonly>
+              <input type="text" class="form-control form-control-user" value="<?php echo $_POST['price']; ?>" name="price" id="price" placeholder="Price" readonly>
               <label for="inputPrice">Price</label>
               <div class="validate"></div>
             </div>
             <fieldset>
-              <legend class="form-floating mb-3">Please select a payment method</legend>
-              <div class="form-group col-6">
-                <input type="radio" id="bca" name="payment" value="bca" <?php echo $payment == 'bca'; ?>>
-                <label for="bca">BCA</label>
-              </div>
-              <div class="form-group col-md-6 mt-3 mt-md-0">
-                <input type="radio" id="bsi" name="payment" value="bsi" <?php echo $payment == 'bsi'; ?>>
-                <label for="bsi">BSI</label>
-              </div>    
-              <div class="form-group col-6">
-                <input type="radio" id="gopay" name="payment" value="gopay" <?php echo $payment == 'gopay'; ?>>
-                <label for="gopay">GoPay</label>
-              </div>    
-              <div class="form-group col-md-6 mt-3 mt-md-0">
-                <input type="radio" id="dana" name="payment" value="dana" <?php echo $payment == 'dana'; ?>>
-                <label for="dana">Dana</label>
-              </div>
-            </fieldset>
+                                <legend class="form-floating mb-3">Please select a payment method</legend>
+                                <div>
+                                    <input type="radio" id="bca" name="payment" value="BCA" <?php if($data['payment']== 'bca'){ echo 'selected'; }?>>
+                                    <label for="bca">BCA</label>
+                                </div>
+                                <div>
+                                    <input type="radio" id="bsi" name="payment" value="BSI" <?php if($data['payment']== 'bsi'){ echo 'selected'; }?>>
+                                    <label for="bsi">BSI</label>
+                                </div>
+                                <div>
+                                    <input type="radio" id="gopay" name="payment" value="GoPay" <?php if($data['payment']== 'gopay'){ echo 'selected'; }?>>
+                                    <label for="gopay">GoPay</label>
+                                </div>
+                                <div>
+                                    <input type="radio" id="dana" name="payment" value="Dana" <?php if($data['payment']== 'dana'){ echo 'selected'; }?>>
+                                    <label for="dana">Dana</label>
+                                </div>
+                            </fieldset>
             <input type="submit" value="Submit" name="submit" class="btn btn-success btn-user ms-3"/>
             <a href='../index.php'>
               <input type='button' value='Cancel' class='btn btn-danger btn-user'>
