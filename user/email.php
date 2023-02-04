@@ -1,4 +1,7 @@
 <?php 
+
+    include '../function/connection.php';
+
     use PHPMailer\PHPMailer\PHPMailer;
     use PHPMailer\PHPMailer\Exception;
 
@@ -6,11 +9,10 @@
     require "../assets/phpmailer/src/Exception.php";
     require "../assets/phpmailer/src/SMTP.php";
 
-    $mail = new PHPMailer(true);
-
     if (isset($_POST['Submit'])) {
         try {
             // $mail->SMTPDebug = SMTP::DEBUG_SERVER;
+            $mail = new PHPMailer(true);
             $mail->isSMTP();
             $mail->Host = "smtp.gmail.com";
             $mail->SMTPAuth = true;
