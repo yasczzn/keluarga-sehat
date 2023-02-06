@@ -1,14 +1,7 @@
-<!-- <?php 
+<?php 
 
 include '../function/connection.php';
 
-$ID = "";
-$name = "";
-$doB = "";
-$gender = "";
-$email = "";
-$phoneNum = "";
-$address = "";
 $vaccineType = "";
 $vaccinationDate = "";
 $price = "";
@@ -17,23 +10,14 @@ $payment = "";
 $errorMessage = "";
 $successMessage = "";
 
-if (isset($_POST['Submit'])) {
-    $ID = $_POST['ID'];
-    $name = $_POST['name'];
-    $doB = $_POST['doB'];
-    $gender = $_POST['gender'];
-    $email = $_POST['email'];
-    $phoneNum = $_POST['phoneNum'];
-    $address = $_POST['address'];
-    $vaccineType = $_POST['vaccineType'];
-    $vaccinationDate = $_POST['vaccinationDate'];
-    $price = $_POST['price'];
-    $payment = $_POST['payment'];
+  $sql = mysqli_query($conn, "SELECT * FROM patient WHERE email LIKE '%".$email."%'");
+  $data = mysqli_fetch_array($sql); 
 
-    header("Location: old-regist-3.php");
+  if(!$data) {
+    header("Location: error.php");
   }
 
-?> -->
+?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -194,24 +178,24 @@ if (isset($_POST['Submit'])) {
               <div class="validate"></div>
             </div>
             <fieldset>
-                                <legend class="form-floating mb-3">Please select a payment method</legend>
-                                <div>
-                                    <input type="radio" id="bca" name="payment" value="BCA" <?php if($data['payment']== 'bca'){ echo 'selected'; }?>>
-                                    <label for="bca">BCA</label>
-                                </div>
-                                <div>
-                                    <input type="radio" id="bsi" name="payment" value="BSI" <?php if($data['payment']== 'bsi'){ echo 'selected'; }?>>
-                                    <label for="bsi">BSI</label>
-                                </div>
-                                <div>
-                                    <input type="radio" id="gopay" name="payment" value="GoPay" <?php if($data['payment']== 'gopay'){ echo 'selected'; }?>>
-                                    <label for="gopay">GoPay</label>
-                                </div>
-                                <div>
-                                    <input type="radio" id="dana" name="payment" value="Dana" <?php if($data['payment']== 'dana'){ echo 'selected'; }?>>
-                                    <label for="dana">Dana</label>
-                                </div>
-                            </fieldset>
+              <legend class="form-floating mb-3">Please select a payment method</legend>
+                <div>
+                  <input type="radio" id="bca" name="payment" value="BCA" <?php if($data['payment']== 'bca'){ echo 'selected'; }?>>
+                  <label for="bca">BCA</label>
+                </div>
+                <div>
+                  <input type="radio" id="bsi" name="payment" value="BSI" <?php if($data['payment']== 'bsi'){ echo 'selected'; }?>>
+                  <label for="bsi">BSI</label>
+                </div>
+                <div>
+                  <input type="radio" id="gopay" name="payment" value="GoPay" <?php if($data['payment']== 'gopay'){ echo 'selected'; }?>>
+                  <label for="gopay">GoPay</label>
+                </div>
+                <div>
+                  <input type="radio" id="dana" name="payment" value="Dana" <?php if($data['payment']== 'dana'){ echo 'selected'; }?>>
+                  <label for="dana">Dana</label>
+                </div>
+            </fieldset>
             <input type="submit" value="Submit" name="submit" class="btn btn-success btn-user ms-3"/>
             <a href='../index.php'>
               <input type='button' value='Cancel' class='btn btn-danger btn-user'>
@@ -225,8 +209,28 @@ if (isset($_POST['Submit'])) {
 
   </main><!-- End #main -->
 
+  <?php
+    
+    if (isset($_POST['Submit'])) {
+        $ID = $_POST['ID'];
+        $name = $_POST['name'];
+        $doB = $_POST['doB'];
+        $gender = $_POST['gender'];
+        $email = $_POST['email'];
+        $phoneNum = $_POST['phoneNum'];
+        $address = $_POST['address'];
+        $vaccineType = $_POST['vaccineType'];
+        $vaccinationDate = $_POST['vaccinationDate'];
+        $price = $_POST['price'];
+        $payment = $_POST['payment'];
+    
+        header("Location: old-regist-3.php");
+      }
+
+  ?>
+
       <!-- ======= Footer ======= -->
-      <footer id="footer">
+    <footer id="footer">
       <div class="footer-top">
         <div class="container">
           <div class="row">

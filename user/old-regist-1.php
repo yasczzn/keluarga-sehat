@@ -1,4 +1,4 @@
-<!-- <?php 
+<?php 
 
 include '../function/connection.php';
 
@@ -8,12 +8,12 @@ $errorMessage = "";
 $successMessage = "";
 
 if (isset($_POST['Submit'])) {
-    $email = $_POST['email'];
+    $email = htmlspecialchars($_GET['email']);
 
     header("Location: old-regist-2.php");
   }
 
-?> -->
+?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -117,10 +117,10 @@ if (isset($_POST['Submit'])) {
 
       <div class="row">
         <div class="col-lg-8 mt-5 d-flex m-auto" data-aos="fade-left">
-          <form action="regist-2.php" method="POST" role="form" class="php-email-form">
+          <form action="old-regist-2.php" method="POST" role="form" class="php-email-form">
             <div class="form-floating mb-3">
               <input type="email" class="form-control form-control-user" value="<?php echo $email; ?>" name="email" placeholder="Email" required>
-              <label for="inputEmail">Email</label>
+              <label for="inputEmail">Input register email</label>
               <div class="validate"></div>
             </div>
             <input type="submit" value="Submit" name="submit" class="btn btn-success btn-user ms-3"/>

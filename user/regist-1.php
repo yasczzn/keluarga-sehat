@@ -1,4 +1,4 @@
-<!-- <?php 
+<?php 
 
 include '../function/connection.php';
 
@@ -33,7 +33,7 @@ if (isset($_POST['Submit'])) {
     header("Location: regist-2.php");
   }
 
-?> -->
+?>
 
 <!DOCTYPE html>
 <html lang="en">

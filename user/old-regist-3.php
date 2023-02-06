@@ -139,73 +139,70 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' ) {
 
       <div class="section-title" data-aos="fade-up">
         <h2>Patient Appointment Check</h2>
+        <h4>Please check your form submission before book your vaccination</h4>
       </div>
 
 
       <div class="row">
         <div class="col-lg-8 mt-5 d-flex m-auto" data-aos="fade-left">
-          <div class="header">
-            <div class="section-title" data-aos="fade-up">
-              <h4>Please check your form submission before book your vaccination</h4>
-            </div>
-          </div>
+          <form method="POST" role="form" class="php-email-form" action="regist-3.php" enctype ="multipart/form-data">
             <table id="datatablesSimple">
               <tbody>
                 <tr>
                   <td>ID</td>
-                  <td><?php echo htmlspecialchars($_POST['ID']) ?></td>
+                  <td><input type="text" value="<?php echo htmlspecialchars($_POST['ID']); ?>" name="ID" readonly></td>
                 </tr>
                 <tr>
                   <td>Name</td>
-                  <td><?php echo htmlspecialchars($_POST['name']) ?></td>
+                  <td><input type="text" value="<?php echo htmlspecialchars($_POST['name']); ?>" name="name" readonly></td>
                 </tr>
                 <tr>
                   <td>doB</td>
-                  <td><?php echo htmlspecialchars($_POST['doB']) ?></td>
+                  <td><input type="text" value="<?php echo htmlspecialchars($_POST['doB']); ?>" name="doB" readonly></td>
                 </tr>
                 <tr>
                   <td>Gender</td>
-                  <td><?php echo htmlspecialchars($_POST['gender']) ?></td>
+                  <td><input type="text" value="<?php echo htmlspecialchars($_POST['gender']); ?>" name="gender" readonly></td>
                 </tr>
                 <tr>
                   <td>Email</td>
-                  <td><?php echo htmlspecialchars($_POST['email']) ?></td>
+                  <td><input type="text" value="<?php echo htmlspecialchars($_POST['email']); ?>" name="email" readonly></td>
                 </tr>
                 <tr>
                   <td>Phone Number</td>
-                  <td><?php echo htmlspecialchars($_POST['phoneNum']) ?></td>
+                  <td><input type="text" value="<?php echo htmlspecialchars($_POST['phoneNum']); ?>" name="phoneNum" readonly></td>
                 </tr>
                 <tr>
                   <td>Address</td>
-                  <td><?php echo htmlspecialchars($_POST['address']) ?></td>
+                  <td><input type="text" value="<?php echo htmlspecialchars($_POST['address']); ?>" name="address" readonly></td>
                 </tr>
                 <tr>
-                  <td>Vacine Type</td>
-                  <td><?php echo htmlspecialchars($_POST['vaccineType']) ?></td>
+                  <td>Vaccine Type</td>
+                  <td><input type="hidden" value="<?php echo htmlspecialchars($_POST['vaccineType']); ?>" name="vaccineType" readonly></td>
                 </tr>
                 <tr>
                   <td>Vaccination Date</td>
-                  <td><?php echo $_POST['vaccinationDate'] ?></td>
+                  <td><input type="text" value="<?php echo htmlspecialchars(!empty($_POST['vaccinationDate']) ? $_POST['vaccinationDate'] : ''); ?>" name="vaccinationDate" readonly></td>
                 </tr>
                 <tr>
                   <td>Price</td>
-                  <td><?php echo $_POST['price'] ?></td>
+                  <td><input type="text" value="<?php echo $_POST['price']; ?>" name="price" readonly></td>
                 </tr>
                 <tr>
                   <td>Payment with</td>
-                  <td><?php echo $_POST['payment'] ?></td>
+                  <td><input type="text" value="<?php echo $_POST['payment']; ?>" name="payment" readonly></td>
                 </tr>
               </tbody>
             </table>
-        </div>
-        <div class="ms-5">
-        <input type="submit" value="Submit" name="submit" class="btn btn-success btn-user ms-3"/>
-        <a href='old-regist-2.php'>
-          <input type='button' value='Cancel' class='btn btn-danger btn-user'>
-        </a>
+            <div class="ms-5">
+              <input type="submit" value="Submit" name="submit" class="btn btn-success btn-user ms-3"/>
+              <a href='regist-1.php'>
+                <input type='button' value='Back' name="back" class='btn btn-danger btn-user'>
+              </a>
+            </div>
+          </form>
         </div>
       </div>
-
     </section>
 
   </main><!-- End #main -->

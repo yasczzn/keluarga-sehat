@@ -184,9 +184,6 @@
                 <li>For 1 person</li>
                 <li>Get discount for next vaccination</li>
               </ul>
-              <div class="btn-wrap">
-                <a href="user/regist-1.php" class="btn-buy">Book Now</a>
-              </div>
             </div>
           </div>
 
@@ -198,9 +195,6 @@
                 <li>For 1 person</li>
                 <li>Get discount for next vaccination</li>
               </ul>
-              <div class="btn-wrap">
-                <a href="user/regist-1.php" class="btn-buy">Book Now</a>
-              </div>
             </div>
           </div>
         </div>
@@ -214,9 +208,6 @@
                 <li>For 1 person</li>
                 <li>Get discount for next vaccination</li>
               </ul>
-              <div class="btn-wrap">
-                <a href="user/regist-1.php" class="btn-buy">Book Now</a>
-              </div>
             </div>
           </div>
 
@@ -228,9 +219,6 @@
                 <li>For 1 person</li>
                 <li>Get discount for next vaccination</li>
               </ul>
-              <div class="btn-wrap">
-                <a href="user/regist-1.php" class="btn-buy">Book Now</a>
-              </div>
             </div>
           </div>
         </div>
@@ -244,9 +232,6 @@
                 <li>For 1 person</li>
                 <li>Get discount for next vaccination</li>
               </ul>
-              <div class="btn-wrap">
-                <a href="user/regist-1.php" class="btn-buy">Book Now</a>
-              </div>
             </div>
           </div>
 
@@ -258,9 +243,6 @@
                 <li>For 1 person</li>
                 <li>Get discount for next vaccination</li>
               </ul>
-              <div class="btn-wrap">
-                <a href="user/regist-1.php" class="btn-buy">Book Now</a>
-              </div>
             </div>
           </div>
         </div>
