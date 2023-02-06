@@ -5,7 +5,7 @@ include '../function/connection.php';
 $errorMessage = "";
 $successMessage = "";
 
-if ($_SERVER['REQUEST_METHOD'] == 'POST' ) {
+if (isset($_POST['Submit'])) {
     $ID = $_POST['ID'];
     $name = $_POST['name'];
     $doB = $_POST['doB'];
@@ -18,39 +18,22 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' ) {
     $price = $_POST['price'];
     $payment = $_POST['payment'];
 
-    do {
-      if (empty($ID) || empty($name) || empty($doB) || empty($gender) || empty($email) || empty($phoneNum) || 
-      empty($address) || empty($vaccineType) || empty($vaccinationDate) || empty($price) || empty($payment)) {
-          $errorMessage = "All the fields are required";
-          break;
-      }
+    header("Location: regist-3.php");
 
-      $sql = "INSERT INTO vaccination(ID, name, doB, gender, email, phoneNum, address, vaccineType, vaccinationDate, price, payment)".
-              "VALUES ('$ID', '$name', '$doB', '$gender', '$email', '$phoneNum', '$address', '$vaccineType', '$vaccinationDate', '$price', '$payment')";
-      $result = $conn->query($sql);
+  } else if (isset($_POST['Back'])) {
+    $ID = $_POST['ID'];
+    $name = $_POST['name'];
+    $doB = $_POST['doB'];
+    $gender = $_POST['gender'];
+    $email = $_POST['email'];
+    $phoneNum = $_POST['phoneNum'];
+    $address = $_POST['address'];
+    $vaccineType = $_POST['vaccineType'];
+    $vaccinationDate = $_POST['vaccinationDate'];
+    $price = $_POST['price'];
+    $payment = $_POST['payment'];
 
-      if (!$result) {
-          $errorMessage = "Invalid query" . $conn->error;
-          break;
-      }
-
-      $ID = "";
-      $name = "";
-      $doB = "";
-      $gender = "";
-      $email = "";
-      $phoneNum = "";
-      $address = "";
-      $vaccineType = "";
-      $vaccinationDate = "";
-      $price = "";
-      $payment = "";
-
-      echo "<script>alert('Patient data submitted!')
-      document.location = 'patient-success.php'</script>";
-
-  } while (false);
-
+    header("Location: old-regist-2.php");
   }
 
 ?>
@@ -196,7 +179,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' ) {
             </table>
             <div class="ms-5">
               <input type="submit" value="Submit" name="submit" class="btn btn-success btn-user ms-3"/>
-              <a href='regist-1.php'>
+              <a href='old-regist-2.php'>
                 <input type='button' value='Back' name="back" class='btn btn-danger btn-user'>
               </a>
             </div>

@@ -137,8 +137,8 @@ $successMessage = "";
             </div>
             <div class="form-floating mb-3">
               <select aria-label="Gender" title="gender-choice" type="text" class="form-control" name="gender" placeholder="Gender" aria-readonly="">
-              <option value="male" <?php if($data['gender']== 'male'){ echo 'selected'; }?>>male</option>
-                                    <option value="female" <?php if($data['gender']== 'female'){ echo 'selected'; }?>>female</option>
+                <option value="male" <?php if($data['gender']== 'male'){ echo 'selected'; }?>>male</option>
+                <option value="female" <?php if($data['gender']== 'female'){ echo 'selected'; }?>>female</option>
               </select>
               <label for="inputGender">Gender</label>
               <div class="validate"></div>
@@ -160,9 +160,9 @@ $successMessage = "";
                 <option value="Dosage 1" <?php if($data['vaccineType']== 'Dosage 1'){ echo 'selected'; }?>>Dosage 1</option>
                 <option value="Dosage 2" <?php if($data['vaccineType']== 'Dosage 2'){ echo 'selected'; }?>>Dosage 2</option>
                 <option value="Dosage 3" <?php if($data['vaccineType']== 'Dosage 3'){ echo 'selected'; }?>>Dosage 3</option>
-                                    <option value="Booster 1" <?php if($data['vaccineType']== 'Booster 1'){ echo 'selected'; }?>>Booster 1</option>
-                                    <option value="Booster 2" <?php if($data['vaccineType']== 'Booster 2'){ echo 'selected'; }?>>Booster 2</option>
-                                    <option value="Booster 3" <?php if($data['vaccineType']== 'Booster 3'){ echo 'selected'; }?>>Booster 3</option>
+                <option value="Booster 1" <?php if($data['vaccineType']== 'Booster 1'){ echo 'selected'; }?>>Booster 1</option>
+                <option value="Booster 2" <?php if($data['vaccineType']== 'Booster 2'){ echo 'selected'; }?>>Booster 2</option>
+                <option value="Booster 3" <?php if($data['vaccineType']== 'Booster 3'){ echo 'selected'; }?>>Booster 3</option>
               </select>
               <label for="inputStatus">Vaccine Type</label>
               <div class="validate"></div>
@@ -200,7 +200,7 @@ $successMessage = "";
             <a href='../index.php'>
               <input type='button' value='Cancel' class='btn btn-danger btn-user'>
             </a>
-            <hr
+            <hr>
           </form>
         </div>
       </div>
